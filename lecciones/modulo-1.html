@@ -7,212 +7,636 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    body { font-family: 'Inter', sans-serif; }
-    .prose-lora { font-family: 'Lora', serif; font-size: 1.05rem; line-height: 1.85; }
+    body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+    .prose-lora { font-family: 'Lora', serif; font-size: 1.1rem; line-height: 1.8; }
     .goog-te-banner-frame.skiptranslate { display: none !important; }
     body { top: 0 !important; }
-    #google_translate_element select {
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.4);
-      color: white;
-      border-radius: 6px;
-      padding: 4px 8px;
-      font-size: 0.85rem;
-      cursor: pointer;
-    }
-    h4 { font-size: 1.05rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #1e3a5f; }
-    h5 { font-size: 1rem; font-weight: 600; margin-top: 1.2rem; margin-bottom: 0.4rem; color: #1e40af; }
-    ul { padding-left: 1.5rem; list-style-type: disc; margin-top: 0.5rem; margin-bottom: 0.5rem; }
-    li { margin-bottom: 0.4rem; }
+    h3 { font-size: 1.8rem; font-weight: 700; color: #1e3a8a; margin-bottom: 1.5rem; }
+    h4 { font-size: 1.4rem; font-weight: 700; margin-top: 3rem; margin-bottom: 1rem; color: #1e3a8a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+    h5 { font-size: 1.2rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; color: #1e40af; }
+    .question-box { background-color: #f8fafc; border: 1px solid #cbd5e1; padding: 1.5rem; border-radius: 12px; margin: 2rem 0; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+    .question-box p { font-family: 'Inter', sans-serif; font-weight: 600; color: #0f172a; margin-bottom: 0.75rem; }
+    .doctrine-card { background: white; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #1e40af; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 1.5rem; }
+    .resource-section { background-color: #eff6ff; padding: 2rem; border-radius: 12px; margin-top: 3rem; }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-slate-50 text-slate-800">
 
-  <header class="bg-blue-950 text-white shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-      <div class="flex items-center gap-4">
-        <a href="../index.html"
-           class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-200">
-          ← Volver al inicio
-        </a>
-        <span class="text-blue-300 text-sm hidden sm:inline">📖 Academia Bíblica</span>
-      </div>
-      <div id="google_translate_element" class="shrink-0"></div>
+  <header class="bg-blue-950 text-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex flex-wrap justify-between items-center gap-4">
+      <a href="../index.html" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 py-2 px-4 rounded-lg transition font-medium">
+        ← Volver al inicio
+      </a>
+      <div id="google_translate_element"></div>
+      <button id="toggle-language" class="bg-indigo-600 hover:bg-indigo-700 py-2 px-6 rounded-lg font-bold transition shadow-md">
+        Switch to English
+      </button>
     </div>
   </header>
 
-  <section class="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-10 px-4">
-    <div class="max-w-7xl mx-auto">
-      <span class="text-blue-300 text-xs font-semibold uppercase tracking-widest">Módulo 1</span>
-      <h1 class="text-3xl sm:text-4xl font-bold mt-1" style="font-family:'Lora',serif;">
+  <section class="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-16 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <span class="text-blue-300 text-sm font-bold uppercase tracking-widest block mb-2">Módulo 1</span>
+      <h1 class="text-4xl md:text-5xl font-bold leading-tight" style="font-family:'Lora',serif;">
         Fundamentos Teológicos de la Conducta Cristiana
       </h1>
-      <p class="text-blue-200 mt-2 text-base">
-        Gracia, Salvación y Transformación del Creyente
-      </p>
     </div>
   </section>
 
-  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-12 bg-white shadow-sm -mt-8 rounded-t-3xl border border-gray-100">
 
-    <div class="flex justify-end mb-8">
-      <button id="toggle-language"
-        class="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-5 rounded-lg transition-colors duration-200">
-        Cambiar a Inglés
-      </button>
-    </div>
+    <div id="content-es" class="prose-lora space-y-6 text-gray-800">
+      
+      <p class="font-bold text-xl mb-8">MÓDULO 1: FUNDAMENTOS TEOLÓGICOS DE LA CONDUCTA CRISTIANA</p>
 
-    <!-- ESPAÑOL -->
-    <div id="content-es" class="prose-lora text-gray-700 space-y-4">
-      <h3 class="text-2xl font-bold text-blue-950 mb-4" style="font-family:'Lora',serif;">
-        MÓDULO 1: FUNDAMENTOS TEOLÓGICOS DE LA CONDUCTA CRISTIANA
-      </h3>
       <h4>INTRODUCCIÓN</h4>
       <p>La conducta cristiana no surge de reglas arbitrarias o de un moralismo vacío. Más bien, emerge de una comprensión profunda de quién es Dios, qué ha hecho por nosotros a través de Cristo, y cómo el Espíritu Santo nos capacita para vivir de manera que refleje su carácter. Este módulo establece los cimientos teológicos que sostienen toda conducta cristiana auténtica.</p>
+
       <h4>SECCIÓN 1.1: LA GRACIA COMO BASE DE LA TRANSFORMACIÓN</h4>
+      
       <h5>Entendiendo la Gracia</h5>
-      <p>La gracia se expresa en hebreo mediante dos términos principales: chesed (חֶסֶד), que significa "gracia, misericordia, amor inalterable, compasión", y chen (חֵן), que significa "gracia, benignidad, bondad". En griego, charis (χάρις) transmite "gracia, favor, benignidad, benevolencia".</p>
+      <p>La gracia se expresa en hebreo mediante dos términos principales: chesed (חֶסֶד), que significa “gracia, misericordia, amor inalterable, compasión”, y chen (חֵן), que significa “gracia, benignidad, bondad”. En griego, charis (χάρις) transmite “gracia, favor, benignidad, benevolencia”.</p>
       <p>Cada término revela una dimensión diferente del concepto:</p>
-      <ul>
+      <ul class="list-disc pl-8 space-y-2">
         <li><strong>Chesed:</strong> Enfatiza la lealtad inquebrantable y el amor constante de Dios, independientemente de nuestro comportamiento.</li>
         <li><strong>Chen:</strong> Destaca la benignidad y el favor que se otorga libremente, sin merecimiento previo.</li>
         <li><strong>Charis:</strong> En el Nuevo Testamento, representa el favor inmerecido que Dios extiende a través de Cristo.</li>
       </ul>
+
       <h5>La Naturaleza de la Gracia Divina</h5>
       <p>La gracia es la conducta benigna o misericordiosa que una persona más poderosa ejerce sobre otra. En el contexto cristiano, esto significa que Dios, siendo infinitamente superior, elige tratarnos con favor que no hemos ganado ni merecemos.</p>
-      <p>La gracia de Dios hacia la humanidad surge de la plenitud de su ser. Él es un Dios de gracia. Cuando Dios se apareció a Moisés declaró su nombre, Yahvé, el YO SOY, como la suma de su ser eterno. Esta naturaleza incluye su gracia: "¡Jehová! ¡Jehová! fuerte, misericordioso y piadoso; tardo para la ira, y grande en misericordia y verdad" (Éxodo 34:6).</p>
+      <p>La gracia de Dios hacia la humanidad surge de la plenitud de su ser. Él es un Dios de gracia. Cuando Dios se apareció a Moisés declaró su nombre, Yahvé, el YO SOY, como la suma de su ser eterno. Esta naturaleza incluye su gracia: “¡Jehová! ¡Jehová! fuerte, misericordioso y piadoso; tardo para la ira, y grande en misericordia y verdad” (Éxodo 34:6).</p>
+
+      <h5>Distinción: Gracia Común vs. Gracia Especial</h5>
+      <p>Comprender estos dos tipos de gracia es fundamental para entender cómo Dios actúa en el mundo y en nuestras vidas:</p>
+      <ul class="list-disc pl-8 space-y-2">
+        <li><strong>Gracia Común:</strong> La gracia común es todo el favor que Dios le muestra a la humanidad que es menor que la salvación. Esto incluye las bendiciones que todos experimentamos: la lluvia, el sol, la salud, la familia, las oportunidades. Incluso los no creyentes reciben gracia común.</li>
+        <li><strong>Gracia Especial (Gracia Salvadora):</strong> La gracia especial es la gracia salvífica, la obra del Espíritu de aplicar la expiación de Cristo a los seres humanos. La gracia especial es pura gracia. No surge de nada que pueda haber en el indigno destinatario. Es sólo por gracia que uno se salva, a través de la fe, que también es un don de la gracia (Efesios 2:7–9).</li>
+      </ul>
+
+      <h5>La Gracia como Acto, No como Estado</h5>
+      <p>Una distinción importante emerge del análisis del término griego. La gracia no significa “endued us with grace” (dotarnos de gracia), ni “made us worthy of love” (hacernos dignos de amor), sino, como indica la Revisión, “grace—which he freely bestowed” (gracia que Él otorgó libremente). La gracia es un acto de Dios, no un estado en el que Él nos coloca.</p>
+      <p>Esto tiene implicaciones profundas: la gracia no es una cualidad que poseemos, sino una acción continua de Dios hacia nosotros. No es algo que ganamos o mantenemos; es algo que recibimos constantemente.</p>
+
+      <div class="question-box">
+        <p>Preguntas Reflexivas</p>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li>¿Cómo cambiaría tu vida si realmente comprendieras que la gracia de Dios no depende de tu desempeño?</li>
+          <li>¿De qué formas experimentas la gracia común en tu vida diaria?</li>
+          <li>¿Cómo la gracia especial de salvación debe motivar tu conducta?</li>
+        </ul>
+      </div>
+
       <h4>SECCIÓN 1.2: SALVACIÓN COMO TRANSFORMACIÓN INTEGRAL</h4>
+      
       <h5>El Evangelio como Poder Transformador</h5>
       <p>Lo maravilloso y potente del evangelio se nota en varias afirmaciones. El evangelio salva. El evangelio ofrece perdón a quienes lo aceptan y los rescata del castigo por el pecado que es la muerte eterna. Nos libra del poder de éste y un día, cuando estemos con Dios, seremos salvos de la presencia del pecado.</p>
       <p>El evangelio no es simplemente un mensaje de perdón pasado; es un poder que continúa transformando nuestras vidas en el presente y nos promete liberación futura.</p>
+
       <h5>Justificación vs. Santificación: Dos Aspectos de la Salvación</h5>
       <p>Aunque frecuentemente se usan estos términos indistintamente, representan aspectos diferentes pero complementarios de la salvación:</p>
-      <ul>
+      <ul class="list-disc pl-8 space-y-2">
         <li><strong>Justificación:</strong> La santificación por Dios se pone antes que la fe del hombre. El aspecto dual de la salvación se presenta así: la gracia de Dios en la primera instancia nos santifica (es decir, nos aparta en Sus propósitos eternos como santos para Sí mismo); y nuestra fe, por don de Dios, se apodera de la salvación (2 Tesalonicenses 2:13; 1 Pedro 1:2).</li>
         <li><strong>Santificación:</strong> En teología cristiana, a veces se hace una distinción entre justificación y santificación, donde la justificación se refiere a tener fe salvadora y la santificación se refiere al proceso de purificación gradual del pecado y crecimiento espiritual progresivo que debe caracterizar la vida del creyente.</li>
       </ul>
+
       <h5>Santificación: Posicional y Progresiva</h5>
       <p>Un aspecto crucial es que la santificación tiene dos dimensiones:</p>
-      <ul>
-        <li><strong>Santificación Posicional (Instantánea):</strong> Cristo, quien una vez por todas consagra a su pueblo a Dios (acercándolos a él en consecuencia) y a gloria eterna, con haberse consagrado por ellos, siendo hecho perfecto (como el sacrificio expiatorio de ellos) por medio del padecimiento.</li>
+      <ol class="list-decimal pl-8 space-y-2">
+        <li><strong>Santificación Posicional (Instantánea):</strong> Cristo, quien una vez por todas consagra a su pueblo a Dios (acercándolos a él en consecuencia) y a gloria eterna, con haberse consagrado por ellos, siendo hecho perfecto (como el sacrificio expiatorio de ellos) por medio del padecimiento. Dios, por su amor electivo, por la obra acabada de Cristo, perfectamente los santifica al servicio de Dios y al cielo una vez por todas; después son progresivamente santificados por medio del Espíritu transformador.</li>
         <li><strong>Santificación Progresiva (Continua):</strong> La clara enseñanza de la Escritura es que los creyentes tienen que crecer y cambiar continuamente (2 Corintios 3:18; Romanos 8:28–29; Colosenses 1:28–29; Efesios 4:11–16, 22–24) y no quedarse inmaduros (Hebreos 5:11–6:4).</li>
-      </ul>
+      </ol>
+
+      <h5>El Propósito Transformador del Evangelio</h5>
+      <p>El llamamiento de Dios es santo. El evangelio no sólo tiene el propósito de perdonar los pecados, y asegurar nuestro destino eterno, sino que tiene la finalidad de producir la santidad en el creyente. El evangelio transforma vidas.</p>
+      <p>Dios dice a su pueblo: “Sed santos, porque yo soy santo” (Levítico 11:44–45, 19:2, 1 Pedro 1:15–16). La santidad no es una opción para el cristiano; es el propósito fundamental de la salvación.</p>
+
+      <h5>La Motivación Correcta para la Obediencia</h5>
+      <p>Un error común es pensar que debemos obedecer para mantener nuestra salvación. La salvación no depende de los esfuerzos humanos. El énfasis es que la salvación es por gracia, no por obras. La redención no se gana por méritos humanos (Efesios 2:8–10, Tito 3:4–5).</p>
+      <p>En cambio, debemos sentirnos motivados a obedecer a Dios por amor y gratitud y anhelar ser conformados a la imagen de Jesucristo. El cristiano debe manifestar al mundo el santo y glorioso carácter de Dios.</p>
+
+      <div class="question-box">
+        <p>Preguntas Reflexivas</p>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li>¿Entiendes tu salvación como un evento pasado, un proceso presente, o una promesa futura? ¿Por qué es importante verla como las tres cosas?</li>
+          <li>¿Cómo la comprensión de que eres santificado en Cristo (posicionalmente) afecta tu motivación para crecer espiritualmente?</li>
+          <li>¿Qué diferencia hay entre obedecer para ser salvo y obedecer porque ya eres salvo?</li>
+        </ul>
+      </div>
+
       <h4>SECCIÓN 1.3: DOCTRINAS FUNDAMENTALES PARA LA CONDUCTA CRISTIANA</h4>
       <p>La conducta cristiana se construye sobre seis doctrinas fundamentales que se entrelazan para formar un sistema coherente de comprensión teológica:</p>
-      <ul>
-        <li><strong>Hamartiología:</strong> Reconocimiento de la Naturaleza Pecaminosa.</li>
-        <li><strong>Cristología:</strong> Cristo como Modelo y Mediador.</li>
-        <li><strong>Bibliología:</strong> La Palabra de Dios como Autoridad.</li>
-        <li><strong>Pneumatología:</strong> El Espíritu Santo como Capacitador.</li>
-        <li><strong>Teología:</strong> Conocimiento del Carácter de Dios.</li>
-        <li><strong>La Responsabilidad Humana:</strong> La naturaleza del ser humano y su responsabilidad moral.</li>
-      </ul>
+
+      <div class="doctrine-card">
+        <strong>1. Hamartiología: Reconocimiento de la Naturaleza Pecaminosa</strong><br>
+        <em>Definición:</em> La doctrina del pecado y su naturaleza.<br>
+        La necesidad fundamental de reconocer nuestra condición caída y pecadora: sin este elemento no existe la experiencia de la gracia en la vida personal, ya que de la única forma por la cual se puede buscar solución a un problema es reconociendo que hay uno, y el problema o fuente principal de este consiste en nuestra pecaminosidad.<br>
+        <em>Implicación para la Conducta:</em> No podemos cambiar lo que no reconocemos. La conducta cristiana comienza con la admisión honesta de nuestra incapacidad para vivir rectamente por nosotros mismos. El pecado contaminó al hombre y lo apartó de su propósito. A partir de ahí todo ser humano nace apartado de Dios, e imposibilitado de acercarse por sus propios medios (Romanos 3:23).
+      </div>
+
+      <div class="doctrine-card">
+        <strong>2. Cristología: Cristo como Modelo y Mediador</strong><br>
+        <em>Definición:</em> La doctrina de la persona y obra de Jesucristo.<br>
+        La necesidad de la fe en el Hijo como medio de salvación: las Escrituras son muy claras cuando expresan que el único medio por el cual el ser humano puede alcanzar la salvación del poder y dominio del pecado y de la condenación eterna merecida es depositar la fe en la persona y obra del Señor Jesús.<br>
+        <em>Implicación para la Conducta:</em> Jesucristo es el ejemplo perfecto de una conducta moral, pura y santa, pero que al mismo tiempo se acerca al pecador para liberarlo. Nuestra conducta debe reflejar la de Cristo: santidad combinada con compasión. El modelo de santificación es Cristo. Cuando enfrentamos decisiones morales, preguntamos: “¿Qué haría Jesús?”
+      </div>
+
+      <div class="doctrine-card">
+        <strong>3. Bibliología: La Palabra de Dios como Autoridad</strong><br>
+        <em>Definición:</em> La doctrina de la inspiración, autoridad e interpretación de las Escrituras.<br>
+        La necesidad personal de estudiar, analizar y aplicar responsablemente la Palabra de Dios en la vida personal: la Biblia, aparte de la experiencia personal, es el único medio por el cual la humanidad puede comprender y disfrutar consciente e inteligentemente del favor inmerecido de Dios en todos los asuntos de su vida personal.<br>
+        <em>Implicación para la Conducta:</em> La Biblia es el medio divino para la dirección, corrección y fortaleza necesarias para llevar una vida de santidad que sea agradable a Dios. La conducta cristiana se fundamenta en la Palabra, no en opiniones personales o tendencias culturales.
+      </div>
+
+      <div class="doctrine-card">
+        <strong>4. Pneumatología: El Espíritu Santo como Capacitador</strong><br>
+        <em>Definición:</em> La doctrina de la persona y obra del Espíritu Santo.<br>
+        La persona divina del Espíritu educando, guiando, formando y preparándonos para caminar en Su gracia: la gracia llega a ser una experiencia descriptible en el momento de la regeneración, es decir, el nuevo nacimiento marca la experiencia plena, satisfactoria y positiva, proporcionando de manera progresiva una conformidad a la imagen del Hijo (Gálatas 5:16–24). La gracia divina como experiencia, tiene como finalidad llevar al receptor a caminar según los mandamientos divinos (Romanos 8:1–2).<br>
+        <em>Implicación para la Conducta:</em> El Espíritu Santo es el que proporciona el dominio propio necesario para controlar los impulsos. No somos capaces de vivir rectamente por nuestra propia fuerza; dependemos del poder del Espíritu. El crecimiento espiritual (santificación) es la obra de Dios en la que el creyente tiene la responsabilidad de participar activamente y con esfuerzo (Filipenses 2:12–13; 1 Corintios 9:24–27; Efesios 6:10–12; 2 Timoteo 4:6–7).
+      </div>
+
+      <div class="doctrine-card">
+        <strong>5. Teología: Conocimiento del Carácter de Dios</strong><br>
+        <em>Definición:</em> La doctrina de la naturaleza, atributos y acciones de Dios.<br>
+        El claro entendimiento de las motivaciones, inclinaciones y acciones de Dios para con la creación y Sus propósitos: quienes han disfrutado del don de Dios en su vida, pueden comprender de manera limitada mediante las evidencias externas plasmadas en la creación, como las evidencias internas reveladas en la Biblia, cuál es el proceder o propósito divino para con su creación. Cabe aclarar que a Dios no se le puede estudiar o comprender a totalidad bajo la lupa de nuestra mente finita, por lo tanto, podemos deducir que los medios que Dios en Su soberanía ha decidido utilizar para mostrar su gracia son los adecuados para beneficiarnos aun en nuestras limitaciones.<br>
+        <em>Implicación para la Conducta:</em> La conducta cristiana refleja el carácter de Dios. Si comprendemos que Dios es justo, seremos justos; si comprendemos que es misericordioso, seremos misericordiosos.
+      </div>
+
+      <div class="doctrine-card">
+        <strong>6. La Responsabilidad Humana</strong><br>
+        <em>Definición:</em> La doctrina de la naturaleza del ser humano y su responsabilidad moral.<br>
+        El ser humano y sus responsabilidades morales ante Dios y ante la sociedad. Aunque somos salvos por gracia, somos responsables de nuestras acciones.<br>
+        <em>Implicación para la Conducta:</em> La presencia del pecado personal, las conductas, inclinaciones, deseos y ética. Debe haber un entendimiento claro de dichas realidades en la vida personal, de forma que exista conciencia no solo de las responsabilidades de cada uno, sino también de los beneficios de hacer lo correcto y consecuencias de no hacerlo.
+      </div>
+
+      <h5>Cómo Estas Doctrinas Se Entrelazan</h5>
+      <p>Imagina estas seis doctrinas como los hilos de una cuerda:</p>
+      <ol class="list-decimal pl-8 space-y-1 text-gray-700">
+        <li><strong>Hamartiología</strong> reconoce el problema (somos pecadores)</li>
+        <li><strong>Cristología</strong> proporciona la solución (Cristo murió por nosotros)</li>
+        <li><strong>Bibliología</strong> nos enseña cómo vivir (la Palabra nos guía)</li>
+        <li><strong>Pneumatología</strong> nos capacita para vivir (el Espíritu nos fortalece)</li>
+        <li><strong>Teología</strong> nos inspira a vivir (imitamos el carácter de Dios)</li>
+        <li><strong>Antropología</strong> nos responsabiliza a vivir (somos responsables de nuestras acciones)</li>
+      </ol>
+      <p>Juntas, estas doctrinas crean un fundamento sólido para la conducta cristiana auténtica.</p>
+
+      <div class="question-box">
+        <p>Preguntas Reflexivas</p>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li>¿Cuál de estas seis doctrinas es la menos clara para ti? ¿Cómo podrías estudiarla más profundamente?</li>
+          <li>¿Cómo cada una de estas doctrinas afecta específicamente tu conducta diaria?</li>
+          <li>¿Qué sucedería si ignoraras una de estas doctrinas? (Por ejemplo, ¿qué pasaría si ignoraras la Pneumatología?)</li>
+        </ul>
+      </div>
+
       <h4>SECCIÓN 1.4: EL PROPÓSITO ORIGINAL DEL SER HUMANO</h4>
-      <p>Dios creó al hombre para él, para que este le diera gloria y viviera en comunión íntima. Es decir, lo creó para un fin específico, consagrado, santo (Romanos 11:36; Colosenses 1:16; Génesis 1:26–27).</p>
-      <p>El pecado contaminó al hombre y lo apartó de su propósito. A partir de ahí todo ser humano nace apartado de Dios, e imposibilitado de acercarse por sus propios medios (Romanos 3:23). Es por eso que, mediante la obra de redención que Cristo llevó a cabo, el ser humano es restaurado a la posición de santificado para Dios.</p>
+      
+      <h5>Creados para un Fin Específico</h5>
+      <p>Antes de comprender cómo debemos vivir, debemos entender por qué fuimos creados. Dios creó al hombre para él, para que este le diera gloria y viviera en comunión íntima. Es decir, lo creó para un fin específico, consagrado, santo (Romanos 11:36; Colosenses 1:16; Génesis 1:26–27).</p>
+      <p>Esto es revolucionario: no fuimos creados para nosotros mismos, sino para Dios. Nuestra existencia tiene un propósito que trasciende nuestros deseos personales.</p>
+
+      <h5>La Caída y la Restauración</h5>
+      <p>El pecado contaminó al hombre y lo apartó de su propósito. A partir de ahí todo ser humano nace apartado de Dios, e imposibilitado de acercarse por sus propios medios (Romanos 3:23). Es por eso que, mediante la obra de redención que Cristo llevó a cabo, el ser humano es restaurado a la posición de santificado para Dios. Ahora puede cumplir su propósito original (Efesios 1:5–12).</p>
+      <p>La conducta cristiana, entonces, no es un conjunto de restricciones, sino la restauración de nuestro propósito original: glorificar a Dios y vivir en comunión con Él.</p>
+
+      <h5>La Santificación Práctica Continua</h5>
+      <p>Mientras permanezca en esta vida, el creyente estará en un proceso continuo de santificación práctica, es decir, apartándose del mundo y del pecado, para consagrar todas las áreas de su vida a Dios (1 Pedro 1:15–16).</p>
+      <p>Esto significa que la conducta cristiana no es algo que alcanzamos y completamos; es un proceso continuo de apartarnos del pecado y dedicarnos más plenamente a Dios.</p>
+
+      <div class="question-box">
+        <p>Preguntas Reflexivas</p>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li>¿Cómo cambiaría tu vida si realmente vivieras como si tu propósito principal fuera glorificar a Dios?</li>
+          <li>¿En qué áreas de tu vida aún no has “consagrado” completamente a Dios?</li>
+          <li>¿Cómo la comprensión de tu propósito original afecta tu conducta diaria?</li>
+        </ul>
+      </div>
+
+      <h4>SECCIÓN 1.5: LA GRACIA COMO MOTIVACIÓN PARA LA OBEDIENCIA</h4>
+      
+      <h5>El Ciclo de la Gracia</h5>
+      <p>La gracia no solo nos salva; también nos motiva a vivir rectamente. Este es un ciclo continuo:</p>
+      <ol class="list-decimal pl-8 space-y-1 text-gray-700">
+        <li>Recibimos gracia (Dios nos perdona y nos acepta)</li>
+        <li>Experimentamos gratitud (reconocemos lo que Dios ha hecho)</li>
+        <li>Nos motivamos a obedecer (queremos agradar a Dios)</li>
+        <li>Vivimos con conducta transformada (nuestras acciones reflejan nuestro agradecimiento)</li>
+        <li>Experimentamos más gracia (Dios continúa obrando en nosotros)</li>
+      </ol>
+
+      <h5>Evitando Dos Extremos</h5>
+      <p><strong>Extremo 1: Legalismo.</strong> Algunos creen que deben obedecer para ser salvos o para mantenerse salvos. Esto convierte la obediencia en una carga pesada y niega la gracia.</p>
+      <p><strong>Extremo 2: Libertinaje.</strong> Otros creen que, como somos salvos por gracia, la conducta no importa. Esto abusa de la gracia y niega la transformación que debe acompañar la salvación.</p>
+      <p><strong>El Equilibrio Bíblico:</strong> El ser salvo por gracia no quiere decir que el creyente seguirá en el mismo camino de pecaminosidad. Si el hombre persiste en la misma desobediencia, entonces, no muestra los frutos del arrepentimiento y de la regeneración.</p>
+
+      <h5>La Gracia Restaura la Naturaleza</h5>
+      <p>La gracia especial renueva a los creyentes desde dentro, los redime de la culpa y el castigo del pecado, los limpia de la contaminación del pecado (Filipenses 1:6) y les da dones espirituales (Gálatas 5:22–23). Por lo tanto, la gracia especial de Dios no sólo salva a los pecadores de la pena del pecado, sino que también renueva y restaura lo que fue corrompido por la caída. La gracia restaura la naturaleza.</p>
+      <p>Esto es esperanzador: la gracia no solo nos perdona; también nos restaura a lo que fuimos creados para ser.</p>
+
+      <div class="question-box">
+        <p>Preguntas Reflexivas</p>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li>¿Cómo experimentas la gracia de Dios en tu vida diaria?</li>
+          <li>¿Qué rol juega la gratitud en tu motivación para obedecer a Dios?</li>
+          <li>¿En qué áreas has experimentado la restauración de la gracia en tu vida?</li>
+        </ul>
+      </div>
+
+      <h4>SECCIÓN 1.6: SÍNTESIS Y APLICACIÓN</h4>
+      
+      <h5>Resumen de los Fundamentos Teológicos</h5>
+      <p>Los fundamentos teológicos de la conducta cristiana descansan sobre estas verdades interconectadas:</p>
+      <ol class="list-decimal pl-8 space-y-1 text-gray-700">
+        <li><strong>La gracia es el fundamento</strong> — No ganamos la salvación; la recibimos como un don inmerecido</li>
+        <li><strong>La salvación es transformadora</strong> — El evangelio no solo nos perdona; nos cambia</li>
+        <li><strong>Six doctrinas nos guían</strong> — Hamartiología, Cristología, Bibliología, Pneumatología, Teología y Antropología</li>
+        <li><strong>Tenemos un propósito</strong> — Fuimos creados para glorificar a Dios y vivir en comunión con Él</li>
+        <li><strong>La gracia nos motiva</strong> — Obedecemos por amor y gratitud, no por obligación</li>
+      </ol>
+
+      <div class="resource-section shadow-sm border border-blue-100">
+        <h5 class="mt-0 text-blue-900 border-b border-blue-200 pb-2">PASAJES CLAVE PARA MEMORIZAR</h5>
+        <ul class="space-y-3 mt-4 text-gray-800">
+          <li><strong>Romanos 12:2</strong> — “No os conforméis a este siglo, sino transformaos por medio de la renovación de vuestro entendimiento”</li>
+          <li><strong>Efesios 2:8–10</strong> — “Porque por gracia sois salvos por medio de la fe... porque somos hechura suya, creados en Cristo Jesús para buenas obras”</li>
+          <li><strong>2 Timoteo 1:9</strong> — “Nos salvó y llamó con llamamiento santo, no conforme a nuestras obras, sino según el propósito suyo y la gracia que nos fue dada en Cristo Jesús”</li>
+          <li><strong>1 Pedro 1:15–16</strong> — “Sino, como aquel que os llamó es santo, sed también vosotros santos en toda vuestra manera de vivir”</li>
+          <li><strong>Colosenses 1:28–29</strong> — “A quien anunciamos, amonestando a todo hombre, y enseñando a todo hombre en toda sabiduría, a fin de presentar perfecto en Cristo Jesús a todo hombre”</li>
+        </ul>
+
+        <h5 class="mt-8 text-blue-900 border-b border-blue-200 pb-2">RECURSOS PARA PROFUNDIZAR</h5>
+        <p class="font-bold text-gray-800 mt-4">1. Los Libros "Columna Vertebral" (Lectura Completa)</p>
+        <p class="text-sm text-gray-700 mb-2">Si quieres entender cómo la teología se convierte en vida, estos tres libros son obligatorios:</p>
+        <ul class="list-disc pl-6 space-y-2 text-sm text-gray-700 mb-6">
+          <li><strong>Romanos (Especialmente caps. 1 al 12):</strong> Es el tratado más completo sobre el pecado (Hamartiología), la justificación (Cristología/Gracia) y la vida en el Espíritu (Pneumatología). El capítulo 12 es el puente perfecto hacia la conducta.</li>
+          <li><strong>Efesios:</strong> Divide perfectamente la posición del cristiano (caps. 1-3: lo que Dios hizo por nosotros) y la práctica (caps. 4-6: cómo debemos vivir).</li>
+          <li><strong>Gálatas:</strong> Fundamental para entender la diferencia entre vivir por la Gracia y caer en el Legalismo.</li>
+        </ul>
+
+        <p class="font-bold text-gray-800">2. Capítulos Clave por Doctrina (Para estudio profundo)</p>
+        <p class="text-sm text-gray-700 mb-2">Para dominar las 6 doctrinas mencionadas en el texto, estudia estos capítulos específicos:</p>
+        
+        <p class="font-semibold text-gray-800 mt-3 mb-1">Sobre la Gracia y el Carácter de Dios</p>
+        <ul class="list-disc pl-6 space-y-1 text-sm text-gray-700">
+          <li><strong>Éxodo 34:</strong> La revelación del nombre y carácter de Dios (misericordioso y clemente).</li>
+          <li><strong>Salmo 103:</strong> Una descripción hermosa de la gracia y la compasión divina.</li>
+          <li><strong>Juan 1:</strong> La gracia y la verdad encarnadas en Jesús.</li>
+        </ul>
+
+        <p class="font-semibold text-gray-800 mt-3 mb-1">Sobre el Pecado y la Necesidad</p>
+        <ul class="list-disc pl-6 space-y-1 text-sm text-gray-700">
+          <li><strong>Génesis 3:</strong> El origen de la caída y la pérdida del propósito original.</li>
+          <li><strong>Romanos 3:</strong> La universalidad del pecado y la incapacidad humana.</li>
+        </ul>
+
+        <p class="font-semibold text-gray-800 mt-3 mb-1">Sobre la Salvación y la Identidad</p>
+        <ul class="list-disc pl-6 space-y-1 text-sm text-gray-700">
+          <li><strong>Juan 3:</strong> El nuevo nacimiento y la iniciativa de Dios.</li>
+          <li><strong>2 Corintios 5:</strong> La obra de reconciliación y nuestra nueva identidad como "nuevas criaturas".</li>
+          <li><strong>Tito 3:1-7:</strong> Un resumen perfecto de cómo la gracia nos salva para buenas obras.</li>
+        </ul>
+
+        <p class="font-semibold text-gray-800 mt-3 mb-1">Sobre la Transformación y el Espíritu</p>
+        <ul class="list-disc pl-6 space-y-1 text-sm text-gray-700">
+          <li><strong>Juan 14 al 16:</strong> Las promesas de Jesús sobre el Espíritu Santo como Consolador y Guía.</li>
+          <li><strong>Gálatas 5:</strong> El contraste entre las obras de la carne y el Fruto del Espíritu.</li>
+          <li><strong>Romanos 8:</strong> La vida en el Espíritu y la victoria sobre el pecado.</li>
+        </ul>
+
+        <p class="font-semibold text-gray-800 mt-3 mb-1">Sobre la Palabra y la Autoridad</p>
+        <ul class="list-disc pl-6 space-y-1 text-sm text-gray-700">
+          <li><strong>Psalm 119:</strong> El amor por la Palabra como guía de conducta.</li>
+          <li><strong>2 Timoteo 3:</strong> La inspiración de la Escritura y su utilidad para "redargüir y corregir".</li>
+        </ul>
+      </div>
+
     </div>
 
-    <!-- ENGLISH (hidden by default) -->
-    <div id="content-en" class="prose-lora text-gray-700 space-y-4 hidden">
-      <h3 class="text-2xl font-bold text-blue-950 mb-4" style="font-family:'Lora',serif;">
-        MODULE 1: THEOLOGICAL FOUNDATIONS OF CHRISTIAN CONDUCT
-      </h3>
+    <div id="content-en" class="prose-lora space-y-6 text-gray-800 hidden">
+      
+      <p class="font-bold text-xl mb-8">MODULE 1: THEOLOGICAL FOUNDATIONS OF CHRISTIAN CONDUCT</p>
+
       <h4>INTRODUCTION</h4>
-      <p>Christian conduct does not arise from arbitrary rules or empty moralism. Rather, it emerges from a deep understanding of who God is, what He has done for us through Christ, and how the Holy Spirit empowers us to live in a way that reflects His character. This module lays the theological foundations that support all authentic Christian conduct.</p>
+      <p>Christian conduct does not arise from arbitrary rules or empty moralism. Rather, it emerges from a deep understanding of who God is, what He has done for us through Christ, and how the Holy Spirit empowers us to live in a way that reflects His character. This module establishes the theological foundations that support all authentic Christian conduct.</p>
+
       <h4>SECTION 1.1: GRACE AS THE BASIS OF TRANSFORMATION</h4>
+      
       <h5>Understanding Grace</h5>
-      <p>Grace is expressed in Hebrew through two main terms: chesed (חֶסֶד), meaning "grace, mercy, steadfast love, compassion," and chen (חֵן), meaning "grace, kindness, goodness." In Greek, charis (χάρις) conveys "grace, favor, kindness, benevolence."</p>
+      <p>Grace is expressed in Hebrew through two main terms: chesed (חֶסֶד), which means "grace, mercy, steadfast love, compassion", and chen (חֵן), which means "grace, kindness, goodness". In Greek, charis (χάρις) conveys "grace, favor, kindness, benevolence".</p>
       <p>Each term reveals a different dimension of the concept:</p>
-      <ul>
-        <li><strong>Chesed:</strong> Emphasizes God's unwavering loyalty and constant love, regardless of our behavior.</li>
-        <li><strong>Chen:</strong> Highlights the kindness and favor that is freely given, without prior merit.</li>
-        <li><strong>Charis:</strong> In the New Testament, represents the unmerited favor that God extends through Christ.</li>
+      <ul class="list-disc pl-8 space-y-2">
+        <li><strong>Chesed:</strong> Emphasizes the unwavering loyalty and constant love of God, regardless of our behavior.</li>
+        <li><strong>Chen:</strong> Highlights the kindness and favor that is freely granted, without prior merit.</li>
+        <li><strong>Charis:</strong> In the New Testament, it represents the unmerited favor that God extends through Christ.</li>
       </ul>
+
       <h5>The Nature of Divine Grace</h5>
       <p>Grace is the kind or merciful conduct that a more powerful person exercises over another. In the Christian context, this means that God, being infinitely superior, chooses to treat us with favor that we have neither earned nor deserved.</p>
-      <p>God's grace toward humanity arises from the fullness of His being. He is a God of grace. When God appeared to Moses, He declared His name, Yahweh, the I AM, as the sum of His eternal being. This nature includes His grace: "The Lord, the Lord, the compassionate and gracious God, slow to anger, abounding in love and faithfulness" (Exodus 34:6).</p>
+      <p>God's grace towards humanity arises from the fullness of His being. He is a God of grace. When God appeared to Moses, He declared His name, Yahweh, the I AM, as the sum of His eternal being. This nature includes His grace: "The Lord, the Lord, the compassionate and gracious God, slow to anger, abounding in love and faithfulness" (Exodus 34:6).</p>
+
+      <h5>Distinction: Common Grace vs. Special Grace</h5>
+      <p>Understanding these two types of grace is fundamental to understanding how God acts in the world and in our lives:</p>
+      <ul class="list-disc pl-8 space-y-2">
+        <li><strong>Common Grace:</strong> Common grace is all the favor God shows to humanity that falls short of salvation. This includes the blessings we all experience: rain, sun, health, family, opportunities. Even unbelievers receive common grace.</li>
+        <li><strong>Special Grace (Saving Grace):</strong> Special grace is saving grace, the work of the Spirit in applying Christ's atonement to human beings. Special grace is pure grace. It does not arise from anything that may reside in the unworthy recipient. It is only by grace that one is saved, through faith, which is also a gift of grace (Ephesians 2:7–9).</li>
+      </ul>
+
+      <h5>Grace as an Act, Not a State</h5>
+      <p>An important distinction emerges from the analysis of the Greek term. Grace does not mean "endued us with grace", nor "made us worthy of love", but rather, as the Revision indicates, "grace—which he freely bestowed". Grace is an act of God, not a state in which He places us.</p>
+      <p>This has profound implications: grace is not a quality we possess, but a continuous action of God toward us. It is not something we earn or maintain; it is something we constantly receive.</p>
+
+      <div class="question-box">
+        <p>Reflective Questions</p>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li>How would your life change if you truly understood that God's grace does not depend on your performance?</li>
+          <li>How do you experience common grace in your daily life?</li>
+          <li>How should the special grace of salvation motivate your conduct?</li>
+        </ul>
+      </div>
+
       <h4>SECTION 1.2: SALVATION AS HOLISTIC TRANSFORMATION</h4>
-      <h5>The Gospel as a Transformative Power</h5>
-      <p>The wonder and power of the gospel are evident in several affirmations. The gospel saves. The gospel offers forgiveness to those who accept it and rescues them from the punishment for sin, which is eternal death. It delivers us from its power, and one day, when we are with God, we will be saved from the presence of sin.</p>
-      <p>The gospel is not merely a message of past forgiveness; it is a power that continues to transform our lives in the present and promises future deliverance.</p>
+      
+      <h5>The Gospel as Transforming Power</h5>
+      <p>The wonderful and potent nature of the gospel is noted in several affirmations. The gospel saves. The gospel offers forgiveness to those who accept it and rescates them from the punishment for sin, which is eternal death. It frees us from its power and one day, when we are with God, we will be saved from the presence of sin.</p>
+      <p>The gospel is not simply a message of past forgiveness; it is a power that continues to transform our lives in the present and promises us future deliverance.</p>
+
       <h5>Justification vs. Sanctification: Two Aspects of Salvation</h5>
       <p>Although these terms are often used interchangeably, they represent different but complementary aspects of salvation:</p>
-      <ul>
-        <li><strong>Justification:</strong> God's sanctification comes before man's faith. The dual aspect of salvation is presented as follows: God's grace initially sanctifies us (that is, sets us apart in His eternal purposes as saints for Himself); and our faith, by God's gift, takes hold of salvation (2 Thessalonians 2:13; 1 Peter 1:2).</li>
-        <li><strong>Sanctification:</strong> In Christian theology, a distinction is sometimes made between justification and sanctification, where justification refers to having saving faith, and sanctification refers to the gradual purification from sin and progressive spiritual growth that should characterize the believer's life.</li>
+      <ul class="list-disc pl-8 space-y-2">
+        <li><strong>Justification:</strong> Sanctification by God is placed before man's faith. The dual aspect of salvation is presented as follows: God's grace in the first instance sanctifies us (that is, sets us apart in His eternal purposes as saints for Himself); and our faith, by God's gift, lays hold of salvation (2 Thessalonians 2:13; 1 Peter 1:2).</li>
+        <li><strong>Santification:</strong> In Christian theology, a distinction is sometimes made between justification and sanctification, where justification refers to having saving faith and sanctification refers to the process of gradual purification from sin and progressive spiritual growth that should characterize the life of the believer.</li>
       </ul>
-      <h5>Sanctification: Positional and Progressive</h5>
-      <p>A crucial aspect is that sanctification has two dimensions:</p>
-      <ul>
-        <li><strong>Positional Sanctification (Instantaneous):</strong> Christ, who once and for all consecrates His people to God (bringing them to Him as a result) and to eternal glory, having consecrated Himself for them, being made perfect (as their atoning sacrifice) through suffering.</li>
-        <li><strong>Progressive Sanctification (Continuous):</strong> The clear teaching of Scripture is that believers must grow and change continuously (2 Corinthians 3:18; Romans 8:28–29; Colossians 1:28–29; Ephesians 4:11–16, 22–24) and not remain immature (Hebrews 5:11–6:4).</li>
-      </ul>
-      <h4>SECTION 1.3: FUNDAMENTAL DOCTRINES FOR CHRISTIAN CONDUCT</h4>
-      <p>Christian conduct is built on six fundamental doctrines that intertwine to form a coherent system of theological understanding:</p>
-      <ul>
-        <li><strong>Hamartiology:</strong> Recognition of Sinful Nature.</li>
-        <li><strong>Christology:</strong> Christ as Model and Mediator.</li>
-        <li><strong>Bibliology:</strong> The Word of God as Authority.</li>
-        <li><strong>Pneumatology:</strong> The Holy Spirit as Enabler.</li>
-        <li><strong>Theology:</strong> Knowledge of God's Character.</li>
-        <li><strong>Human Responsibility:</strong> The nature of humanity and moral responsibility.</li>
-      </ul>
-      <h4>SECTION 1.4: THE ORIGINAL PURPOSE OF HUMANITY</h4>
-      <p>God created man for Himself, to glorify Him and live in intimate communion. That is, He created man for a specific, consecrated, holy purpose (Romans 11:36; Colossians 1:16; Genesis 1:26–27).</p>
-      <p>Sin tainted man and separated him from his purpose. From that point on, every human being is born separated from God and unable to approach Him by their own means (Romans 3:23). That is why, through the work of redemption that Christ accomplished, humanity is restored to the position of being sanctified for God.</p>
-    </div>
 
+      <h5>Santification: Positional and Progressive</h5>
+      <p>A crucial aspect is that sanctification has two dimensions:</p>
+      <ol class="list-decimal pl-8 space-y-2">
+        <li><strong>Positional Sanctification (Instantaneous):</strong> Christ, who once and for all consecrates His people to God (bringing them near to Him as a result) and to eternal glory, by having consecrated Himself for them, being made perfect (as their atoning sacrifice) through suffering. God, by His electing love, through the finished work of Christ, perfectly sanctifies them to the service of God and to heaven once and for all; afterward they are progressively sanctified through the transforming Spirit.</li>
+        <li><strong>Progressive Sanctification (Continuous):</strong> The clear teaching of Scripture is that believers must grow and change continually (2 Corinthians 3:18; Romans 8:28–29; Colossians 1:28–29; Ephesians 4:11–16, 22–24) and not remain immature (Hebrews 5:11–6:4).</li>
+      </ol>
+
+      <h5>The Transforming Purpose of the Gospel</h5>
+      <p>God's calling is holy. The gospel is not only meant to forgive sins, and secure our eternal destiny, but it has the purpose of producing holiness in the believer. The gospel transforms lives.</p>
+      <p>God tells His people: "Be holy, because I am holy" (Leviticus 11:44–45, 19:2, 1 Peter 1:15–16). Holiness is not an option for the Christian; it is the fundamental purpose of salvation.</p>
+
+      <h5>La Motivación Correcta para la Obediencia</h5>
+      <p>A common mistake is thinking we must obey to maintain our salvation. Salvation does not depend on human effort. The emphasis is that salvation is by grace, not by works. Redemption is not earned by human merit (Ephesians 2:8–10, Titus 3:4–5).</p>
+      <p>Instead, we should be motivated to obey God out of love and gratitude, longing to be conformed to the image of Jesus Christ. The Christian must manifest the holy and glorious character of God to the world.</p>
+
+      <div class="question-box">
+        <p>Reflective Questions</p>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li>Do you understand your salvation as a past event, a present process, or a future promise? Why is it important to see it as all three?</li>
+          <li>How does understanding that you are sanctified in Christ (positionally) affect your motivation to grow spiritually?</li>
+          <li>What is the difference between obeying to be saved and obeying because you are already saved?</li>
+        </ul>
+      </div>
+
+      <h4>SECCIÓN 1.3: FUNDAMENTAL DOCTRINES FOR CHRISTIAN CONDUCT</h4>
+      <p>Christian conduct is built upon six fundamental doctrines that intertwine to form a coherent system of theological understanding:</p>
+
+      <div class="doctrine-card">
+        <strong>1. Hamartiology: Recognition of Sinful Nature</strong><br>
+        <em>Definition:</em> The doctrine of sin and its nature.<br>
+        The fundamental need to recognize our fallen and sinful condition: without this element, there is no experience of grace in personal life, since the only way a solution can be sought for a problem is by recognizing that there is one, and the main problem or source of this consists in our sinfulness.<br>
+        <em>Implication for Conduct:</em> We cannot change what we do not recognize. Christian conduct begins with the honest admission of our inability to live righteously on our own. Sin defiled man and separated him from his purpose. From then on every human being is born separated from God, and unable to approach by his own means (Romans 3:23).
+      </div>
+
+      <div class="doctrine-card">
+        <strong>2. Christology: Christ as Model and Mediator</strong><br>
+        <em>Definition:</em> The doctrine of the person and work of Jesus Christ.<br>
+        The need for faith in the Son as the means of salvation: the Scriptures are very clear when they state that the only means by which human beings can achieve salvation from the power and dominion of sin and the deserved eternal condemnation is by placing faith in the person and work of the Lord Jesus.<br>
+        <em>Implication for Conduct:</em> Jesus Christ is the perfect example of moral, pure, and holy conduct, but who at the same time approaches the sinner to liberate him. Nuestra conducta debe reflejar la de Cristo: santidad combinada con compasión. El modelo de santificación es Cristo. Cuando enfrentamos decisiones morales, preguntamos: “¿Qué haría Jesús?”
+      </div>
+
+      <div class="doctrine-card">
+        <strong>3. Bibliology: The Word of God as Authority</strong><br>
+        <em>Definition:</em> The doctrine of the inspiration, authority, and interpretation of the Scriptures.<br>
+        The personal need to study, analyze, and responsibly apply the Word of God in personal life: the Bible, apart from personal experience, is the only means by which humanity can consciously and intelligently understand and enjoy the unmerited favor of God in all matters of personal life.<br>
+        <em>Implication for Conduct:</em> The Bible is the divine means for the direction, correction, and strength necessary to lead a life of holiness that is pleasing to God. Christian conduct is founded on the Word, not on personal opinions or cultural trends.
+      </div>
+
+      <div class="doctrine-card">
+        <strong>4. Pneumatology: The Holy Spirit as Enabler</strong><br>
+        <em>Definition:</em> The doctrine of the person and work of the Holy Spirit.<br>
+        The divine person of the Spirit educating, guiding, forming, and preparing us to walk in His grace: grace becomes a describable experience at the moment of regeneration, meaning, the new birth marks the experience fully, satisfactorily, and positively, progressively providing conformity to the image of the Son (Galatians 5:16–24). Divine grace as an experience aims to lead the recipient to walk according to divine commandments (Romans 8:1–2).<br>
+        <em>Implication for Conduct:</em> The Holy Spirit is the one who provides the self-control necessary to manage impulses. We are not capable of living righteously by our own strength; we depend on the power of the Spirit. Spiritual growth (sanctification) is the work of God in which the believer has the responsibility to participate actively and with effort (Philippians 2:12–13; 1 Corinthians 9:24–27; Ephesians 6:10–12; 2 Timothy 4:6–7).
+      </div>
+
+      <div class="doctrine-card">
+        <strong>5. Theology: Conocimiento del Carácter de Dios</strong><br>
+        <em>Definición:</em> La doctrina de la naturaleza, atributos y acciones de Dios.<br>
+        El claro entendimiento de las motivaciones, inclinaciones y acciones de Dios para con la creación y Sus propósitos: quienes han disfrutado del don de Dios en su vida, pueden comprender de manera limitada mediante las evidencias externas plasmadas en la creación, como las evidencias internas reveladas en la Biblia, cuál es el proceder o propósito divino para con su creación. Cabe aclarar que a Dios no se le puede estudiar o comprender a totalidad bajo la lupa de nuestra mente finita, por lo tanto, podemos deducir que los medios que Dios en Su soberanía ha decidido utilizar para mostrar su gracia son los adecuados para beneficiarnos aun en nuestras limitaciones.<br>
+        <em>Implicación para la Conducta:</em> La conducta cristiana refleja el carácter de Dios. Si comprendemos que Dios es justo, seremos justos; si comprendemos que es misericordioso, seremos misericordiosos.
+      </div>
+
+      <div class="doctrine-card">
+        <strong>6. La Responsabilidad Humana</strong><br>
+        <em>Definición:</em> La doctrina de la naturaleza del ser humano y su responsabilidad moral.<br>
+        Human beings and their moral responsibilities before God and society. Although we are saved by grace, we are responsible for our actions.<br>
+        <em>Implicación para la Conducta:</em> The presence of personal sin, behaviors, inclinations, desires, and ethics. There must be a clear understanding of these realities in personal life, so that there is awareness not only of one's responsibilities, but also of the benefits of doing what is right and the consequences of not doing it.
+      </div>
+
+      <h5>How These Doctrinas Intertwine</h5>
+      <p>Imagina estas seis doctrinas como los hilos de una cuerda:</p>
+      <ol class="list-decimal pl-8 space-y-1 text-gray-700">
+        <li><strong>Hamartiology</strong> reconoce el problema (somos pecadores)</li>
+        <li><strong>Christology</strong> proporciona la solución (Cristo murió por nosotros)</li>
+        <li><strong>Bibliology</strong> nos enseña cómo vivir (la Palabra nos guía)</li>
+        <li><strong>Pneumatology</strong> nos capacita para vivir (el Espíritu nos fortalece)</li>
+        <li><strong>Theology</strong> nos inspira a vivir (imitamos el carácter de Dios)</li>
+        <li><strong>Anthropology</strong> nos responsabiliza a vivir (somos responsables de nuestras acciones)</li>
+      </ol>
+      <p>Juntas, estas doctrinas crean un fundamento sólido para la conducta cristiana auténtica.</p>
+
+      <div class="question-box">
+        <p>Preguntas Reflexivas</p>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li>¿Cuál de estas seis doctrinas es la menos clara para ti? ¿Cómo podrías estudiarla más profundamente?</li>
+          <li>¿Cómo cada una de estas doctrinas afecta específicamente tu conducta diaria?</li>
+          <li>¿Qué sucedería si ignoraras una de estas doctrinas? (Por ejemplo, ¿qué pasaría si ignoraras la Pneumatología?)</li>
+        </ul>
+      </div>
+
+      <h4>SECCIÓN 1.4: EL PROPÓSITO ORIGINAL DEL SER HUMANO</h4>
+      
+      <h5>Creados para un Fin Específico</h5>
+      <p>Antes de comprender cómo debemos vivir, debemos entender por qué fuimos creados. Dios creó al hombre para él, para que este le diera gloria y viviera en comunión íntima. Es decir, lo creó para un fin específico, consagrado, santo (Romanos 11:36; Colosenses 1:16; Génesis 1:26–27).</p>
+      <p>Esto es revolucionario: no fuimos creados para nosotros mismos, sino para Dios. Nuestra existencia tiene un propósito que trasciende nuestros deseos personales.</p>
+
+      <h5>La Caída y la Restauración</h5>
+      <p>El pecado contaminó al hombre y lo apartó de su propósito. A partir de ahí todo ser humano nace apartado de Dios, e imposibilitado de acercarse por sus propios medios (Romanos 3:23). Es por eso que, mediante la obra de redención que Cristo llevó a cabo, el ser humano es restaurado a la posición de santificado para Dios. Ahora puede cumplir su propósito original (Efesios 1:5–12).</p>
+      <p>La conducta cristiana, entonces, no es un conjunto de restricciones, sino la restauración de nuestro propósito original: glorificar a Dios y vivir en comunión con Él.</p>
+
+      <h5>La Santificación Práctica Continua</h5>
+      <p>Mientras permanezca en esta vida, el creyente estará en un proceso continuo de santificación práctica, es decir, apartándose del mundo y del pecado, para consagrar todas las áreas de su vida a Dios (1 Pedro 1:15–16).</p>
+      <p>Esto significa que la conducta cristiana no es algo que alcanzamos y completamos; es un proceso continuo de apartarnos del pecado y dedicarnos más plenamente a Dios.</p>
+
+      <div class="question-box">
+        <p>Preguntas Reflexivas</p>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li>¿Cómo cambiaría tu vida si realmente vivieras como si tu propósito principal fuera glorificar a Dios?</li>
+          <li>¿En qué áreas de tu vida aún no has “consagrado” completamente a Dios?</li>
+          <li>¿Cómo la comprensión de tu propósito original afecta tu conducta diaria?</li>
+        </ul>
+      </div>
+
+      <h4>SECCIÓN 1.5: LA GRACIA COMO MOTIVACIÓN PARA LA OBEDIENCIA</h4>
+      
+      <h5>El Ciclo de la Gracia</h5>
+      <p>La gracia no solo nos salva; también nos motiva a vivir rectamente. Este es un ciclo continuo:</p>
+      <ol class="list-decimal pl-8 space-y-1 text-gray-700">
+        <li>Recibimos gracia (Dios nos perdona y nos acepta)</li>
+        <li>Experimentamos gratitud (reconocemos lo que Dios ha hecho)</li>
+        <li>Nos motivamos a obedecer (queremos agradar a Dios)</li>
+        <li>Vivimos con conducta transformada (nuestras acciones reflejan nuestro agradecimiento)</li>
+        <li>Experimentamos más gracia (Dios continúa obrando en nosotros)</li>
+      </ol>
+
+      <h5>Evitando Dos Extremos</h5>
+      <p><strong>Extremo 1: Legalismo.</strong> Algunos creen que deben obedecer para ser salvos o para mantenerse salvos. Esto convierte la obediencia en una carga pesada y niega la gracia.</p>
+      <p><strong>Extremo 2: Libertinaje.</strong> Otros creen que, como somos salvos por gracia, la conducta no importa. Esto abusa de la gracia y niega la transformación que debe acompañar la salvación.</p>
+      <p><strong>El Equilibrio Bíblico:</strong> El ser salvo por gracia no quiere decir que el creyente seguirá en el mismo camino de pecaminosidad. Si el hombre persiste en la misma desobediencia, entonces, no muestra los frutos del arrepentimiento y de la regeneración.</p>
+
+      <h5>La Gracia Restaura la Naturaleza</h5>
+      <p>La gracia especial renueva a los creyentes desde dentro, los redime de la culpa y el castigo del pecado, los limpia de la contaminación del pecado (Filipenses 1:6) y les da dones espirituales (Gálatas 5:22–23). Por lo tanto, la gracia especial de Dios no sólo salva a los pecadores de la pena del pecado, sino que también renueva y restaura lo que fue corrompido por la caída. La gracia restaura la naturaleza.</p>
+      <p>Esto es esperanzador: la gracia no solo nos perdona; también nos restaura a lo que fuimos creados para ser.</p>
+
+      <div class="question-box">
+        <p>Preguntas Reflexivas</p>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li>¿Cómo experimentas la gracia de Dios en tu vida diaria?</li>
+          <li>¿Qué rol juega la gratitud en tu motivación para obedecer a Dios?</li>
+          <li>¿En qué áreas has experimentado la restauración de la gracia en tu vida?</li>
+        </ul>
+      </div>
+
+      <h4>SECCIÓN 1.6: SÍNTESIS Y APLICACIÓN</h4>
+      
+      <h5>Resumen de los Fundamentos Teológicos</h5>
+      <p>Los fundamentos teológicos de la conducta cristiana descansan sobre estas verdades interconectadas:</p>
+      <ol class="list-decimal pl-8 space-y-1 text-gray-700">
+        <li><strong>La gracia es el fundamento</strong> — No ganamos la salvación; la recibimos como un don inmerecido</li>
+        <li><strong>La salvación es transformadora</strong> — El evangelio no solo nos perdona; nos cambia</li>
+        <li><strong>Six doctrinas nos guían</strong> — Hamartiología, Cristología, Bibliología, Pneumatología, Teología y Antropología</li>
+        <li><strong>Tenemos un propósito</strong> — Fuimos creados para glorificar a Dios y vivir en comunión con Él</li>
+        <li><strong>La gracia nos motiva</strong> — Obedecemos por amor y gratitud, no por obligación</li>
+      </ol>
+
+      <div class="resource-section shadow-sm border border-blue-100">
+        <h5 class="mt-0 text-blue-900 border-b border-blue-200 pb-2">PASAJES CLAVE PARA MEMORIZAR</h5>
+        <ul class="space-y-3 mt-4 text-gray-800">
+          <li><strong>Romanos 12:2</strong> — “No os conforméis a este siglo, sino transformaos por medio de la renovación de vuestro entendimiento”</li>
+          <li><strong>Efesios 2:8–10</strong> — “Porque por gracia sois salvos por medio de la fe... porque somos hechura suya, creados en Cristo Jesús para buenas obras”</li>
+          <li><strong>2 Timoteo 1:9</strong> — “Nos salvó y llamó con llamamiento santo, no conforme a nuestras obras, sino según el propósito suyo y la gracia que nos fue dada en Cristo Jesús”</li>
+          <li><strong>1 Pedro 1:15–16</strong> — “Sino, como aquel que os llamó es santo, sed también vosotros santos en toda vuestra manera de vivir”</li>
+          <li><strong>Colosenses 1:28–29</strong> — “A quien anunciamos, amonestando a todo hombre, y enseñando a todo hombre en toda sabiduría, a fin de presentar perfecto en Cristo Jesús a todo hombre”</li>
+        </ul>
+
+        <h5 class="mt-8 text-blue-900 border-b border-blue-200 pb-2">RECURSOS PARA PROFUNDIZAR</h5>
+        <p class="font-bold text-gray-800 mt-4">1. Los Libros "Columna Vertebral" (Lectura Completa)</p>
+        <p class="text-sm text-gray-700 mb-2">If you want to understand how theology translates into life, these three books are mandatory:</p>
+        <ul class="list-disc pl-6 space-y-2 text-sm text-gray-700 mb-6">
+          <li><strong>Romanos (Especially chs. 1 to 12):</strong> It is the most comprehensive treatise on sin (Hamartiology), justification (Christology/Grace), and life in the Spirit (Pneumatology). Chapter 12 is the perfect bridge to conduct.</li>
+          <li><strong>Efesios:</strong> Perfectly divides the Christian's position (chs. 1-3: what God did for us) and practice (chs. 4-6: how we should live).</li>
+          <li><strong>Gálatas:</strong> Fundamental for understanding the difference between living by Grace and falling into Legalism.</li>
+        </ul>
+
+        <p class="font-bold text-gray-800">2. Key Chapters by Doctrine (For deep study)</p>
+        <p class="text-sm text-gray-700 mb-2">To master the 6 doctrines mentioned in the text, study these specific chapters:</p>
+        
+        <p class="font-semibold text-gray-800 mt-3 mb-1">On Grace and the Character of God</p>
+        <ul class="list-disc pl-6 space-y-1 text-sm text-gray-700">
+          <li><strong>Exodus 34:</strong> The revelation of God's name and character (merciful and gracious).</li>
+          <li><strong>Psalm 103:</strong> A beautiful description of divine grace and compassion.</li>
+          <li><strong>John 1:</strong> Grace and truth incarnated in Jesus.</li>
+        </ul>
+
+        <p class="font-semibold text-gray-800 mt-3 mb-1">On Sin and Necessity</p>
+        <ul class="list-disc pl-6 space-y-1 text-sm text-gray-700">
+          <li><strong>Genesis 3:</strong> The origin of the fall and the loss of original purpose.</li>
+          <li><strong>Romanos 3:</strong> The universality of sin and human inability.</li>
+        </ul>
+
+        <p class="font-semibold text-gray-800 mt-3 mb-1">On Salvation and Identity</p>
+        <ul class="list-disc pl-6 space-y-1 text-sm text-gray-700">
+          <li><strong>John 3:</strong> The new birth and God's initiative.</li>
+          <li><strong>2 Corinthians 5:</strong> The work of reconciliation and our new identity as "new creations".</li>
+          <li><strong>Tito 3:1-7:</strong> A perfect summary of how grace saves us for good works.</li>
+        </ul>
+
+        <p class="font-semibold text-gray-800 mt-3 mb-1">On Transformation and the Spirit</p>
+        <ul class="list-disc pl-6 space-y-1 text-sm text-gray-700">
+          <li><strong>John 14 to 16:</strong> Jesus' promises about the Holy Spirit as Comforter and Guide.</li>
+          <li><strong>Gálatas 5:</strong> The contrast between the acts of the flesh and the Fruit of the Spirit.</li>
+          <li><strong>Romanos 8:</strong> Life in the Spirit and victory over sin.</li>
+        </ul>
+
+        <p class="font-semibold text-gray-800 mt-3 mb-1">On the Word and Authority</p>
+        <ul class="list-disc pl-6 space-y-1 text-sm text-gray-700">
+          <li><strong>Psalm 119:</strong> Love for the Word as a guide for conduct.</li>
+          <li><strong>2 Timothy 3:</strong> The inspiration of Scripture and its usefulness for "teaching, rebuking, correcting".</li>
+        </ul>
+      </div>
+
+    </div>
   </main>
 
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-    <div class="flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-gray-200 pt-8">
-      <a href="../index.html"
-         class="inline-flex items-center gap-2 bg-blue-950 hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded-xl transition-colors duration-200">
-        ← Volver al menú principal
-      </a>
-      <a href="modulo-2.html"
-         class="inline-flex items-center gap-2 bg-indigo-700 hover:bg-indigo-800 text-white font-semibold py-3 px-6 rounded-xl transition-colors duration-200">
-        Módulo 2 →
-      </a>
+  <footer class="bg-blue-950 text-white mt-12 py-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6 border-b border-white/20 pb-8 mb-8">
+        <a href="../index.html" class="text-blue-300 hover:text-white transition font-medium">← Volver al Menú Principal</a>
+        <a href="modulo-2.html" class="bg-indigo-600 hover:bg-indigo-500 py-3 px-8 rounded-xl font-bold transition shadow-lg">Siguiente Módulo →</a>
+      </div>
+      <div class="text-center">
+        <p class="text-sm text-blue-300">© 2026 Academia Bíblica Digital · Módulo 1 Completo</p>
+      </div>
     </div>
-  </div>
-
-  <footer class="bg-blue-950 text-blue-300 text-center text-sm py-6">
-    <p>© 2026 Academia Bíblica · Módulo 1 de 6</p>
   </footer>
 
   <script type="text/javascript">
     function googleTranslateElementInit() {
-      new google.translate.TranslateElement(
-        { pageLanguage: 'es', includedLanguages: 'en,es',
-          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-          autoDisplay: false },
-        'google_translate_element'
-      );
+      new google.translate.TranslateElement({pageLanguage: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
     }
-  </script>
-  <script type="text/javascript"
-    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-  </script>
-
-  <script>
+    
     const toggleBtn = document.getElementById('toggle-language');
     const contentEs = document.getElementById('content-es');
     const contentEn = document.getElementById('content-en');
 
     toggleBtn.addEventListener('click', () => {
-      const showingSpanish = !contentEs.classList.contains('hidden');
-      if (showingSpanish) {
+      const isSpanish = !contentEs.classList.contains('hidden');
+      if (isSpanish) {
         contentEs.classList.add('hidden');
         contentEn.classList.remove('hidden');
-        toggleBtn.textContent = 'Switch to Spanish';
+        toggleBtn.textContent = 'Cambiar a Español';
       } else {
         contentEn.classList.add('hidden');
         contentEs.classList.remove('hidden');
-        toggleBtn.textContent = 'Cambiar a Inglés';
+        toggleBtn.textContent = 'Switch to English';
       }
+      window.scrollTo(0, 0);
+    });
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const keywords = ["gracia", "chesed", "chen", "charis", "salvación", "justificación", "santificación", "pecado", "Cristo", "Biblia"];
+      const books = ["Romanos", "Efesios", "Levítico", "1 Pedro", "2 Tesalonicenses", "Colosenses", "Hebreos", "Tito"];
+      const verses = ["Romanos 12:2", "Efesios 2:8-10", "Levítico 11:44-45", "1 Pedro 1:15-16", "2 Tesalonicenses 2:13", "Colosenses 1:28-29", "Hebreos 5:11-6:4", "Tito 3:4-5"];
+
+      function highlightText(content, terms, className) {
+        terms.forEach(term => {
+          const regex = new RegExp(`\\b(${term})\\b`, "gi");
+          content.innerHTML = content.innerHTML.replace(regex, `<span class="${className}">$1</span>`);
+        });
+      }
+
+      highlightText(contentEs, keywords, "text-yellow-500 font-bold");
+      highlightText(contentEs, books, "text-blue-600 font-semibold");
+      highlightText(contentEs, verses, "text-green-600 font-italic");
     });
   </script>
 
