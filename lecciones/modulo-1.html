@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Módulo 1 – Introducción a la Biblia | Academia Bíblica</title>
+  <title>Módulo 1 – Fundamentos Teológicos | Academia Bíblica</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
-    body  { font-family: 'Inter', sans-serif; }
+    body { font-family: 'Inter', sans-serif; }
     .prose-lora { font-family: 'Lora', serif; font-size: 1.05rem; line-height: 1.85; }
-    /* Google Translate banner fix */
     .goog-te-banner-frame.skiptranslate { display: none !important; }
     body { top: 0 !important; }
     #google_translate_element select {
@@ -23,11 +22,14 @@
       font-size: 0.85rem;
       cursor: pointer;
     }
+    h4 { font-size: 1.05rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #1e3a5f; }
+    h5 { font-size: 1rem; font-weight: 600; margin-top: 1.2rem; margin-bottom: 0.4rem; color: #1e40af; }
+    ul { padding-left: 1.5rem; list-style-type: disc; margin-top: 0.5rem; margin-bottom: 0.5rem; }
+    li { margin-bottom: 0.4rem; }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-  <!-- ─── HEADER ─────────────────────────────────────────────────── -->
   <header class="bg-blue-950 text-white shadow-lg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
       <div class="flex items-center gap-4">
@@ -41,167 +43,130 @@
     </div>
   </header>
 
-  <!-- ─── LESSON TITLE BANNER ────────────────────────────────────── -->
   <section class="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-10 px-4">
     <div class="max-w-7xl mx-auto">
       <span class="text-blue-300 text-xs font-semibold uppercase tracking-widest">Módulo 1</span>
       <h1 class="text-3xl sm:text-4xl font-bold mt-1" style="font-family:'Lora',serif;">
-        Introducción a la Biblia
+        Fundamentos Teológicos de la Conducta Cristiana
       </h1>
       <p class="text-blue-200 mt-2 text-base">
-        Origen, estructura y propósito de las Sagradas Escrituras
+        Gracia, Salvación y Transformación del Creyente
       </p>
     </div>
   </section>
 
-  <!-- ─── BILINGUAL CONTENT ──────────────────────────────────────── -->
-  <!--
-    INSTRUCCIÓN PARA EL DOCENTE:
-    Para agregar tu propio contenido, selecciona el texto de ejemplo dentro de las
-    secciones marcadas con [ESPAÑOL] y [ENGLISH] y reemplázalos con tu material.
-    Puedes usar Copilot (Ctrl+I) y pegar tu texto diciendo:
-    "Usa este texto para rellenar la columna de español y genera la traducción al inglés."
-  -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
-    <!-- Column headers -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
-      <div class="flex items-center gap-2">
-        <span class="text-2xl">🇪🇸</span>
-        <h2 class="text-lg font-semibold text-blue-900 uppercase tracking-wide">Español</h2>
-      </div>
-      <div class="flex items-center gap-2">
-        <span class="text-2xl">🇺🇸</span>
-        <h2 class="text-lg font-semibold text-blue-900 uppercase tracking-wide">English</h2>
-      </div>
+    <div class="flex justify-end mb-8">
+      <button id="toggle-language"
+        class="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-5 rounded-lg transition-colors duration-200">
+        Cambiar a Inglés
+      </button>
     </div>
 
-    <!-- Divider -->
-    <div class="border-t border-blue-200 mb-8"></div>
-
-    <!-- ── Section 1 ─────────────────────────────────────────────── -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-
-      <!-- [ESPAÑOL] -->
-      <article class="prose-lora text-gray-700">
-        <h3 class="text-xl font-bold text-blue-950 mb-4" style="font-family:'Lora',serif;">
-          1. ¿Qué es la Biblia?
-        </h3>
-        <p>
-          La Biblia es la colección de escritos sagrados que constituyen el fundamento de la fe cristiana.
-          Su nombre proviene del griego <em>biblía</em>, que significa «los libros». Es una biblioteca
-          de 66 libros —39 en el Antiguo Testamento y 27 en el Nuevo Testamento— escritos a lo largo
-          de aproximadamente 1,500 años por más de 40 autores distintos.
-        </p>
-        <p class="mt-4">
-          A pesar de la diversidad de sus autores y épocas, la Biblia mantiene una notable unidad temática:
-          el plan redentor de Dios para la humanidad, que tiene su centro en la persona y obra de
-          Jesucristo. Los creyentes la consideran la Palabra de Dios, inspirada por el Espíritu Santo
-          (2 Timoteo 3:16).
-        </p>
-      </article>
-
-      <!-- [ENGLISH] -->
-      <article class="prose-lora text-gray-700 md:border-l md:border-blue-100 md:pl-8">
-        <h3 class="text-xl font-bold text-blue-950 mb-4" style="font-family:'Lora',serif;">
-          1. What is the Bible?
-        </h3>
-        <p>
-          The Bible is the collection of sacred writings that form the foundation of the Christian faith.
-          Its name comes from the Greek <em>biblía</em>, meaning "the books." It is a library of
-          66 books—39 in the Old Testament and 27 in the New Testament—written over approximately
-          1,500 years by more than 40 different authors.
-        </p>
-        <p class="mt-4">
-          Despite the diversity of its authors and eras, the Bible maintains a remarkable thematic unity:
-          God's redemptive plan for humanity, centered on the person and work of Jesus Christ. Believers
-          regard it as the Word of God, inspired by the Holy Spirit (2 Timothy 3:16).
-        </p>
-      </article>
-
+    <!-- ESPAÑOL -->
+    <div id="content-es" class="prose-lora text-gray-700 space-y-4">
+      <h3 class="text-2xl font-bold text-blue-950 mb-4" style="font-family:'Lora',serif;">
+        MÓDULO 1: FUNDAMENTOS TEOLÓGICOS DE LA CONDUCTA CRISTIANA
+      </h3>
+      <h4>INTRODUCCIÓN</h4>
+      <p>La conducta cristiana no surge de reglas arbitrarias o de un moralismo vacío. Más bien, emerge de una comprensión profunda de quién es Dios, qué ha hecho por nosotros a través de Cristo, y cómo el Espíritu Santo nos capacita para vivir de manera que refleje su carácter. Este módulo establece los cimientos teológicos que sostienen toda conducta cristiana auténtica.</p>
+      <h4>SECCIÓN 1.1: LA GRACIA COMO BASE DE LA TRANSFORMACIÓN</h4>
+      <h5>Entendiendo la Gracia</h5>
+      <p>La gracia se expresa en hebreo mediante dos términos principales: chesed (חֶסֶד), que significa "gracia, misericordia, amor inalterable, compasión", y chen (חֵן), que significa "gracia, benignidad, bondad". En griego, charis (χάρις) transmite "gracia, favor, benignidad, benevolencia".</p>
+      <p>Cada término revela una dimensión diferente del concepto:</p>
+      <ul>
+        <li><strong>Chesed:</strong> Enfatiza la lealtad inquebrantable y el amor constante de Dios, independientemente de nuestro comportamiento.</li>
+        <li><strong>Chen:</strong> Destaca la benignidad y el favor que se otorga libremente, sin merecimiento previo.</li>
+        <li><strong>Charis:</strong> En el Nuevo Testamento, representa el favor inmerecido que Dios extiende a través de Cristo.</li>
+      </ul>
+      <h5>La Naturaleza de la Gracia Divina</h5>
+      <p>La gracia es la conducta benigna o misericordiosa que una persona más poderosa ejerce sobre otra. En el contexto cristiano, esto significa que Dios, siendo infinitamente superior, elige tratarnos con favor que no hemos ganado ni merecemos.</p>
+      <p>La gracia de Dios hacia la humanidad surge de la plenitud de su ser. Él es un Dios de gracia. Cuando Dios se apareció a Moisés declaró su nombre, Yahvé, el YO SOY, como la suma de su ser eterno. Esta naturaleza incluye su gracia: "¡Jehová! ¡Jehová! fuerte, misericordioso y piadoso; tardo para la ira, y grande en misericordia y verdad" (Éxodo 34:6).</p>
+      <h4>SECCIÓN 1.2: SALVACIÓN COMO TRANSFORMACIÓN INTEGRAL</h4>
+      <h5>El Evangelio como Poder Transformador</h5>
+      <p>Lo maravilloso y potente del evangelio se nota en varias afirmaciones. El evangelio salva. El evangelio ofrece perdón a quienes lo aceptan y los rescata del castigo por el pecado que es la muerte eterna. Nos libra del poder de éste y un día, cuando estemos con Dios, seremos salvos de la presencia del pecado.</p>
+      <p>El evangelio no es simplemente un mensaje de perdón pasado; es un poder que continúa transformando nuestras vidas en el presente y nos promete liberación futura.</p>
+      <h5>Justificación vs. Santificación: Dos Aspectos de la Salvación</h5>
+      <p>Aunque frecuentemente se usan estos términos indistintamente, representan aspectos diferentes pero complementarios de la salvación:</p>
+      <ul>
+        <li><strong>Justificación:</strong> La santificación por Dios se pone antes que la fe del hombre. El aspecto dual de la salvación se presenta así: la gracia de Dios en la primera instancia nos santifica (es decir, nos aparta en Sus propósitos eternos como santos para Sí mismo); y nuestra fe, por don de Dios, se apodera de la salvación (2 Tesalonicenses 2:13; 1 Pedro 1:2).</li>
+        <li><strong>Santificación:</strong> En teología cristiana, a veces se hace una distinción entre justificación y santificación, donde la justificación se refiere a tener fe salvadora y la santificación se refiere al proceso de purificación gradual del pecado y crecimiento espiritual progresivo que debe caracterizar la vida del creyente.</li>
+      </ul>
+      <h5>Santificación: Posicional y Progresiva</h5>
+      <p>Un aspecto crucial es que la santificación tiene dos dimensiones:</p>
+      <ul>
+        <li><strong>Santificación Posicional (Instantánea):</strong> Cristo, quien una vez por todas consagra a su pueblo a Dios (acercándolos a él en consecuencia) y a gloria eterna, con haberse consagrado por ellos, siendo hecho perfecto (como el sacrificio expiatorio de ellos) por medio del padecimiento.</li>
+        <li><strong>Santificación Progresiva (Continua):</strong> La clara enseñanza de la Escritura es que los creyentes tienen que crecer y cambiar continuamente (2 Corintios 3:18; Romanos 8:28–29; Colosenses 1:28–29; Efesios 4:11–16, 22–24) y no quedarse inmaduros (Hebreos 5:11–6:4).</li>
+      </ul>
+      <h4>SECCIÓN 1.3: DOCTRINAS FUNDAMENTALES PARA LA CONDUCTA CRISTIANA</h4>
+      <p>La conducta cristiana se construye sobre seis doctrinas fundamentales que se entrelazan para formar un sistema coherente de comprensión teológica:</p>
+      <ul>
+        <li><strong>Hamartiología:</strong> Reconocimiento de la Naturaleza Pecaminosa.</li>
+        <li><strong>Cristología:</strong> Cristo como Modelo y Mediador.</li>
+        <li><strong>Bibliología:</strong> La Palabra de Dios como Autoridad.</li>
+        <li><strong>Pneumatología:</strong> El Espíritu Santo como Capacitador.</li>
+        <li><strong>Teología:</strong> Conocimiento del Carácter de Dios.</li>
+        <li><strong>La Responsabilidad Humana:</strong> La naturaleza del ser humano y su responsabilidad moral.</li>
+      </ul>
+      <h4>SECCIÓN 1.4: EL PROPÓSITO ORIGINAL DEL SER HUMANO</h4>
+      <p>Dios creó al hombre para él, para que este le diera gloria y viviera en comunión íntima. Es decir, lo creó para un fin específico, consagrado, santo (Romanos 11:36; Colosenses 1:16; Génesis 1:26–27).</p>
+      <p>El pecado contaminó al hombre y lo apartó de su propósito. A partir de ahí todo ser humano nace apartado de Dios, e imposibilitado de acercarse por sus propios medios (Romanos 3:23). Es por eso que, mediante la obra de redención que Cristo llevó a cabo, el ser humano es restaurado a la posición de santificado para Dios.</p>
     </div>
 
-    <!-- ── Section 2 ─────────────────────────────────────────────── -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-
-      <!-- [ESPAÑOL] -->
-      <article class="prose-lora text-gray-700">
-        <h3 class="text-xl font-bold text-blue-950 mb-4" style="font-family:'Lora',serif;">
-          2. Estructura de la Biblia
-        </h3>
-        <p>
-          El <strong>Antiguo Testamento</strong> registra la historia de la creación, la caída del hombre,
-          el llamamiento del pueblo de Israel y las profecías que anuncian la llegada del Mesías.
-          Se divide en libros históricos, poéticos, proféticos mayores y menores.
-        </p>
-        <p class="mt-4">
-          El <strong>Nuevo Testamento</strong> narra la vida, muerte y resurrección de Jesucristo a
-          través de los cuatro Evangelios, documenta el nacimiento de la Iglesia en los Hechos de los
-          Apóstoles y profundiza en la doctrina cristiana mediante las cartas apostólicas y el Apocalipsis.
-        </p>
-      </article>
-
-      <!-- [ENGLISH] -->
-      <article class="prose-lora text-gray-700 md:border-l md:border-blue-100 md:pl-8">
-        <h3 class="text-xl font-bold text-blue-950 mb-4" style="font-family:'Lora',serif;">
-          2. Structure of the Bible
-        </h3>
-        <p>
-          The <strong>Old Testament</strong> records the history of creation, the fall of humanity,
-          the calling of the people of Israel, and the prophecies announcing the coming of the Messiah.
-          It is divided into historical, poetic, and prophetic books (major and minor prophets).
-        </p>
-        <p class="mt-4">
-          The <strong>New Testament</strong> narrates the life, death, and resurrection of Jesus Christ
-          through the four Gospels, documents the birth of the Church in the Acts of the Apostles, and
-          deepens Christian doctrine through the apostolic letters and the Book of Revelation.
-        </p>
-      </article>
-
+    <!-- ENGLISH (hidden by default) -->
+    <div id="content-en" class="prose-lora text-gray-700 space-y-4 hidden">
+      <h3 class="text-2xl font-bold text-blue-950 mb-4" style="font-family:'Lora',serif;">
+        MODULE 1: THEOLOGICAL FOUNDATIONS OF CHRISTIAN CONDUCT
+      </h3>
+      <h4>INTRODUCTION</h4>
+      <p>Christian conduct does not arise from arbitrary rules or empty moralism. Rather, it emerges from a deep understanding of who God is, what He has done for us through Christ, and how the Holy Spirit empowers us to live in a way that reflects His character. This module lays the theological foundations that support all authentic Christian conduct.</p>
+      <h4>SECTION 1.1: GRACE AS THE BASIS OF TRANSFORMATION</h4>
+      <h5>Understanding Grace</h5>
+      <p>Grace is expressed in Hebrew through two main terms: chesed (חֶסֶד), meaning "grace, mercy, steadfast love, compassion," and chen (חֵן), meaning "grace, kindness, goodness." In Greek, charis (χάρις) conveys "grace, favor, kindness, benevolence."</p>
+      <p>Each term reveals a different dimension of the concept:</p>
+      <ul>
+        <li><strong>Chesed:</strong> Emphasizes God's unwavering loyalty and constant love, regardless of our behavior.</li>
+        <li><strong>Chen:</strong> Highlights the kindness and favor that is freely given, without prior merit.</li>
+        <li><strong>Charis:</strong> In the New Testament, represents the unmerited favor that God extends through Christ.</li>
+      </ul>
+      <h5>The Nature of Divine Grace</h5>
+      <p>Grace is the kind or merciful conduct that a more powerful person exercises over another. In the Christian context, this means that God, being infinitely superior, chooses to treat us with favor that we have neither earned nor deserved.</p>
+      <p>God's grace toward humanity arises from the fullness of His being. He is a God of grace. When God appeared to Moses, He declared His name, Yahweh, the I AM, as the sum of His eternal being. This nature includes His grace: "The Lord, the Lord, the compassionate and gracious God, slow to anger, abounding in love and faithfulness" (Exodus 34:6).</p>
+      <h4>SECTION 1.2: SALVATION AS HOLISTIC TRANSFORMATION</h4>
+      <h5>The Gospel as a Transformative Power</h5>
+      <p>The wonder and power of the gospel are evident in several affirmations. The gospel saves. The gospel offers forgiveness to those who accept it and rescues them from the punishment for sin, which is eternal death. It delivers us from its power, and one day, when we are with God, we will be saved from the presence of sin.</p>
+      <p>The gospel is not merely a message of past forgiveness; it is a power that continues to transform our lives in the present and promises future deliverance.</p>
+      <h5>Justification vs. Sanctification: Two Aspects of Salvation</h5>
+      <p>Although these terms are often used interchangeably, they represent different but complementary aspects of salvation:</p>
+      <ul>
+        <li><strong>Justification:</strong> God's sanctification comes before man's faith. The dual aspect of salvation is presented as follows: God's grace initially sanctifies us (that is, sets us apart in His eternal purposes as saints for Himself); and our faith, by God's gift, takes hold of salvation (2 Thessalonians 2:13; 1 Peter 1:2).</li>
+        <li><strong>Sanctification:</strong> In Christian theology, a distinction is sometimes made between justification and sanctification, where justification refers to having saving faith, and sanctification refers to the gradual purification from sin and progressive spiritual growth that should characterize the believer's life.</li>
+      </ul>
+      <h5>Sanctification: Positional and Progressive</h5>
+      <p>A crucial aspect is that sanctification has two dimensions:</p>
+      <ul>
+        <li><strong>Positional Sanctification (Instantaneous):</strong> Christ, who once and for all consecrates His people to God (bringing them to Him as a result) and to eternal glory, having consecrated Himself for them, being made perfect (as their atoning sacrifice) through suffering.</li>
+        <li><strong>Progressive Sanctification (Continuous):</strong> The clear teaching of Scripture is that believers must grow and change continuously (2 Corinthians 3:18; Romans 8:28–29; Colossians 1:28–29; Ephesians 4:11–16, 22–24) and not remain immature (Hebrews 5:11–6:4).</li>
+      </ul>
+      <h4>SECTION 1.3: FUNDAMENTAL DOCTRINES FOR CHRISTIAN CONDUCT</h4>
+      <p>Christian conduct is built on six fundamental doctrines that intertwine to form a coherent system of theological understanding:</p>
+      <ul>
+        <li><strong>Hamartiology:</strong> Recognition of Sinful Nature.</li>
+        <li><strong>Christology:</strong> Christ as Model and Mediator.</li>
+        <li><strong>Bibliology:</strong> The Word of God as Authority.</li>
+        <li><strong>Pneumatology:</strong> The Holy Spirit as Enabler.</li>
+        <li><strong>Theology:</strong> Knowledge of God's Character.</li>
+        <li><strong>Human Responsibility:</strong> The nature of humanity and moral responsibility.</li>
+      </ul>
+      <h4>SECTION 1.4: THE ORIGINAL PURPOSE OF HUMANITY</h4>
+      <p>God created man for Himself, to glorify Him and live in intimate communion. That is, He created man for a specific, consecrated, holy purpose (Romans 11:36; Colossians 1:16; Genesis 1:26–27).</p>
+      <p>Sin tainted man and separated him from his purpose. From that point on, every human being is born separated from God and unable to approach Him by their own means (Romans 3:23). That is why, through the work of redemption that Christ accomplished, humanity is restored to the position of being sanctified for God.</p>
     </div>
 
-    <!-- ── Section 3 ─────────────────────────────────────────────── -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+  </main>
 
-      <!-- [ESPAÑOL] -->
-      <article class="prose-lora text-gray-700">
-        <h3 class="text-xl font-bold text-blue-950 mb-4" style="font-family:'Lora',serif;">
-          3. ¿Por qué estudiar la Biblia?
-        </h3>
-        <p>
-          El estudio sistemático de las Escrituras transforma la mente y el corazón del creyente.
-          El Salmo 119:105 declara: «Tu palabra es una lámpara a mis pies y una lumbrera a mi camino».
-          Estudiar la Biblia nos permite conocer el carácter de Dios, discernir su voluntad y fortalecer
-          nuestra fe ante los desafíos de la vida.
-        </p>
-        <p class="mt-4">
-          Además, una lectura responsable de la Biblia —tomando en cuenta el contexto histórico,
-          literario y cultural de cada libro— nos protege de interpretaciones erróneas y nos equipa
-          para compartir su mensaje con claridad y fidelidad.
-        </p>
-      </article>
-
-      <!-- [ENGLISH] -->
-      <article class="prose-lora text-gray-700 md:border-l md:border-blue-100 md:pl-8">
-        <h3 class="text-xl font-bold text-blue-950 mb-4" style="font-family:'Lora',serif;">
-          3. Why study the Bible?
-        </h3>
-        <p>
-          Systematic study of the Scriptures transforms the mind and heart of the believer.
-          Psalm 119:105 declares: "Your word is a lamp to my feet and a light to my path."
-          Studying the Bible allows us to know God's character, discern His will, and strengthen
-          our faith in the face of life's challenges.
-        </p>
-        <p class="mt-4">
-          Furthermore, a responsible reading of the Bible—taking into account the historical, literary,
-          and cultural context of each book—protects us from misinterpretation and equips us to share
-          its message with clarity and faithfulness.
-        </p>
-      </article>
-
-    </div>
-
-    <!-- ─── NAVIGATION ─────────────────────────────────────────── -->
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
     <div class="flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-gray-200 pt-8">
       <a href="../index.html"
          class="inline-flex items-center gap-2 bg-blue-950 hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded-xl transition-colors duration-200">
@@ -212,30 +177,43 @@
         Módulo 2 →
       </a>
     </div>
+  </div>
 
-  </main>
-
-  <!-- ─── FOOTER ─────────────────────────────────────────────────── -->
-  <footer class="bg-blue-950 text-blue-300 text-center text-sm py-6 mt-4">
+  <footer class="bg-blue-950 text-blue-300 text-center text-sm py-6">
     <p>© 2026 Academia Bíblica · Módulo 1 de 6</p>
   </footer>
 
-  <!-- ─── GOOGLE TRANSLATE SCRIPT ────────────────────────────────── -->
   <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement(
-        {
-          pageLanguage: 'es',
-          includedLanguages: 'en,es',
+        { pageLanguage: 'es', includedLanguages: 'en,es',
           layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-          autoDisplay: false
-        },
+          autoDisplay: false },
         'google_translate_element'
       );
     }
   </script>
   <script type="text/javascript"
     src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+  </script>
+
+  <script>
+    const toggleBtn = document.getElementById('toggle-language');
+    const contentEs = document.getElementById('content-es');
+    const contentEn = document.getElementById('content-en');
+
+    toggleBtn.addEventListener('click', () => {
+      const showingSpanish = !contentEs.classList.contains('hidden');
+      if (showingSpanish) {
+        contentEs.classList.add('hidden');
+        contentEn.classList.remove('hidden');
+        toggleBtn.textContent = 'Switch to Spanish';
+      } else {
+        contentEn.classList.add('hidden');
+        contentEs.classList.remove('hidden');
+        toggleBtn.textContent = 'Cambiar a Inglés';
+      }
+    });
   </script>
 
 </body>
