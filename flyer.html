@@ -1,204 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digital Flyer</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css"> <!-- Ruta absoluta para Tailwind CSS -->
+  <title>Flyer Digital - Clase Bíblica</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+    body { font-family: sans-serif; }
     .font-lora { font-family: 'Lora', serif; }
-
-    /* Ajustar el tamaño máximo de las imágenes */
-    #flyer-image {
-      max-width: 100%;
-      height: auto;
-      max-height: 300px;
-      object-fit: cover;
-    }
-
-    /* Asegurar que el formulario de edición esté oculto por defecto */
-    #flyer-form.hidden {
-      display: none;
-    }
-
-    /* Ajustar el diseño general */
-    body {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
   </style>
 </head>
-<body class="bg-blue-950 text-white">
+<body class="bg-blue-950 min-h-screen flex items-center justify-center p-4">
 
-  <!-- DATOS MODIFICABLES -->
-  <div id="flyer-data" class="hidden"
-       data-title="Clase Bíblica Semanal"
-       data-date="Martes, 9 de Mayo"
-       data-time="7:00 PM"
-       data-image-url="https://drive.google.com/uc?export=view&id=1ncvjBu2owjwGigrxw_oj09emsFUszyBY"
-       data-button-link="#">
-  </div>
-
-  <!-- FLYER CONTENT -->
-  <div class="flex items-center justify-center min-h-screen">
-    <div class="bg-white rounded-3xl shadow-lg overflow-hidden max-w-md w-full">
-      <!-- Header Image -->
-      <div class="relative w-full max-w-lg mx-auto" style="padding-top: 56.25%; max-height: 300px; overflow: hidden;"> <!-- Contenedor centrado con relación 16:9 -->
-        <img id="flyer-image" src="https://pablotorre2025.github.io/clc-clases/assets/f1.png" alt="Flyer Header" class="absolute top-0 left-0 w-full h-full object-cover"> <!-- Imagen ajustada al contenedor -->
-        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-        <h1 id="flyer-title" class="absolute bottom-4 left-4 text-white text-2xl font-lora font-bold">Clase Bíblica Semanal</h1>
-      </div>
-
-      <!-- Info Blocks -->
-      <div class="p-6 text-center">
-        <div class="flex items-center justify-center mb-4">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-700">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <span id="flyer-date" class="ml-2 text-gray-700 text-lg">Martes, 9 de Mayo</span>
-        </div>
-        <div class="flex items-center justify-center mb-6">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-700">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2" />
-          </svg>
-          <span id="flyer-time" class="ml-2 text-gray-700 text-lg">7:00 PM</span>
-        </div>
-
-        <!-- Action Button -->
-        <a id="flyer-button" href="#" class="block text-center bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded-xl transition-transform transform active:scale-95">Ir a la Clase ahora</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Language Switch -->
-  <div class="absolute top-4 right-4">
-    <button id="language-switch" class="bg-blue-700 hover:bg-blue-800 text-white text-sm px-3 py-1 rounded-full">
+  <!-- Botón de idioma -->
+  <div class="fixed top-4 right-4 z-10">
+    <button id="language-switch" class="bg-blue-700 hover:bg-blue-800 text-white text-sm px-3 py-1 rounded-full shadow">
       EN / ES
     </button>
   </div>
 
-  <!-- Formulario de autenticación eliminado para que el contenido sea visible al abrir el flyer -->
+  <!-- Tarjeta del flyer -->
+  <div class="bg-white rounded-3xl shadow-2xl overflow-hidden w-full max-w-sm">
+
+    <!-- Imagen de cabecera -->
+    <div class="relative w-full" style="height: 220px;">
+      <img id="flyer-image"
+           src="https://pablotorre2025.github.io/clc-clases/assets/f1.png"
+           alt="Clase Bíblica"
+           style="width:100%; height:100%; object-fit:cover; display:block;">
+      <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.65), transparent);"></div>
+      <h1 id="flyer-title" class="font-lora absolute bottom-3 left-4 text-white text-xl font-bold">Clase Bíblica Semanal</h1>
+    </div>
+
+    <!-- Información -->
+    <div class="p-6">
+
+      <!-- Fecha -->
+      <div class="flex items-center mb-3">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width:22px;height:22px;color:#1d4ed8;flex-shrink:0;">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+        </svg>
+        <span id="flyer-date" class="ml-2 text-gray-700 text-base">Martes, 9 de Mayo</span>
+      </div>
+
+      <!-- Hora -->
+      <div class="flex items-center mb-6">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width:22px;height:22px;color:#1d4ed8;flex-shrink:0;">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" />
+        </svg>
+        <span id="flyer-time" class="ml-2 text-gray-700 text-base">7:00 PM</span>
+      </div>
+
+      <!-- Botón de acción -->
+      <a id="flyer-button" href="#"
+         class="block text-center bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded-xl transition-all active:scale-95">
+        Ir a la Clase ahora
+      </a>
+    </div>
+  </div>
 
   <script>
-    // Load data from attributes
-    const flyerData = document.getElementById('flyer-data');
-    document.getElementById('flyer-title').textContent = flyerData.dataset.title;
-    document.getElementById('flyer-date').textContent = flyerData.dataset.date;
-    document.getElementById('flyer-time').textContent = flyerData.dataset.time;
-    document.getElementById('flyer-image').src = flyerData.dataset.imageUrl;
-    document.getElementById('flyer-button').href = flyerData.dataset.buttonLink;
-
-    // Language switch functionality
-    const languageSwitch = document.getElementById('language-switch');
-    languageSwitch.addEventListener('click', () => {
-      const isEnglish = languageSwitch.textContent.includes('EN');
-      languageSwitch.textContent = isEnglish ? 'ES / EN' : 'EN / ES';
+    // Cambio de idioma
+    let isEnglish = false;
+    document.getElementById('language-switch').addEventListener('click', () => {
+      isEnglish = !isEnglish;
+      document.getElementById('language-switch').textContent = isEnglish ? 'ES / EN' : 'EN / ES';
       document.getElementById('flyer-title').textContent = isEnglish ? 'Weekly Bible Class' : 'Clase Bíblica Semanal';
       document.getElementById('flyer-date').textContent = isEnglish ? 'Tuesday, May 9th' : 'Martes, 9 de Mayo';
       document.getElementById('flyer-time').textContent = isEnglish ? '7:00 PM' : '7:00 PM';
       document.getElementById('flyer-button').textContent = isEnglish ? 'Go to Class Now' : 'Ir a la Clase ahora';
+      document.documentElement.lang = isEnglish ? 'en' : 'es';
     });
 
-    // Mostrar/ocultar el formulario de edición
-    const editButton = document.getElementById('edit-flyer');
-    const flyerForm = document.getElementById('flyer-form');
-    const cancelEdit = document.getElementById('cancel-edit');
-
-    editButton.addEventListener('click', () => {
-      flyerForm.classList.remove('hidden');
-    });
-
-    cancelEdit.addEventListener('click', () => {
-      flyerForm.classList.add('hidden');
-    });
-
-    // Inicializar flyerImage antes de usarlo
-    const flyerImage = document.getElementById('flyer-image');
-
-    // Mostrar el enlace de la imagen para depuración
-    const debugImageUrl = document.getElementById('debug-image-url');
-    if (debugImageUrl) {
-      debugImageUrl.textContent = `Enlace de la imagen: ${flyerImage.src}`;
-      debugImageUrl.style.color = 'white';
-    }
-
-    // Agregar un evento para manejar errores de carga de la imagen
-    flyerImage.addEventListener('error', () => {
-      flyerImage.alt = 'No se pudo cargar la imagen. Verifica el enlace.';
-      flyerImage.src = 'https://via.placeholder.com/1280x720?text=Imagen+de+Prueba'; // Enlace de respaldo actualizado
-    });
-
-    // Establecer la imagen predeterminada directamente en el HTML
-    document.getElementById('flyer-image').src = './assets/f1.png';
-
-    // Cargar datos desde localStorage
-    const loadFlyerData = () => {
-      const savedData = JSON.parse(localStorage.getItem('flyerData')) || {};
-      // Actualizar la URL de la imagen para usar la nueva imagen en assets
-      const defaultImageUrl = './assets/f1.png';
-      document.getElementById('flyer-title').textContent = savedData.title || flyerData.dataset.title;
-      document.getElementById('flyer-date').textContent = savedData.date || flyerData.dataset.date;
-      document.getElementById('flyer-time').textContent = savedData.time || flyerData.dataset.time;
-      document.getElementById('flyer-image').src = savedData.imageUrl || defaultImageUrl;
-      document.getElementById('flyer-button').href = savedData.buttonLink || flyerData.dataset.buttonLink;
-
-      // Actualizar valores en el formulario
-      document.getElementById('title').value = savedData.title || flyerData.dataset.title;
-      document.getElementById('date').value = savedData.date || '';
-      document.getElementById('time').value = savedData.time || '';
-      document.getElementById('image-url').value = savedData.imageUrl || defaultImageUrl;
-      document.getElementById('button-link').value = savedData.buttonLink || flyerData.dataset.buttonLink;
-    };
-
-    loadFlyerData();
-
-    // Guardar datos desde el formulario
-    const form = document.getElementById('form-data');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const newData = {
-        title: document.getElementById('title').value,
-        date: document.getElementById('date').value,
-        time: document.getElementById('time').value,
-        imageUrl: document.getElementById('image-url').value,
-        buttonLink: document.getElementById('button-link').value,
-      };
-      console.log('Datos guardados:', newData); // Mensaje de depuración
-      localStorage.setItem('flyerData', JSON.stringify(newData));
-      flyerForm.classList.add('hidden');
-      loadFlyerData();
-    });
-
-    // Mostrar un mensaje de depuración con el enlace de la imagen
-    const debugContainer = document.createElement('div');
-    debugContainer.style.color = 'white';
-    debugContainer.style.marginTop = '20px';
-    debugContainer.textContent = `Enlace de la imagen cargada: ${flyerImage.src}`;
-    document.body.appendChild(debugContainer);
-
-    // Mostrar la ruta de la imagen predeterminada para depuración
-    const debugImagePath = document.createElement('div');
-    debugImagePath.style.color = 'white';
-    debugImagePath.style.marginTop = '20px';
-    debugImagePath.textContent = `Ruta de la imagen predeterminada: ${document.getElementById('flyer-image').src}`;
-    document.body.appendChild(debugImagePath);
-
-    // Asegurar que el formulario de edición esté oculto al cargar la página
-    document.addEventListener('DOMContentLoaded', () => {
-      const flyerForm = document.getElementById('flyer-form');
-      flyerForm.classList.add('hidden');
-    });
-
-    // Eliminar el formulario de edición completamente
-    document.addEventListener('DOMContentLoaded', () => {
-      const flyerForm = document.getElementById('flyer-form');
-      if (flyerForm) {
-        flyerForm.remove();
-      }
+    // Fallback si la imagen no carga
+    document.getElementById('flyer-image').addEventListener('error', function() {
+      this.src = 'https://placehold.co/400x220/1e3a5f/ffffff?text=Clase+Biblica';
     });
   </script>
-
 </body>
 </html>
