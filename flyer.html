@@ -166,11 +166,15 @@
     document.getElementById('language-switch').addEventListener('click', () => {
       isEnglish = !isEnglish;
       document.getElementById('language-switch').textContent = isEnglish ? 'ES / EN' : 'EN / ES';
-      if (isEnglish) {
-        document.getElementById('flyer-button').textContent = 'Go to Class Now';
-      } else {
-        document.getElementById('flyer-button').textContent = 'Ir a la Clase ahora';
-      }
+
+      // Update button text
+      document.getElementById('flyer-button').textContent = isEnglish ? 'Go to Class Now' : 'Ir a la Clase ahora';
+
+      // Update title, subtitle, and date
+      document.getElementById('flyer-title').innerHTML = isEnglish ? 'Weekly Bible Class' : 'Clase Bíblica<br>Semanal';
+      document.getElementById('flyer-subtitle').textContent = isEnglish ? 'Lesson 1' : 'Lección 1';
+      document.getElementById('flyer-date').textContent = isEnglish ? 'Tuesday, May 9' : 'Martes, 9 de Mayo';
+
       document.documentElement.lang = isEnglish ? 'en' : 'es';
     });
 
