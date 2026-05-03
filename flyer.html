@@ -3,34 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flyer Digital - Clase Bíblica</title>
+  <title>Flyer Digital - Academia Bíblica</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
   <style>
     html, body { height: 100%; margin: 0; padding: 0; }
     .font-lora { font-family: 'Lora', serif; }
-    #btn-edit {
-      opacity: 0.15;
-      transition: opacity 0.3s;
-    }
-    #btn-edit:hover {
-      opacity: 0.6;
-    }
-
-    /* Ensure the image fits well on mobile screens */
-    #flyer-image {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      max-height: 60vh; /* Limit height to 60% of the viewport */
-    }
-
-    /* Adjust layout for smaller screens */
-    @media (max-width: 768px) {
-      .flex-col {
-        padding: 1rem; /* Add padding for better readability */
-      }
-    }
+    #btn-edit { opacity: 0.15; transition: opacity 0.3s; }
+    #btn-edit:hover { opacity: 0.6; }
   </style>
 </head>
 <body class="bg-gray-100" style="height:100vh; display:flex; flex-direction:column;">
@@ -47,35 +27,41 @@
     <button id="btn-edit" class="bg-blue-800 text-white text-xs px-3 py-2 rounded-full shadow-lg">✏️ Editar</button>
   </div>
 
-  <!-- SECCIÓN IMAGEN (60% de la pantalla) -->
-  <div class="bg-gray-100" style="flex: 0 0 60vh; padding-top: 1px; overflow:hidden; position:relative;">
+  <!-- SECCIÓN IMAGEN -->
+  <div style="flex: 0 0 55vh; overflow:hidden; position:relative;">
     <img id="flyer-image"
          src="https://pablotorre2025.github.io/clc-clases/assets/f1.png"
-         alt="Clase Bíblica"
+         alt="Evento"
          style="width:100%; height:100%; object-fit:cover; display:block;">
     <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 50%);"></div>
   </div>
 
-  <!-- SECCIÓN INFORMACIÓN (40% de la pantalla) -->
-  <div class="flex flex-col justify-center px-8 py-6 bg-gray-100" style="flex: 1;">
-    <h1 id="flyer-title" class="font-lora text-3xl font-bold text-blue-950 mb-2 text-center">
-      Clase Bíblica<br>Semanal
-    </h1>
-    <p id="flyer-subtitle" class="text-blue-700 font-semibold text-xl mb-4 text-center">Lección 1</p>
-    <div class="flex items-center mb-3">
+  <!-- SECCIÓN INFORMACIÓN -->
+  <div class="flex flex-col px-6 py-4 bg-gray-100" style="flex: 1; overflow-y: auto;">
+
+    <!-- Tabs de día -->
+    <div class="flex gap-2 mb-4">
+      <button data-day="martes"  class="day-tab flex-1 py-1.5 rounded-full text-sm font-semibold transition-all bg-blue-700 text-white">Martes</button>
+      <button data-day="viernes" class="day-tab flex-1 py-1.5 rounded-full text-sm font-semibold transition-all bg-gray-200 text-gray-600">Viernes</button>
+      <button data-day="domingo" class="day-tab flex-1 py-1.5 rounded-full text-sm font-semibold transition-all bg-gray-200 text-gray-600">Domingo</button>
+    </div>
+
+    <h1 id="flyer-title" class="font-lora text-3xl font-bold text-blue-950 mb-1 text-center"></h1>
+    <p id="flyer-subtitle" class="text-blue-700 font-semibold text-lg mb-3 text-center"></p>
+
+    <!-- Horario dinámico -->
+    <div id="schedule-container" class="mb-3 space-y-2"></div>
+
+    <!-- Fecha -->
+    <div class="flex items-center mb-4">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#1d4ed8" style="width:20px;height:20px;flex-shrink:0;">
         <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
       </svg>
-      <span id="flyer-date" class="ml-3 text-gray-700 text-xl font-medium">Martes, 9 de Mayo</span>
+      <span id="flyer-date" class="ml-3 text-gray-700 text-xl font-medium"></span>
     </div>
-    <div class="flex items-center mb-6">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#1d4ed8" style="width:20px;height:20px;flex-shrink:0;">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" />
-      </svg>
-      <span id="flyer-time" class="ml-3 text-gray-700 text-xl font-medium">7:00 PM</span>
-    </div>
+
     <a id="flyer-button" href="index.html"
-       class="block text-center bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-2xl text-base shadow-md active:scale-95 transition-all">
+       class="block text-center bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-2xl text-base shadow-md active:scale-95 transition-all mt-auto">
       Ir a la Clase ahora
     </a>
   </div>
@@ -96,8 +82,9 @@
 
   <!-- MODAL: Formulario de edición -->
   <div id="modal-form" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:50; align-items:center; justify-content:center;" class="flex">
-    <div class="bg-white rounded-2xl shadow-xl p-6 w-80">
-      <h2 class="font-lora text-xl font-bold text-blue-950 mb-4">Editar Flyer</h2>
+    <div class="bg-white rounded-2xl shadow-xl p-6 w-80" style="max-height:90vh; overflow-y:auto;">
+      <h2 class="font-lora text-xl font-bold text-blue-950 mb-1">Editar Flyer</h2>
+      <p id="form-event-label" class="text-blue-600 text-xs font-semibold mb-4"></p>
       <div class="space-y-3">
         <div>
           <label class="block text-xs font-semibold text-gray-600 mb-1">Título (Español)</label>
@@ -116,16 +103,9 @@
           <input id="f-subtitle-en" type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
         </div>
         <div>
-          <label class="block text-xs font-semibold text-gray-600 mb-1">Fecha (Español)</label>
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Próxima Fecha</label>
           <input id="f-date" type="date" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
-        </div>
-        <div>
-          <label class="block text-xs font-semibold text-gray-600 mb-1">Fecha (Inglés)</label>
-          <input id="f-date-en" type="date" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
-        </div>
-        <div>
-          <label class="block text-xs font-semibold text-gray-600 mb-1">Hora</label>
-          <input id="f-time" type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ej: 7:00 PM">
+          <p class="text-gray-400 text-xs mt-1">El tab cambia automáticamente según el día (Mar/Vie/Dom)</p>
         </div>
       </div>
       <div class="flex gap-2 mt-5">
@@ -138,39 +118,97 @@
   <script>
     const PASS = '1234';
     let isEnglish = false;
+    let currentDay = 'martes';
 
-    // Datos actuales
-    let data = JSON.parse(localStorage.getItem('flyerData')) || {
-      title: 'Clase Bíblica Semanal',
-      lesson: '1',
-      date: 'Martes, 9 de Mayo',
-      time: '7:00 PM',
-      subtitle: 'Lección 1'
+    // Horarios fijos por tipo de evento (siempre iguales, no se editan)
+    const schedules = {
+      martes: [
+        { es: 'Oración',         en: 'Prayer',        time: '7:00 – 8:00 PM' },
+        { es: 'Estudio Bíblico', en: 'Bible Study',   time: '8:00 – 9:00 PM' }
+      ],
+      viernes: [
+        { es: 'Servicio General', en: 'General Service', time: '7:00 – 9:00 PM' }
+      ],
+      domingo: [
+        { es: 'Servicio Dominical', en: 'Sunday Service', time: '10:00 AM' }
+      ]
     };
 
-    function renderFlyer() {
-      const titleElement = document.getElementById('flyer-title');
-      const subtitleElement = document.getElementById('flyer-subtitle');
-      const dateElement = document.getElementById('flyer-date');
-      const timeElement = document.getElementById('flyer-time');
-      const buttonElement = document.getElementById('flyer-button');
+    // Imagen por tipo de evento
+    const images = {
+      martes:  'https://pablotorre2025.github.io/clc-clases/assets/f1.png',
+      viernes: 'https://pablotorre2025.github.io/clc-clases/assets/f2.png',
+      domingo: 'https://pablotorre2025.github.io/clc-clases/assets/f3.png'
+    };
 
-      if (titleElement) {
-        titleElement.innerHTML = data.title.replace(/\n/g, '<br>');
-      }
-      if (subtitleElement) {
-        subtitleElement.innerHTML = data.subtitle.replace(/\n/g, '<br>');
-      }
-      if (dateElement) {
-        dateElement.textContent = data.date;
-      }
-      if (timeElement) {
-        timeElement.textContent = data.time;
-      }
-      if (buttonElement) {
-        buttonElement.textContent = isEnglish ? 'Go to Class Now' : 'Ir a la Clase ahora';
-      }
+    // Títulos por defecto si el usuario no ha personalizado
+    const defaultTitles = {
+      martes:  { es: 'Oración & Estudio Bíblico', en: 'Prayer & Bible Study' },
+      viernes: { es: 'Servicio General',           en: 'General Service' },
+      domingo: { es: 'Servicio Dominical',         en: 'Sunday Service' }
+    };
+
+    // Datos editables en localStorage
+    let eventData = JSON.parse(localStorage.getItem('eventData')) || {
+      martes:  { title: '', titleEn: '', subtitle: '', subtitleEn: '', date: '', dateEn: '', dateISO: '' },
+      viernes: { title: '', titleEn: '', subtitle: '', subtitleEn: '', date: '', dateEn: '', dateISO: '' },
+      domingo: { title: '', titleEn: '', subtitle: '', subtitleEn: '', date: '', dateEn: '', dateISO: '' }
+    };
+
+    function formatDateSpanish(isoDate) {
+      const d = new Date(isoDate + 'T12:00:00');
+      const days   = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+      const months = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+      return days[d.getDay()] + ', ' + d.getDate() + ' de ' + months[d.getMonth()];
     }
+
+    function formatDateEnglish(isoDate) {
+      const d = new Date(isoDate + 'T12:00:00');
+      const days   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+      const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+      return days[d.getDay()] + ', ' + months[d.getMonth()] + ' ' + d.getDate();
+    }
+
+    function renderSchedule() {
+      const container = document.getElementById('schedule-container');
+      container.innerHTML = schedules[currentDay].map(item => `
+        <div class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#1d4ed8" style="width:20px;height:20px;flex-shrink:0;">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" />
+          </svg>
+          <span class="ml-3 text-gray-700 text-lg font-medium">
+            <span class="font-semibold text-blue-800">${isEnglish ? item.en : item.es}</span>: ${item.time}
+          </span>
+        </div>
+      `).join('');
+    }
+
+    function renderFlyer() {
+      const d   = eventData[currentDay];
+      const def = defaultTitles[currentDay];
+
+      document.getElementById('flyer-image').src = images[currentDay];
+      const title = isEnglish ? (d.titleEn || def.en) : (d.title || def.es);
+      document.getElementById('flyer-title').innerHTML   = title.replace(/\n/g, '<br>');
+      document.getElementById('flyer-subtitle').textContent = isEnglish ? d.subtitleEn : d.subtitle;
+      document.getElementById('flyer-date').textContent     = isEnglish ? d.dateEn : d.date;
+      document.getElementById('flyer-button').textContent   = isEnglish ? 'Go to Class Now' : 'Ir a la Clase ahora';
+
+      renderSchedule();
+
+      document.querySelectorAll('.day-tab').forEach(btn => {
+        const active = btn.dataset.day === currentDay;
+        btn.className = `day-tab flex-1 py-1.5 rounded-full text-sm font-semibold transition-all ${active ? 'bg-blue-700 text-white' : 'bg-gray-200 text-gray-600'}`;
+      });
+    }
+
+    // Tabs de día
+    document.querySelectorAll('.day-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentDay = btn.dataset.day;
+        renderFlyer();
+      });
+    });
 
     renderFlyer();
 
@@ -178,34 +216,22 @@
     document.getElementById('language-switch').addEventListener('click', () => {
       isEnglish = !isEnglish;
       document.getElementById('language-switch').textContent = isEnglish ? 'ES / EN' : 'EN / ES';
-
-      // Update button text
-      document.getElementById('flyer-button').textContent = isEnglish ? 'Go to Class Now' : 'Ir a la Clase ahora';
-
-      // Update title, subtitle, and date
-      document.getElementById('flyer-title').innerHTML = isEnglish ? data.titleEn : data.title;
-      document.getElementById('flyer-subtitle').textContent = isEnglish ? data.subtitleEn : data.subtitle;
-      document.getElementById('flyer-date').textContent = isEnglish ? data.dateEn : data.date;
-
       document.documentElement.lang = isEnglish ? 'en' : 'es';
+      renderFlyer();
     });
 
     // Fallback imagen
     document.getElementById('flyer-image').addEventListener('error', function() {
-      this.src = 'https://placehold.co/800x600/1e3a5f/ffffff?text=Clase+Biblica';
+      this.src = 'https://placehold.co/800x600/1e3a5f/ffffff?text=Academia+Biblica';
     });
 
     // --- Flujo de edición con contraseña ---
-    const modalPw = document.getElementById('modal-password');
+    const modalPw   = document.getElementById('modal-password');
     const modalForm = document.getElementById('modal-form');
 
     document.getElementById('btn-edit').addEventListener('click', () => {
-      const modalPw = document.getElementById('modal-password');
-      const inputPassword = document.getElementById('input-password');
-      const pwError = document.getElementById('pw-error');
-
-      inputPassword.value = '';
-      pwError.style.display = 'none';
+      document.getElementById('input-password').value = '';
+      document.getElementById('pw-error').style.display = 'none';
       modalPw.style.display = 'flex';
     });
 
@@ -217,19 +243,21 @@
       const pw = document.getElementById('input-password').value;
       if (pw === PASS) {
         modalPw.style.display = 'none';
-        // Rellenar formulario con datos actuales
-        document.getElementById('f-title').value = data.title;
-        document.getElementById('f-subtitle').value = data.subtitle;
-        document.getElementById('f-date').value = data.dateISO || '';
-        document.getElementById('f-time').value = data.time;
+        const d = eventData[currentDay];
+        const dayLabels = { martes: 'Martes', viernes: 'Viernes', domingo: 'Domingo' };
+        document.getElementById('form-event-label').textContent = 'Editando: ' + dayLabels[currentDay];
+        document.getElementById('f-title').value       = d.title;
+        document.getElementById('f-title-en').value    = d.titleEn;
+        document.getElementById('f-subtitle').value    = d.subtitle;
+        document.getElementById('f-subtitle-en').value = d.subtitleEn;
+        document.getElementById('f-date').value        = d.dateISO || '';
         modalForm.style.display = 'flex';
       } else {
         document.getElementById('pw-error').style.display = 'block';
       }
     });
 
-    // Permitir Enter en el campo de contraseña
-    document.getElementById('input-password').addEventListener('keydown', (e) => {
+    document.getElementById('input-password').addEventListener('keydown', e => {
       if (e.key === 'Enter') document.getElementById('btn-pw-ok').click();
     });
 
@@ -237,47 +265,41 @@
       modalForm.style.display = 'none';
     });
 
-    function formatDateSpanish(isoDate) {
-      const d = new Date(isoDate + 'T12:00:00');
-      const days = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
-      const months = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
-      return days[d.getDay()] + ', ' + d.getDate() + ' de ' + months[d.getMonth()];
-    }
-
-    function formatDateEnglish(isoDate) {
-      const d = new Date(isoDate + 'T12:00:00');
-      const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-      const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-      return days[d.getDay()] + ', ' + months[d.getMonth()] + ' ' + d.getDate();
-    }
-
     document.getElementById('btn-form-save').addEventListener('click', () => {
-      data.title = document.getElementById('f-title').value || data.title;
-      data.titleEn = document.getElementById('f-title-en').value || data.titleEn;
-      data.subtitle = document.getElementById('f-subtitle').value || data.subtitle;
-      data.subtitleEn = document.getElementById('f-subtitle-en').value || data.subtitleEn;
       const pickedDate = document.getElementById('f-date').value;
+
+      // Opción C: detectar día automáticamente y cambiar tab
       if (pickedDate) {
-        data.dateISO = pickedDate;
-        data.date = formatDateSpanish(pickedDate);
+        const dow = new Date(pickedDate + 'T12:00:00').getDay();
+        if      (dow === 2) currentDay = 'martes';
+        else if (dow === 5) currentDay = 'viernes';
+        else if (dow === 0) currentDay = 'domingo';
       }
-      const pickedDateEn = document.getElementById('f-date-en').value;
-      if (pickedDateEn) {
-        data.dateEn = formatDateEnglish(pickedDateEn);
+
+      const d = eventData[currentDay];
+      d.title      = document.getElementById('f-title').value      || d.title;
+      d.titleEn    = document.getElementById('f-title-en').value   || d.titleEn;
+      d.subtitle   = document.getElementById('f-subtitle').value;
+      d.subtitleEn = document.getElementById('f-subtitle-en').value;
+
+      if (pickedDate) {
+        d.dateISO = pickedDate;
+        d.date    = formatDateSpanish(pickedDate);
+        d.dateEn  = formatDateEnglish(pickedDate);
       }
-      data.time = document.getElementById('f-time').value || data.time;
-      localStorage.setItem('flyerData', JSON.stringify(data));
+
+      localStorage.setItem('eventData', JSON.stringify(eventData));
       modalForm.style.display = 'none';
       isEnglish = false;
       document.getElementById('language-switch').textContent = 'EN / ES';
       renderFlyer();
     });
 
-    // Add a keyboard shortcut to toggle the visibility of the edit button
-    document.addEventListener('keydown', (e) => {
-      if (e.ctrlKey && e.key === 'e') { // Ctrl + E to toggle visibility
-        const editButton = document.getElementById('btn-edit');
-        editButton.style.opacity = editButton.style.opacity === '0.1' ? '1' : '0.1';
+    // Ctrl+E para mostrar/ocultar botón de edición
+    document.addEventListener('keydown', e => {
+      if (e.ctrlKey && e.key === 'e') {
+        const btn = document.getElementById('btn-edit');
+        btn.style.opacity = btn.style.opacity === '0.6' ? '0.15' : '0.6';
       }
     });
   </script>
