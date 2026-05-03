@@ -175,8 +175,12 @@
     const modalForm = document.getElementById('modal-form');
 
     document.getElementById('btn-edit').addEventListener('click', () => {
-      document.getElementById('input-password').value = '';
-      document.getElementById('pw-error').style.display = 'none';
+      const modalPw = document.getElementById('modal-password');
+      const inputPassword = document.getElementById('input-password');
+      const pwError = document.getElementById('pw-error');
+
+      inputPassword.value = '';
+      pwError.style.display = 'none';
       modalPw.style.display = 'flex';
     });
 
