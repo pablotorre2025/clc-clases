@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Flyer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+    .font-lora { font-family: 'Lora', serif; }
+  </style>
+</head>
+<body class="bg-blue-950 text-white">
+
+  <!-- DATOS MODIFICABLES -->
+  <div id="flyer-data" class="hidden"
+       data-title="Clase Bíblica Semanal"
+       data-date="Martes, 9 de Mayo"
+       data-time="7:00 PM"
+       data-image-url="https://drive.google.com/uc?export=view&id=1ncvjBu2owjwGigrxw_oj09emsFUszyBY"
+       data-button-link="#">
+  </div>
+
+  <!-- FLYER CONTENT -->
+  <div class="flex items-center justify-center min-h-screen">
+    <div class="bg-white rounded-3xl shadow-lg overflow-hidden max-w-md w-full">
+      <!-- Header Image -->
+      <div class="relative w-full" style="padding-top: 56.25%;"> <!-- 16:9 Aspect Ratio -->
+        <img id="flyer-image" src="https://via.placeholder.com/600x300" alt="Flyer Header" class="absolute top-0 left-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+        <h1 id="flyer-title" class="absolute bottom-4 left-4 text-white text-2xl font-lora font-bold">Clase Bíblica Semanal</h1>
+      </div>
+
+      <!-- Info Blocks -->
+      <div class="p-6">
+        <div class="flex items-center mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-700">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span id="flyer-date" class="ml-2 text-gray-700">Martes, 9 de Mayo</span>
+        </div>
+        <div class="flex items-center mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-700">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2" />
+          </svg>
+          <span id="flyer-time" class="ml-2 text-gray-700">7:00 PM</span>
+        </div>
+
+        <!-- Action Button -->
+        <a id="flyer-button" href="#" class="block text-center bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 rounded-xl transition-transform transform active:scale-95">
+          Ir a la Clase ahora
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Language Switch -->
+  <div class="absolute top-4 right-4">
+    <button id="language-switch" class="bg-blue-700 hover:bg-blue-800 text-white text-sm px-3 py-1 rounded-full">
+      EN / ES
+    </button>
+  </div>
+
+  <!-- Botón para abrir el formulario -->
+  <div class="absolute top-4 left-4">
+    <button id="edit-flyer" class="bg-blue-700 hover:bg-blue-800 text-white text-sm px-3 py-1 rounded-full">
+      Editar Flyer
+    </button>
+  </div>
+
+  <!-- Formulario de edición actualizado -->
+  <div id="flyer-form" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center">
+    <div class="bg-white p-6 rounded-xl shadow-lg max-w-sm w-full">
+      <h2 class="text-xl font-bold mb-4">Editar Flyer</h2>
+      <form id="form-data" class="space-y-4">
+        <div>
+          <label for="title" class="block text-sm font-medium text-gray-700">Título</label>
+          <input type="text" id="title" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm text-gray-900" placeholder="Clase Bíblica Semanal">
+        </div>
+        <div>
+          <label for="date" class="block text-sm font-medium text-gray-700">Fecha</label>
+          <input type="date" id="date" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm text-gray-900">
+        </div>
+        <div>
+          <label for="time" class="block text-sm font-medium text-gray-700">Hora</label>
+          <input type="time" id="time" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm text-gray-900">
+        </div>
+        <div>
+          <label for="image-url" class="block text-sm font-medium text-gray-700">URL de la Imagen</label>
+          <input type="text" id="image-url" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm text-gray-900" placeholder="https://via.placeholder.com/600x300">
+        </div>
+        <div>
+          <label for="button-link" class="block text-sm font-medium text-gray-700">Enlace del Botón</label>
+          <input type="text" id="button-link" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm text-gray-900" placeholder="#">
+        </div>
+        <div class="flex justify-end space-x-2">
+          <button type="button" id="cancel-edit" class="bg-gray-300 hover:bg-gray-400 text-gray-800 text-sm px-3 py-1 rounded-full">Cancelar</button>
+          <button type="submit" class="bg-blue-700 hover:bg-blue-800 text-white text-sm px-3 py-1 rounded-full">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Formulario de autenticación eliminado para que el contenido sea visible al abrir el flyer -->
+
+  <script>
+    // Load data from attributes
+    const flyerData = document.getElementById('flyer-data');
+    document.getElementById('flyer-title').textContent = flyerData.dataset.title;
+    document.getElementById('flyer-date').textContent = flyerData.dataset.date;
+    document.getElementById('flyer-time').textContent = flyerData.dataset.time;
+    document.getElementById('flyer-image').src = flyerData.dataset.imageUrl;
+    document.getElementById('flyer-button').href = flyerData.dataset.buttonLink;
+
+    // Language switch functionality
+    const languageSwitch = document.getElementById('language-switch');
+    languageSwitch.addEventListener('click', () => {
+      const isEnglish = languageSwitch.textContent.includes('EN');
+      languageSwitch.textContent = isEnglish ? 'ES / EN' : 'EN / ES';
+      document.getElementById('flyer-title').textContent = isEnglish ? 'Weekly Bible Class' : 'Clase Bíblica Semanal';
+      document.getElementById('flyer-date').textContent = isEnglish ? 'Tuesday, May 9th' : 'Martes, 9 de Mayo';
+      document.getElementById('flyer-time').textContent = isEnglish ? '7:00 PM' : '7:00 PM';
+      document.getElementById('flyer-button').textContent = isEnglish ? 'Go to Class Now' : 'Ir a la Clase ahora';
+    });
+
+    // Mostrar/ocultar el formulario de edición
+    const editButton = document.getElementById('edit-flyer');
+    const flyerForm = document.getElementById('flyer-form');
+    const cancelEdit = document.getElementById('cancel-edit');
+
+    editButton.addEventListener('click', () => {
+      flyerForm.classList.remove('hidden');
+    });
+
+    cancelEdit.addEventListener('click', () => {
+      flyerForm.classList.add('hidden');
+    });
+
+    // Inicializar flyerImage antes de usarlo
+    const flyerImage = document.getElementById('flyer-image');
+
+    // Mostrar el enlace de la imagen para depuración
+    const debugImageUrl = document.getElementById('debug-image-url');
+    if (debugImageUrl) {
+      debugImageUrl.textContent = `Enlace de la imagen: ${flyerImage.src}`;
+      debugImageUrl.style.color = 'white';
+    }
+
+    // Agregar un evento para manejar errores de carga de la imagen
+    flyerImage.addEventListener('error', () => {
+      flyerImage.alt = 'No se pudo cargar la imagen. Verifica el enlace.';
+      flyerImage.src = 'https://via.placeholder.com/1280x720?text=Imagen+de+Prueba'; // Enlace de respaldo actualizado
+    });
+
+    // Cargar datos desde localStorage
+    const loadFlyerData = () => {
+      const savedData = JSON.parse(localStorage.getItem('flyerData')) || {};
+      // Usar una imagen de prueba como respaldo para verificar el problema
+      const defaultImageUrl = 'https://via.placeholder.com/1280x720?text=Imagen+de+Prueba';
+      document.getElementById('flyer-title').textContent = savedData.title || flyerData.dataset.title;
+      document.getElementById('flyer-date').textContent = savedData.date || flyerData.dataset.date;
+      document.getElementById('flyer-time').textContent = savedData.time || flyerData.dataset.time;
+      document.getElementById('flyer-image').src = savedData.imageUrl || defaultImageUrl;
+      document.getElementById('flyer-button').href = savedData.buttonLink || flyerData.dataset.buttonLink;
+
+      // Actualizar valores en el formulario
+      document.getElementById('title').value = savedData.title || flyerData.dataset.title;
+      document.getElementById('date').value = savedData.date || '';
+      document.getElementById('time').value = savedData.time || '';
+      document.getElementById('image-url').value = savedData.imageUrl || defaultImageUrl;
+      document.getElementById('button-link').value = savedData.buttonLink || flyerData.dataset.buttonLink;
+    };
+
+    loadFlyerData();
+
+    // Guardar datos desde el formulario
+    const form = document.getElementById('form-data');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const newData = {
+        title: document.getElementById('title').value,
+        date: document.getElementById('date').value,
+        time: document.getElementById('time').value,
+        imageUrl: document.getElementById('image-url').value,
+        buttonLink: document.getElementById('button-link').value,
+      };
+      console.log('Datos guardados:', newData); // Mensaje de depuración
+      localStorage.setItem('flyerData', JSON.stringify(newData));
+      flyerForm.classList.add('hidden');
+      loadFlyerData();
+    });
+
+    // Mostrar un mensaje de depuración con el enlace de la imagen
+    const debugContainer = document.createElement('div');
+    debugContainer.style.color = 'white';
+    debugContainer.style.marginTop = '20px';
+    debugContainer.textContent = `Enlace de la imagen cargada: ${flyerImage.src}`;
+    document.body.appendChild(debugContainer);
+  </script>
+
+</body>
+</html>
