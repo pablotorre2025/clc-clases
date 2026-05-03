@@ -143,11 +143,27 @@
     };
 
     function renderFlyer() {
-      document.getElementById('flyer-title').innerHTML = data.title.replace(/\n/g, '<br>');
-      document.getElementById('flyer-subtitle').innerHTML = data.subtitle.replace(/\n/g, '<br>');
-      document.getElementById('flyer-date').textContent = data.date;
-      document.getElementById('flyer-time').textContent = data.time;
-      document.getElementById('flyer-button').textContent = isEnglish ? 'Go to Class Now' : 'Ir a la Clase ahora';
+      const titleElement = document.getElementById('flyer-title');
+      const subtitleElement = document.getElementById('flyer-subtitle');
+      const dateElement = document.getElementById('flyer-date');
+      const timeElement = document.getElementById('flyer-time');
+      const buttonElement = document.getElementById('flyer-button');
+
+      if (titleElement) {
+        titleElement.innerHTML = data.title.replace(/\n/g, '<br>');
+      }
+      if (subtitleElement) {
+        subtitleElement.innerHTML = data.subtitle.replace(/\n/g, '<br>');
+      }
+      if (dateElement) {
+        dateElement.textContent = data.date;
+      }
+      if (timeElement) {
+        timeElement.textContent = data.time;
+      }
+      if (buttonElement) {
+        buttonElement.textContent = isEnglish ? 'Go to Class Now' : 'Ir a la Clase ahora';
+      }
     }
 
     renderFlyer();
