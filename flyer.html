@@ -9,6 +9,17 @@
   <style>
     html, body { height: 100%; margin: 0; padding: 0; }
     .font-lora { font-family: 'Lora', serif; }
+    #btn-edit {
+      position: fixed;
+      top: 0;
+      left: 0;
+      opacity: 0.1;
+      z-index: 10;
+      transition: opacity 0.3s;
+    }
+    #btn-edit:hover {
+      opacity: 0.5;
+    }
   </style>
 </head>
 <body class="bg-gray-100" style="height:100vh; display:flex; flex-direction:column;">
@@ -194,6 +205,14 @@
       isEnglish = false;
       document.getElementById('language-switch').textContent = 'EN / ES';
       renderFlyer();
+    });
+
+    // Add a keyboard shortcut to toggle the visibility of the edit button
+    document.addEventListener('keydown', (e) => {
+      if (e.ctrlKey && e.key === 'e') { // Ctrl + E to toggle visibility
+        const editButton = document.getElementById('btn-edit');
+        editButton.style.opacity = editButton.style.opacity === '0.1' ? '1' : '0.1';
+      }
     });
   </script>
 </body>
