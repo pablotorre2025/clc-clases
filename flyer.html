@@ -25,8 +25,8 @@
   <div class="flex items-center justify-center min-h-screen">
     <div class="bg-white rounded-3xl shadow-lg overflow-hidden max-w-md w-full">
       <!-- Header Image -->
-      <div class="relative w-full" style="padding-top: 56.25%;"> <!-- 16:9 Aspect Ratio -->
-        <img id="flyer-image" src="https://via.placeholder.com/600x300" alt="Flyer Header" class="absolute top-0 left-0 w-full h-full object-cover">
+      <div class="relative w-full" style="padding-top: 56.25%; max-height: 300px; overflow: hidden;"> <!-- Contenedor con relación 16:9 y altura máxima -->
+        <img id="flyer-image" src="http://127.0.0.1:5500/assets/f1.png" alt="Flyer Header" class="absolute top-0 left-0 w-full h-full object-cover"> <!-- Imagen ajustada al contenedor -->
         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
         <h1 id="flyer-title" class="absolute bottom-4 left-4 text-white text-2xl font-lora font-bold">Clase Bíblica Semanal</h1>
       </div>
@@ -152,11 +152,14 @@
       flyerImage.src = 'https://via.placeholder.com/1280x720?text=Imagen+de+Prueba'; // Enlace de respaldo actualizado
     });
 
+    // Establecer la imagen predeterminada directamente en el HTML
+    document.getElementById('flyer-image').src = './assets/f1.png';
+
     // Cargar datos desde localStorage
     const loadFlyerData = () => {
       const savedData = JSON.parse(localStorage.getItem('flyerData')) || {};
-      // Usar una imagen de prueba como respaldo para verificar el problema
-      const defaultImageUrl = 'https://via.placeholder.com/1280x720?text=Imagen+de+Prueba';
+      // Actualizar la URL de la imagen para usar la nueva imagen en assets
+      const defaultImageUrl = './assets/f1.png';
       document.getElementById('flyer-title').textContent = savedData.title || flyerData.dataset.title;
       document.getElementById('flyer-date').textContent = savedData.date || flyerData.dataset.date;
       document.getElementById('flyer-time').textContent = savedData.time || flyerData.dataset.time;
@@ -196,6 +199,13 @@
     debugContainer.style.marginTop = '20px';
     debugContainer.textContent = `Enlace de la imagen cargada: ${flyerImage.src}`;
     document.body.appendChild(debugContainer);
+
+    // Mostrar la ruta de la imagen predeterminada para depuración
+    const debugImagePath = document.createElement('div');
+    debugImagePath.style.color = 'white';
+    debugImagePath.style.marginTop = '20px';
+    debugImagePath.textContent = `Ruta de la imagen predeterminada: ${document.getElementById('flyer-image').src}`;
+    document.body.appendChild(debugImagePath);
   </script>
 
 </body>
