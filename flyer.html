@@ -193,6 +193,7 @@
       document.getElementById('flyer-subtitle').textContent = isEnglish ? d.subtitleEn : d.subtitle;
       document.getElementById('flyer-date').textContent     = isEnglish ? d.dateEn : d.date;
       document.getElementById('flyer-button').textContent   = isEnglish ? 'Go to Class Now' : 'Ir a la Clase ahora';
+      document.getElementById('flyer-button').style.display = currentDay === 'martes' ? 'block' : 'none';
 
       renderSchedule();
 
