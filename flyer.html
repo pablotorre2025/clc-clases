@@ -20,6 +20,21 @@
     #btn-edit:hover {
       opacity: 0.5;
     }
+
+    /* Ensure the image fits well on mobile screens */
+    #flyer-image {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      max-height: 60vh; /* Limit height to 60% of the viewport */
+    }
+
+    /* Adjust layout for smaller screens */
+    @media (max-width: 768px) {
+      .flex-col {
+        padding: 1rem; /* Add padding for better readability */
+      }
+    }
   </style>
 </head>
 <body class="bg-gray-100" style="height:100vh; display:flex; flex-direction:column;">
