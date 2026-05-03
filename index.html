@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Academia Bíblica</title>
+  <title>Christian Life Center - Español</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,22 +11,6 @@
   <style>
     body { font-family: 'Inter', sans-serif; }
     h1, h2, h3 { font-family: 'Lora', serif; }
-    /* Google Translate tweak — hide top banner */
-    .goog-te-banner-frame.skiptranslate { display: none !important; }
-    body { top: 0 !important; }
-    #google_translate_element select {
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.4);
-      color: white;
-      border-radius: 6px;
-      padding: 4px 8px;
-      font-size: 0.85rem;
-      cursor: pointer;
-    }
-    #google_translate_element .goog-te-gadget-simple {
-      background: transparent !important;
-      border: none !important;
-    }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -35,11 +19,9 @@
   <header class="bg-blue-950 text-white shadow-lg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
       <div>
-        <h1 class="text-3xl font-bold tracking-wide">📖 Academia Bíblica</h1>
+        <h1 class="text-3xl font-bold tracking-wide">📖 Christian Life Center - Español</h1>
         <p class="text-blue-300 text-sm mt-1">Estudia la Palabra a tu propio ritmo</p>
       </div>
-      <!-- Google Translate widget -->
-      <div id="google_translate_element" class="shrink-0"></div>
     </div>
   </header>
 
@@ -68,10 +50,16 @@
           <p class="text-gray-500 text-sm flex-1">
             Aprende el origen, la estructura y el propósito de las Sagradas Escrituras. Una base esencial para todo creyente.
           </p>
-          <a href="lecciones/modulo-1.html"
-             class="mt-6 inline-block text-center bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2.5 px-5 rounded-xl transition-colors duration-200">
-            Estudiar ahora →
-          </a>
+          <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <a href="lecciones/modulo-1-es.html"
+               class="inline-block text-center bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2.5 px-5 rounded-xl transition-colors duration-200">
+              Estudiar en Español →
+            </a>
+            <a href="lecciones/modulo-1-en.html"
+               class="inline-block text-center border border-blue-700 text-blue-700 hover:bg-blue-50 font-semibold py-2.5 px-5 rounded-xl transition-colors duration-200">
+              Study in English →
+            </a>
+          </div>
         </div>
       </div>
 
@@ -162,24 +150,6 @@
   <footer class="bg-blue-950 text-blue-300 text-center text-sm py-6 mt-8">
     <p>© 2026 Academia Bíblica · Todos los derechos reservados</p>
   </footer>
-
-  <!-- ─── GOOGLE TRANSLATE SCRIPT ────────────────────────────────── -->
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement(
-        {
-          pageLanguage: 'es',
-          includedLanguages: 'en,es',
-          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-          autoDisplay: false
-        },
-        'google_translate_element'
-      );
-    }
-  </script>
-  <script type="text/javascript"
-    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-  </script>
 
 </body>
 </html>
