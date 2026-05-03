@@ -10,15 +10,11 @@
     html, body { height: 100%; margin: 0; padding: 0; }
     .font-lora { font-family: 'Lora', serif; }
     #btn-edit {
-      position: fixed;
-      top: 0;
-      left: 0;
-      opacity: 0.1;
-      z-index: 10;
+      opacity: 0.15;
       transition: opacity 0.3s;
     }
     #btn-edit:hover {
-      opacity: 0.5;
+      opacity: 0.6;
     }
 
     /* Ensure the image fits well on mobile screens */
@@ -79,7 +75,7 @@
     </div>
     <a id="flyer-button" href="#"
        class="block text-center bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-2xl text-base shadow-md active:scale-95 transition-all">
-      Lección 1 — Ir a la Clase ahora
+      Ir a la Clase ahora
     </a>
   </div>
 
@@ -132,6 +128,7 @@
 
   <script>
     const PASS = '1234';
+    let isEnglish = false;
 
     // Datos actuales
     let data = JSON.parse(localStorage.getItem('flyerData')) || {
@@ -169,7 +166,6 @@
     renderFlyer();
 
     // Cambio de idioma
-    let isEnglish = false;
     document.getElementById('language-switch').addEventListener('click', () => {
       isEnglish = !isEnglish;
       document.getElementById('language-switch').textContent = isEnglish ? 'ES / EN' : 'EN / ES';
