@@ -132,7 +132,7 @@
       document.getElementById('flyer-date').textContent = data.date;
       document.getElementById('flyer-time').textContent = data.time;
       document.getElementById('flyer-button').href = `index.html?lesson=${data.lesson}`;
-      document.getElementById('flyer-button').textContent = `Lección ${data.lesson} — Ir a la Clase ahora`;
+      document.getElementById('flyer-button').textContent = 'Ir a la Clase ahora';
     }
 
     renderFlyer();
@@ -143,9 +143,9 @@
       isEnglish = !isEnglish;
       document.getElementById('language-switch').textContent = isEnglish ? 'ES / EN' : 'EN / ES';
       if (isEnglish) {
-        document.getElementById('flyer-button').textContent = `Lesson ${data.lesson} — Go to Class Now`;
+        document.getElementById('flyer-button').textContent = 'Go to Class Now';
       } else {
-        document.getElementById('flyer-button').textContent = `Lección ${data.lesson} — Ir a la Clase ahora`;
+        document.getElementById('flyer-button').textContent = 'Ir a la Clase ahora';
       }
       document.documentElement.lang = isEnglish ? 'en' : 'es';
     });
