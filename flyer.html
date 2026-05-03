@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Digital Flyer</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css"> <!-- Ruta absoluta para Tailwind CSS -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
     .font-lora { font-family: 'Lora', serif; }
@@ -25,31 +25,29 @@
   <div class="flex items-center justify-center min-h-screen">
     <div class="bg-white rounded-3xl shadow-lg overflow-hidden max-w-md w-full">
       <!-- Header Image -->
-      <div class="relative w-full" style="padding-top: 56.25%; max-height: 300px; overflow: hidden;"> <!-- Contenedor con relación 16:9 y altura máxima -->
-        <img id="flyer-image" src="http://127.0.0.1:5500/assets/f1.png" alt="Flyer Header" class="absolute top-0 left-0 w-full h-full object-cover"> <!-- Imagen ajustada al contenedor -->
+      <div class="relative w-full max-w-lg mx-auto" style="padding-top: 56.25%; max-height: 300px; overflow: hidden;"> <!-- Contenedor centrado con relación 16:9 -->
+        <img id="flyer-image" src="https://pablotorre2025.github.io/clc-clases/assets/f1.png" alt="Flyer Header" class="absolute top-0 left-0 w-full h-full object-cover"> <!-- Imagen ajustada al contenedor -->
         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
         <h1 id="flyer-title" class="absolute bottom-4 left-4 text-white text-2xl font-lora font-bold">Clase Bíblica Semanal</h1>
       </div>
 
       <!-- Info Blocks -->
-      <div class="p-6">
-        <div class="flex items-center mb-4">
+      <div class="p-6 text-center">
+        <div class="flex items-center justify-center mb-4">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-700">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          <span id="flyer-date" class="ml-2 text-gray-700">Martes, 9 de Mayo</span>
+          <span id="flyer-date" class="ml-2 text-gray-700 text-lg">Martes, 9 de Mayo</span>
         </div>
-        <div class="flex items-center mb-6">
+        <div class="flex items-center justify-center mb-6">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-700">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2" />
           </svg>
-          <span id="flyer-time" class="ml-2 text-gray-700">7:00 PM</span>
+          <span id="flyer-time" class="ml-2 text-gray-700 text-lg">7:00 PM</span>
         </div>
 
         <!-- Action Button -->
-        <a id="flyer-button" href="#" class="block text-center bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 rounded-xl transition-transform transform active:scale-95">
-          Ir a la Clase ahora
-        </a>
+        <a id="flyer-button" href="#" class="block text-center bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded-xl transition-transform transform active:scale-95">Ir a la Clase ahora</a>
       </div>
     </div>
   </div>
