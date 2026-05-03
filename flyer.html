@@ -8,6 +8,25 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
     .font-lora { font-family: 'Lora', serif; }
+
+    /* Limitar el tamaño máximo de las imágenes */
+    #flyer-image {
+      max-width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+    }
+
+    /* Asegurar que el formulario de edición esté oculto por defecto */
+    #flyer-form.hidden {
+      display: none;
+    }
+
+    /* Ajustar el diseño general */
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
   </style>
 </head>
 <body class="bg-blue-950 text-white">
@@ -204,6 +223,12 @@
     debugImagePath.style.marginTop = '20px';
     debugImagePath.textContent = `Ruta de la imagen predeterminada: ${document.getElementById('flyer-image').src}`;
     document.body.appendChild(debugImagePath);
+
+    // Asegurar que el formulario de edición esté oculto al cargar la página
+    document.addEventListener('DOMContentLoaded', () => {
+      const flyerForm = document.getElementById('flyer-form');
+      flyerForm.classList.add('hidden');
+    });
   </script>
 
 </body>
