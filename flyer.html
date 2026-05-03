@@ -120,7 +120,7 @@
       document.getElementById('flyer-title').innerHTML = data.title.replace(/\n/g, '<br>');
       document.getElementById('flyer-date').textContent = data.date;
       document.getElementById('flyer-time').textContent = data.time;
-      document.getElementById('flyer-button').href = data.link;
+      document.getElementById('flyer-button').href = `index.html?lesson=${data.lesson}`;
       document.getElementById('flyer-button').textContent = `Lección ${data.lesson} — Ir a la Clase ahora`;
     }
 
@@ -132,11 +132,9 @@
       isEnglish = !isEnglish;
       document.getElementById('language-switch').textContent = isEnglish ? 'ES / EN' : 'EN / ES';
       if (isEnglish) {
-        document.getElementById('flyer-title').innerHTML = 'Weekly<br>Bible Class';
-        document.getElementById('flyer-date').textContent = 'Tuesday, May 9th';
         document.getElementById('flyer-button').textContent = `Lesson ${data.lesson} — Go to Class Now`;
       } else {
-        renderFlyer();
+        document.getElementById('flyer-button').textContent = `Lección ${data.lesson} — Ir a la Clase ahora`;
       }
       document.documentElement.lang = isEnglish ? 'en' : 'es';
     });
