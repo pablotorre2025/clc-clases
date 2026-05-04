@@ -49,6 +49,14 @@
     #hero-overlay-button:active {
       transform: scale(0.98);
     }
+    #directions-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+    #directions-link:active {
+      transform: scale(0.99);
+    }
     @media (max-width: 640px) {
       #hero-section {
         flex-basis: 44vh;
@@ -143,8 +151,10 @@
       <span id="flyer-date" class="ml-3 text-gray-700 text-xl font-medium"></span>
     </div>
 
-    <div class="bg-white/80 rounded-2xl p-4 shadow-sm border border-blue-100 mb-4">
-      <div class="flex items-start gap-3 mb-3">
+    <a id="directions-link" href="https://www.google.com/maps/search/?api=1&query=404%20W.%20Wilshire%20Avenue%2C%20Fullerton%2C%20CA%2092832"
+       target="_blank" rel="noopener noreferrer"
+       class="bg-white/80 rounded-2xl p-4 shadow-sm border border-blue-100 mb-4">
+      <div class="flex items-start gap-3">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#1d4ed8" style="width:22px;height:22px;flex-shrink:0; margin-top:2px;">
           <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
           <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
@@ -154,12 +164,7 @@
           <p id="flyer-address" class="text-gray-700 text-sm leading-snug">404 W. Wilshire Avenue; Fullerton, CA 92832</p>
         </div>
       </div>
-      <a id="maps-button" href="https://www.google.com/maps/search/?api=1&query=404%20W.%20Wilshire%20Avenue%2C%20Fullerton%2C%20CA%2092832"
-         target="_blank" rel="noopener noreferrer"
-         class="block text-center bg-white border border-blue-200 hover:border-blue-300 text-blue-800 font-semibold py-3 px-4 rounded-2xl text-base shadow-sm active:scale-95 transition-all">
-        Abrir en Google Maps
-      </a>
-    </div>
+    </a>
 
     <a id="flyer-button" href="index.html"
        class="block text-center bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-2xl text-base shadow-md active:scale-95 transition-all mt-auto">
@@ -401,8 +406,7 @@
       const dateText = isEnglish ? d.dateEn : d.date;
       document.getElementById('flyer-date').textContent = dateText || (isEnglish ? 'Date not set' : 'Fecha no definida');
       document.getElementById('flyer-address').textContent = ADDRESS_TEXT;
-      document.getElementById('maps-button').href = MAPS_URL;
-      document.getElementById('maps-button').textContent = isEnglish ? 'Open in Google Maps' : 'Abrir en Google Maps';
+      document.getElementById('directions-link').href = MAPS_URL;
       document.getElementById('hero-overlay-button').textContent = isEnglish ? 'View full image' : 'Ver imagen completa';
       document.getElementById('flyer-button').textContent   = isEnglish ? 'Go to Class Now' : 'Ir a la Clase ahora';
       document.getElementById('flyer-button').style.display = currentDay === 'martes' ? 'block' : 'none';
