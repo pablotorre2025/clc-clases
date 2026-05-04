@@ -8,6 +8,8 @@
   <meta http-equiv="Expires" content="0">
   <title>Flyer Digital - Academia Bíblica</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
   <style>
     html, body { height: 100%; margin: 0; padding: 0; }
@@ -67,6 +69,7 @@
        class="block text-center bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-2xl text-base shadow-md active:scale-95 transition-all mt-auto">
       Ir a la Clase ahora
     </a>
+    <p id="load-status" class="text-sm mt-3 text-gray-600" style="display:none;"></p>
   </div>
 
   <!-- MODAL: Contraseña -->
@@ -118,6 +121,8 @@
     </div>
   </div>
 
+  <p id="save-status" class="text-sm mt-3 text-gray-600 mx-6" style="display:none;"></p>
+
   <script>
     const PASS = '1234';
     let isEnglish = false;
@@ -152,36 +157,106 @@
     };
 
     const dayLabels = { martes: 'Martes', viernes: 'Viernes', domingo: 'Domingo' };
-    const APP_VERSION = '1.0.1';
-    const STORAGE_KEY = 'eventData';
-    const VERSION_KEY = 'eventDataVersion';
+
+    const FIREBASE_CONFIG = {
+      apiKey: 'AIzaSyAfaHoUOtRoVyYLVD128NfrBpIPC-x8RVw',
+      authDomain: 'clc-clases.firebaseapp.com',
+      databaseURL: 'https://clc-clases-default-rtdb.firebaseio.com',
+      projectId: 'clc-clases',
+      storageBucket: 'clc-clases.firebasestorage.app',
+      messagingSenderId: '74056773519',
+      appId: '1:74056773519:web:871dc95bb400db490025fa'
+    };
+    const firebaseEnabled = FIREBASE_CONFIG.apiKey && FIREBASE_CONFIG.apiKey !== '<TU_API_KEY>';
 
     const defaultEventData = {
       title: '', titleEn: '', subtitle: '', subtitleEn: '', date: '', dateEn: '', dateISO: ''
     };
 
-    function loadEventData() {
-      const storedVersion = localStorage.getItem(VERSION_KEY);
-      if (storedVersion !== APP_VERSION) {
-        localStorage.removeItem(STORAGE_KEY);
-        localStorage.setItem(VERSION_KEY, APP_VERSION);
-      }
+    let eventData = {
+      martes:  { ...defaultEventData },
+      viernes: { ...defaultEventData },
+      domingo: { ...defaultEventData }
+    };
 
+    let firebaseApp = null;
+    let firebaseDatabase = null;
+
+    function initFirebase() {
+      if (!firebaseEnabled) {
+        showLoadStatus('Firebase no está configurado correctamente.', '#b91c1c');
+        return false;
+      }
+      if (typeof firebase === 'undefined') {
+        showLoadStatus('Firebase no cargó. Verifica los scripts importados.', '#b91c1c');
+        return false;
+      }
+      try {
+        if (firebase.apps && firebase.apps.length > 0) {
+          firebaseApp = firebase.app();
+        } else {
+          firebaseApp = firebase.initializeApp(FIREBASE_CONFIG);
+        }
+        firebaseDatabase = firebase.database();
+        return true;
+      } catch (err) {
+        console.warn('Firebase no inicializado:', err);
+        showLoadStatus('Error inicializando Firebase: ' + err.message, '#b91c1c');
+        return false;
+      }
+    }
+
+    function loadLocalData() {
       let saved = {};
       try {
-        saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+        saved = JSON.parse(localStorage.getItem('eventData') || '{}');
       } catch (err) {
         saved = {};
       }
-
-      return {
+      eventData = {
         martes:  { ...defaultEventData, ...(saved.martes || {}) },
         viernes: { ...defaultEventData, ...(saved.viernes || {}) },
         domingo: { ...defaultEventData, ...(saved.domingo || {}) }
       };
     }
 
-    let eventData = loadEventData();
+    async function loadFirebaseData() {
+      if (!initFirebase()) return false;
+      try {
+        const snapshot = await firebaseDatabase.ref('/flyerData').once('value');
+        const json = snapshot.val();
+        if (!json) {
+          showLoadStatus('Firebase conectado, pero no hay datos en /flyerData.', '#b91c1c');
+          return false;
+        }
+        eventData = {
+          martes:  { ...defaultEventData, ...(json.martes || {}) },
+          viernes: { ...defaultEventData, ...(json.viernes || {}) },
+          domingo: { ...defaultEventData, ...(json.domingo || {}) }
+        };
+        return true;
+      } catch (err) {
+        console.warn('Error cargando datos de Firebase:', err);
+        showLoadStatus('Error cargando Firebase: ' + err.message, '#b91c1c');
+        return false;
+      }
+    }
+
+    function saveLocalData() {
+      localStorage.setItem('eventData', JSON.stringify(eventData));
+    }
+
+    async function saveFirebaseData() {
+      if (!firebaseEnabled || !initFirebase()) return false;
+      try {
+        await firebaseDatabase.ref('/flyerData').set(eventData);
+        return true;
+      } catch (err) {
+        console.warn('Error guardando datos en Firebase:', err);
+        showLoadStatus('Error guardando en Firebase: ' + err.message, '#b91c1c');
+        return false;
+      }
+    }
 
     function formatDateSpanish(isoDate) {
       const d = new Date(isoDate + 'T12:00:00');
@@ -248,7 +323,28 @@
       });
     });
 
-    renderFlyer();
+    function showLoadStatus(message, color = '#374151') {
+      const loadStatus = document.getElementById('load-status');
+      loadStatus.textContent = message;
+      loadStatus.style.color = color;
+      loadStatus.style.display = 'block';
+    }
+
+    async function initFlyer() {
+      let loadedFromFirebase = false;
+      if (firebaseEnabled) {
+        loadedFromFirebase = await loadFirebaseData();
+      }
+      if (loadedFromFirebase) {
+        showLoadStatus('Datos cargados desde Firebase.', '#0b7d29');
+      } else {
+        loadLocalData();
+        showLoadStatus('No se pudo cargar Firebase; usando datos locales.', '#b91c1c');
+      }
+      renderFlyer();
+    }
+
+    initFlyer();
 
     // Evitar mostrar contenido antiguo desde cache de página
     window.addEventListener('pageshow', event => {
@@ -310,7 +406,7 @@
       modalForm.style.display = 'none';
     });
 
-    document.getElementById('btn-form-save').addEventListener('click', () => {
+    document.getElementById('btn-form-save').addEventListener('click', async () => {
       const pickedDate = document.getElementById('f-date').value;
       const fTitle      = document.getElementById('f-title').value.trim();
       const fTitleEn    = document.getElementById('f-title-en').value.trim();
@@ -337,11 +433,30 @@
         d.dateEn  = formatDateEnglish(pickedDate);
       }
 
-      localStorage.setItem('eventData', JSON.stringify(eventData));
+      const firebaseSaved = await saveFirebaseData();
+      saveLocalData();
+      if (firebaseEnabled && !firebaseSaved) {
+        console.warn('No se pudo guardar en Firebase. Los datos se guardaron localmente.');
+      }
+
       modalForm.style.display = 'none';
       isEnglish = false;
       document.getElementById('language-switch').textContent = 'EN / ES';
       renderFlyer();
+      const statusMessage = document.getElementById('save-status');
+      if (firebaseEnabled) {
+        if (firebaseSaved) {
+          statusMessage.textContent = 'Guardado en Firebase correctamente.';
+          statusMessage.style.color = '#0b7d29';
+        } else {
+          statusMessage.textContent = 'No se pudo guardar en Firebase. Se guardó localmente.';
+          statusMessage.style.color = '#b91c1c';
+        }
+      } else {
+        statusMessage.textContent = 'Firebase no está disponible; los datos se guardaron localmente.';
+        statusMessage.style.color = '#374151';
+      }
+      statusMessage.style.display = 'block';
     });
 
     // Ctrl+E para mostrar/ocultar botón de edición

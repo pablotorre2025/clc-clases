@@ -1,0 +1,29 @@
+{
+  "martes": {
+    "title": "Oración & Estudio Bíblico",
+    "titleEn": "Prayer & Bible Study",
+    "subtitle": "Oración: 7:00 – 8:00 PM\nEstudio Bíblico: 8:00 – 9:00 PM",
+    "subtitleEn": "Prayer: 7:00 – 8:00 PM\nBible Study: 8:00 – 9:00 PM",
+    "date": "Martes, 13 de mayo",
+    "dateEn": "Tuesday, May 13",
+    "dateISO": "2025-05-13"
+  },
+  "viernes": {
+    "title": "Servicio General",
+    "titleEn": "General Service",
+    "subtitle": "7:00 – 9:00 PM",
+    "subtitleEn": "7:00 – 9:00 PM",
+    "date": "Viernes, 16 de mayo",
+    "dateEn": "Friday, May 16",
+    "dateISO": "2025-05-16"
+  },
+  "domingo": {
+    "title": "Servicio Dominical",
+    "titleEn": "Sunday Service",
+    "subtitle": "10:00 AM",
+    "subtitleEn": "10:00 AM",
+    "date": "Domingo, 18 de mayo",
+    "dateEn": "Sunday, May 18",
+    "dateISO": "2025-05-18"
+  }
+}
