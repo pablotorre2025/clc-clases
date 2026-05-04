@@ -32,17 +32,18 @@
     }
     @media (max-width: 640px) {
       #hero-section {
-        flex-basis: 48vh;
+        flex-basis: 44vh;
         min-height: 280px;
+        margin-top: calc(env(safe-area-inset-top, 0px) + 60px);
       }
       #flyer-image[data-day="martes"] {
-        object-position: center 60%;
+        object-position: center 4%;
       }
       #flyer-image[data-day="viernes"] {
-        object-position: center 14%;
+        object-position: center 8%;
       }
       #flyer-image[data-day="domingo"] {
-        object-position: center 10%;
+        object-position: center 6%;
       }
     }
     @media (min-width: 641px) and (max-width: 1024px) {
