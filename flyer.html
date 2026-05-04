@@ -121,8 +121,6 @@
     </div>
   </div>
 
-  <p id="save-status" class="text-sm mt-3 text-gray-600 mx-6" style="display:none;"></p>
-
   <script>
     const PASS = '1234';
     let isEnglish = false;
@@ -443,20 +441,6 @@
       isEnglish = false;
       document.getElementById('language-switch').textContent = 'EN / ES';
       renderFlyer();
-      const statusMessage = document.getElementById('save-status');
-      if (firebaseEnabled) {
-        if (firebaseSaved) {
-          statusMessage.textContent = 'Guardado en Firebase correctamente.';
-          statusMessage.style.color = '#0b7d29';
-        } else {
-          statusMessage.textContent = 'No se pudo guardar en Firebase. Se guardó localmente.';
-          statusMessage.style.color = '#b91c1c';
-        }
-      } else {
-        statusMessage.textContent = 'Firebase no está disponible; los datos se guardaron localmente.';
-        statusMessage.style.color = '#374151';
-      }
-      statusMessage.style.display = 'block';
     });
 
     // Ctrl+E para mostrar/ocultar botón de edición
