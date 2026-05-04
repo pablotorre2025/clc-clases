@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title>Flyer Digital - Academia Bíblica</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
@@ -136,9 +139,9 @@
 
     // Imagen por tipo de evento
     const images = {
-      martes:  'https://pablotorre2025.github.io/clc-clases/assets/f1.png',
-      viernes: 'https://pablotorre2025.github.io/clc-clases/assets/f2.png',
-      domingo: 'https://pablotorre2025.github.io/clc-clases/assets/f3.jpg'
+      martes:  'https://pablotorre2025.github.io/clc-clases/assets/f1.jpeg',
+      viernes: 'https://pablotorre2025.github.io/clc-clases/assets/f2.jpeg',
+      domingo: 'https://pablotorre2025.github.io/clc-clases/assets/f3.jpeg'
     };
 
     // Títulos por defecto si el usuario no ha personalizado
@@ -148,12 +151,37 @@
       domingo: { es: 'Servicio Dominical',         en: 'Sunday Service' }
     };
 
-    // Datos editables en localStorage
-    let eventData = JSON.parse(localStorage.getItem('eventData')) || {
-      martes:  { title: '', titleEn: '', subtitle: '', subtitleEn: '', date: '', dateEn: '', dateISO: '' },
-      viernes: { title: '', titleEn: '', subtitle: '', subtitleEn: '', date: '', dateEn: '', dateISO: '' },
-      domingo: { title: '', titleEn: '', subtitle: '', subtitleEn: '', date: '', dateEn: '', dateISO: '' }
+    const dayLabels = { martes: 'Martes', viernes: 'Viernes', domingo: 'Domingo' };
+    const APP_VERSION = '1.0.1';
+    const STORAGE_KEY = 'eventData';
+    const VERSION_KEY = 'eventDataVersion';
+
+    const defaultEventData = {
+      title: '', titleEn: '', subtitle: '', subtitleEn: '', date: '', dateEn: '', dateISO: ''
     };
+
+    function loadEventData() {
+      const storedVersion = localStorage.getItem(VERSION_KEY);
+      if (storedVersion !== APP_VERSION) {
+        localStorage.removeItem(STORAGE_KEY);
+        localStorage.setItem(VERSION_KEY, APP_VERSION);
+      }
+
+      let saved = {};
+      try {
+        saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+      } catch (err) {
+        saved = {};
+      }
+
+      return {
+        martes:  { ...defaultEventData, ...(saved.martes || {}) },
+        viernes: { ...defaultEventData, ...(saved.viernes || {}) },
+        domingo: { ...defaultEventData, ...(saved.domingo || {}) }
+      };
+    }
+
+    let eventData = loadEventData();
 
     function formatDateSpanish(isoDate) {
       const d = new Date(isoDate + 'T12:00:00');
@@ -183,6 +211,13 @@
       `).join('');
     }
 
+    function getTabLabel(day) {
+      const d = eventData[day];
+      const dateText = isEnglish ? d.dateEn : d.date;
+      if (!dateText) return dayLabels[day];
+      return `${dayLabels[day]}<span class="block text-[10px] font-normal leading-tight">${dateText}</span>`;
+    }
+
     function renderFlyer() {
       const d   = eventData[currentDay];
       const def = defaultTitles[currentDay];
@@ -190,8 +225,9 @@
       document.getElementById('flyer-image').src = images[currentDay];
       const title = isEnglish ? (d.titleEn || def.en) : (d.title || def.es);
       document.getElementById('flyer-title').innerHTML   = title.replace(/\n/g, '<br>');
-      document.getElementById('flyer-subtitle').textContent = isEnglish ? d.subtitleEn : d.subtitle;
-      document.getElementById('flyer-date').textContent     = isEnglish ? d.dateEn : d.date;
+      document.getElementById('flyer-subtitle').textContent = isEnglish ? (d.subtitleEn || '') : (d.subtitle || '');
+      const dateText = isEnglish ? d.dateEn : d.date;
+      document.getElementById('flyer-date').textContent = dateText || (isEnglish ? 'Date not set' : 'Fecha no definida');
       document.getElementById('flyer-button').textContent   = isEnglish ? 'Go to Class Now' : 'Ir a la Clase ahora';
       document.getElementById('flyer-button').style.display = currentDay === 'martes' ? 'block' : 'none';
 
@@ -200,6 +236,7 @@
       document.querySelectorAll('.day-tab').forEach(btn => {
         const active = btn.dataset.day === currentDay;
         btn.className = `day-tab flex-1 py-1.5 rounded-full text-sm font-semibold transition-all ${active ? 'bg-blue-700 text-white' : 'bg-gray-200 text-gray-600'}`;
+        btn.innerHTML = getTabLabel(btn.dataset.day);
       });
     }
 
@@ -212,6 +249,13 @@
     });
 
     renderFlyer();
+
+    // Evitar mostrar contenido antiguo desde cache de página
+    window.addEventListener('pageshow', event => {
+      if (event.persisted) {
+        window.location.reload();
+      }
+    });
 
     // Cambio de idioma
     document.getElementById('language-switch').addEventListener('click', () => {
@@ -268,6 +312,10 @@
 
     document.getElementById('btn-form-save').addEventListener('click', () => {
       const pickedDate = document.getElementById('f-date').value;
+      const fTitle      = document.getElementById('f-title').value.trim();
+      const fTitleEn    = document.getElementById('f-title-en').value.trim();
+      const fSubtitle   = document.getElementById('f-subtitle').value.trim();
+      const fSubtitleEn = document.getElementById('f-subtitle-en').value.trim();
 
       // Opción C: detectar día automáticamente y cambiar tab
       if (pickedDate) {
@@ -278,10 +326,10 @@
       }
 
       const d = eventData[currentDay];
-      d.title      = document.getElementById('f-title').value      || d.title;
-      d.titleEn    = document.getElementById('f-title-en').value   || d.titleEn;
-      d.subtitle   = document.getElementById('f-subtitle').value;
-      d.subtitleEn = document.getElementById('f-subtitle-en').value;
+      d.title      = fTitle      || d.title;
+      d.titleEn    = fTitleEn    || d.titleEn;
+      d.subtitle   = fSubtitle   || d.subtitle;
+      d.subtitleEn = fSubtitleEn || d.subtitleEn;
 
       if (pickedDate) {
         d.dateISO = pickedDate;
