@@ -69,7 +69,6 @@
        class="block text-center bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-2xl text-base shadow-md active:scale-95 transition-all mt-auto">
       Ir a la Clase ahora
     </a>
-    <p id="load-status" class="text-sm mt-3 text-gray-600" style="display:none;"></p>
   </div>
 
   <!-- MODAL: Contraseña -->
@@ -182,11 +181,11 @@
 
     function initFirebase() {
       if (!firebaseEnabled) {
-        showLoadStatus('Firebase no está configurado correctamente.', '#b91c1c');
+        console.warn('Firebase no está configurado correctamente.');
         return false;
       }
       if (typeof firebase === 'undefined') {
-        showLoadStatus('Firebase no cargó. Verifica los scripts importados.', '#b91c1c');
+        console.warn('Firebase no cargó. Verifica los scripts importados.');
         return false;
       }
       try {
@@ -199,7 +198,7 @@
         return true;
       } catch (err) {
         console.warn('Firebase no inicializado:', err);
-        showLoadStatus('Error inicializando Firebase: ' + err.message, '#b91c1c');
+        console.warn('Error inicializando Firebase: ' + err.message);
         return false;
       }
     }
@@ -224,7 +223,7 @@
         const snapshot = await firebaseDatabase.ref('/flyerData').once('value');
         const json = snapshot.val();
         if (!json) {
-          showLoadStatus('Firebase conectado, pero no hay datos en /flyerData.', '#b91c1c');
+          console.warn('Firebase conectado, pero no hay datos en /flyerData.');
           return false;
         }
         eventData = {
@@ -235,7 +234,7 @@
         return true;
       } catch (err) {
         console.warn('Error cargando datos de Firebase:', err);
-        showLoadStatus('Error cargando Firebase: ' + err.message, '#b91c1c');
+        console.warn('Error cargando Firebase: ' + err.message);
         return false;
       }
     }
@@ -251,7 +250,7 @@
         return true;
       } catch (err) {
         console.warn('Error guardando datos en Firebase:', err);
-        showLoadStatus('Error guardando en Firebase: ' + err.message, '#b91c1c');
+        console.warn('Error guardando en Firebase: ' + err.message);
         return false;
       }
     }
@@ -321,23 +320,14 @@
       });
     });
 
-    function showLoadStatus(message, color = '#374151') {
-      const loadStatus = document.getElementById('load-status');
-      loadStatus.textContent = message;
-      loadStatus.style.color = color;
-      loadStatus.style.display = 'block';
-    }
-
     async function initFlyer() {
       let loadedFromFirebase = false;
       if (firebaseEnabled) {
         loadedFromFirebase = await loadFirebaseData();
       }
-      if (loadedFromFirebase) {
-        showLoadStatus('Datos cargados desde Firebase.', '#0b7d29');
-      } else {
+      if (!loadedFromFirebase) {
         loadLocalData();
-        showLoadStatus('No se pudo cargar Firebase; usando datos locales.', '#b91c1c');
+        console.warn('No se pudo cargar Firebase; usando datos locales.');
       }
       renderFlyer();
     }
