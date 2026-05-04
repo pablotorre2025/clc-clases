@@ -16,6 +16,63 @@
     .font-lora { font-family: 'Lora', serif; }
     #btn-edit { opacity: 0.15; transition: opacity 0.3s; }
     #btn-edit:hover { opacity: 0.6; }
+    #hero-section {
+      flex: 0 0 55vh;
+      min-height: 320px;
+      max-height: 620px;
+      overflow: hidden;
+      position: relative;
+    }
+    #flyer-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+    @media (max-width: 640px) {
+      #hero-section {
+        flex-basis: 48vh;
+        min-height: 280px;
+      }
+      #flyer-image[data-day="martes"] {
+        object-position: center 18%;
+      }
+      #flyer-image[data-day="viernes"] {
+        object-position: center 24%;
+      }
+      #flyer-image[data-day="domingo"] {
+        object-position: center 20%;
+      }
+    }
+    @media (min-width: 641px) and (max-width: 1024px) {
+      #hero-section {
+        flex-basis: 52vh;
+      }
+      #flyer-image[data-day="martes"] {
+        object-position: center 28%;
+      }
+      #flyer-image[data-day="viernes"] {
+        object-position: center 32%;
+      }
+      #flyer-image[data-day="domingo"] {
+        object-position: center 30%;
+      }
+    }
+    @media (min-width: 1025px) {
+      #hero-section {
+        flex-basis: 58vh;
+      }
+      #flyer-image[data-day="martes"] {
+        object-position: center 35%;
+      }
+      #flyer-image[data-day="viernes"] {
+        object-position: center 38%;
+      }
+      #flyer-image[data-day="domingo"] {
+        object-position: center 34%;
+      }
+    }
   </style>
 </head>
 <body class="bg-gray-100" style="height:100vh; display:flex; flex-direction:column;">
@@ -33,11 +90,11 @@
   </div>
 
   <!-- SECCIÓN IMAGEN -->
-  <div style="flex: 0 0 55vh; overflow:hidden; position:relative;">
+  <div id="hero-section">
     <img id="flyer-image"
          src="https://pablotorre2025.github.io/clc-clases/assets/f1.png"
          alt="Evento"
-         style="width:100%; height:100%; object-fit:cover; display:block;">
+         style="display:block;">
     <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 50%);"></div>
   </div>
 
@@ -295,6 +352,7 @@
       const def = defaultTitles[currentDay];
 
       document.getElementById('flyer-image').src = images[currentDay];
+      document.getElementById('flyer-image').dataset.day = currentDay;
       const title = isEnglish ? (d.titleEn || def.en) : (d.title || def.es);
       document.getElementById('flyer-title').innerHTML   = title.replace(/\n/g, '<br>');
       document.getElementById('flyer-subtitle').textContent = isEnglish ? (d.subtitleEn || '') : (d.subtitle || '');
