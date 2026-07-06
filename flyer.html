@@ -151,9 +151,9 @@
 
     <!-- Tabs de día -->
     <div class="flex gap-2 mb-4">
-      <button data-day="martes"  class="day-tab flex-1 py-1.5 rounded-full text-sm font-semibold transition-all bg-blue-700 text-white">Martes</button>
-      <button data-day="viernes" class="day-tab flex-1 py-1.5 rounded-full text-sm font-semibold transition-all bg-gray-200 text-gray-600">Viernes</button>
-      <button data-day="domingo" class="day-tab flex-1 py-1.5 rounded-full text-sm font-semibold transition-all bg-gray-200 text-gray-600">Domingo</button>
+      <button type="button" data-day="martes"  class="day-tab flex-1 py-1.5 rounded-full text-sm font-semibold transition-all bg-blue-700 text-white">Martes</button>
+      <button type="button" data-day="viernes" class="day-tab flex-1 py-1.5 rounded-full text-sm font-semibold transition-all bg-gray-200 text-gray-600">Viernes</button>
+      <button type="button" data-day="domingo" class="day-tab flex-1 py-1.5 rounded-full text-sm font-semibold transition-all bg-gray-200 text-gray-600">Domingo</button>
     </div>
 
     <h1 id="flyer-title" class="font-lora text-3xl font-bold text-blue-950 mb-1 text-center"></h1>
@@ -291,6 +291,8 @@
     const defaultEventData = {
       title: '', titleEn: '', subtitle: '', subtitleEn: '', date: '', dateEn: '', dateISO: ''
     };
+
+    let editingDay = 'martes';
 
     let eventData = {
       martes:  { ...defaultEventData },
@@ -436,8 +438,14 @@
       document.querySelectorAll('.day-tab').forEach(btn => {
         const active = btn.dataset.day === currentDay;
         btn.className = `day-tab flex-1 py-1.5 rounded-full text-sm font-semibold transition-all ${active ? 'bg-blue-700 text-white' : 'bg-gray-200 text-gray-600'}`;
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
         btn.innerHTML = getTabLabel(btn.dataset.day);
       });
+    }
+
+    function getActiveDayFromUI() {
+      const activeTab = document.querySelector('.day-tab[aria-pressed="true"]') || document.querySelector('.day-tab.bg-blue-700');
+      return activeTab?.dataset?.day || currentDay;
     }
 
     // Tabs de día
@@ -494,6 +502,7 @@
     const modalForm = document.getElementById('modal-form');
 
     document.getElementById('btn-edit').addEventListener('click', () => {
+      currentDay = getActiveDayFromUI();
       document.getElementById('input-password').value = '';
       document.getElementById('pw-error').style.display = 'none';
       modalPw.style.display = 'flex';
@@ -506,10 +515,12 @@
     document.getElementById('btn-pw-ok').addEventListener('click', () => {
       const pw = document.getElementById('input-password').value;
       if (pw === PASS) {
+        editingDay = getActiveDayFromUI();
+        currentDay = editingDay;
         modalPw.style.display = 'none';
-        const d = eventData[currentDay];
+        const d = eventData[editingDay];
         const dayLabels = { martes: 'Martes', viernes: 'Viernes', domingo: 'Domingo' };
-        document.getElementById('form-event-label').textContent = 'Editando: ' + dayLabels[currentDay];
+        document.getElementById('form-event-label').textContent = 'Editando: ' + dayLabels[editingDay];
         document.getElementById('f-title').value       = d.title;
         document.getElementById('f-title-en').value    = d.titleEn;
         document.getElementById('f-subtitle').value    = d.subtitle;
@@ -538,7 +549,8 @@
 
       // Mantener la pestaña seleccionada por el usuario al guardar.
 
-      const d = eventData[currentDay];
+      const targetDay = editingDay || getActiveDayFromUI();
+      const d = eventData[targetDay];
       d.title      = fTitle      || d.title;
       d.titleEn    = fTitleEn    || d.titleEn;
       d.subtitle   = fSubtitle   || d.subtitle;
