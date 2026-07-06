@@ -536,13 +536,7 @@
       const fSubtitle   = document.getElementById('f-subtitle').value.trim();
       const fSubtitleEn = document.getElementById('f-subtitle-en').value.trim();
 
-      // Opción C: detectar día automáticamente y cambiar tab
-      if (pickedDate) {
-        const dow = new Date(pickedDate + 'T12:00:00').getDay();
-        if      (dow === 2) currentDay = 'martes';
-        else if (dow === 5) currentDay = 'viernes';
-        else if (dow === 0) currentDay = 'domingo';
-      }
+      // Mantener la pestaña seleccionada por el usuario al guardar.
 
       const d = eventData[currentDay];
       d.title      = fTitle      || d.title;
