@@ -584,6 +584,27 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      function applyVerseBlockCards() {
+        const content = document.getElementById("content-es");
+        if (!content) return;
+
+        const paragraphs = content.querySelectorAll("p");
+        paragraphs.forEach((p) => {
+          const html = p.innerHTML.trim();
+          const match = html.match(/^<strong>([^<]+)<\/strong><br>([\s\S]+)$/);
+          if (!match) return;
+
+          const reference = match[1].trim();
+          const verseHtml = match[2].trim();
+          if (!(verseHtml.startsWith("“") || verseHtml.startsWith("&quot;"))) return;
+
+          const card = document.createElement("div");
+          card.className = "verse-block";
+          card.innerHTML = `${verseHtml}<div class="text-sm font-semibold mt-2 not-italic text-cyan-900">${reference}</div>`;
+          p.replaceWith(card);
+        });
+      }
+
       const keywords = [
         "Dios", "Jesús", "Espíritu Santo", "Gracia", "Pecado", "Palabras",
         "Lengua", "Logos", "Charis", "Oikodomeō", "Edificar", "Madurez espiritual",
@@ -649,6 +670,7 @@
         });
       }
 
+      applyVerseBlockCards();
       highlightKeywordsInElement(document.getElementById("content-es"));
     });
   </script>
