@@ -25,6 +25,9 @@
     }
     .greek-term { font-style: italic; font-weight: 600; color: #1e40af; }
     .verse-block { background-color: #f0f9ff; border-left: 4px solid #0284c7; padding: 1rem 1.5rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0; font-style: italic; color: #1e3a8a; }
+    .concept-chain { display: flex; flex-direction: column; gap: 0.5rem; margin: 1.5rem 0; }
+    .chain-step { display: flex; align-items: center; gap: 1rem; padding: 0.75rem 1rem; background: white; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    .chain-number { background: #1e40af; color: white; border-radius: 50%; width: 2rem; height: 2rem; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.875rem; flex-shrink: 0; }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
@@ -32,7 +35,7 @@
   <header class="bg-blue-950 text-white shadow-lg sticky top-0 z-50">
     <div class="max-w-5xl mx-auto px-4 py-4 flex flex-wrap justify-between items-center gap-4">
       <a href="../index-en.html" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 py-2 px-4 rounded-lg transition font-medium">
-        ← Back to home
+        ← Back to Home
       </a>
       <div class="flex gap-4 mt-4">
         <button id="increase-text-size" class="bg-green-600 hover:bg-green-700 py-2 px-6 rounded-lg font-bold text-white transition shadow-md">
@@ -51,158 +54,499 @@
       <h1 class="text-4xl md:text-5xl font-bold leading-tight" style="font-family:'Lora',serif;">
         The Power of Your Words
       </h1>
-      <p class="mt-4 text-blue-200 text-lg max-w-2xl mx-auto">How the tongue reveals the heart and transforms (or harms) the community</p>
+      <p class="mt-4 text-blue-200 text-lg max-w-2xl mx-auto">How your tongue reveals your heart and transforms (or damages) the community</p>
     </div>
   </section>
 
   <main class="max-w-4xl mx-auto px-4 sm:px-6 py-12 bg-white shadow-sm -mt-8 rounded-t-3xl border border-gray-100">
 
     <div id="content-en" class="prose-lora space-y-6 text-gray-800">
-
       <p class="font-bold text-xl mb-8">MODULE 3: THE POWER OF YOUR WORDS</p>
 
-      <h4 class="font-bold">INTRODUCTION</h4>
-      <p>The words we speak reveal who we are at the deepest level. More than almost anything else, our speech exposes our spiritual maturity, our true attitudes, and the quality of our inner life with God. This module explores how mastering the tongue is essential for authentic Christian conduct, and how our words carry power: to build up or tear down, to heal or wound, to bring others closer to God or push them away from Him.</p>
-
-      <h4 class="font-bold">SECTION 3.1: ETYMOLOGICAL ANALYSIS OF KEY TERMS</h4>
-
-      <h5 class="font-bold">The Greek Word Logos (λόγος)</h5>
-      <p>The term <span class="greek-term">logos</span> evolved from a primarily mathematical usage to one identified with speech and rationality. At its most basic level, logos means "to gather, collect, count, give account": the act of relating concrete realities to one another.</p>
-      <p>Over time, logos came to communicate the idea of "giving account" in the sense of explaining a story. Once associated with language, logos came to include everything language implies: both the act of sharing information and the thought process that produces language.</p>
-
-      <div class="doctrine-card">
-        <strong>Deeper meaning of Logos</strong>
-        <ul class="list-disc pl-6 space-y-2 mt-3 text-gray-700">
-          <li>In its common sense, it refers to a word, a discourse, or the act of speaking.</li>
-          <li>In its particular sense, it refers to God's special revelation to people.</li>
-          <li>In its unique sense, it embodies God's revelation in Jesus the Messiah.</li>
-        </ul>
-      </div>
-
-      <p><strong>Theological implication:</strong> when we speak, we participate in a function that is profoundly spiritual. Our words can reveal truth, just as God's Logos reveals divine truth. This raises the responsibility of Christian speech to a completely new level.</p>
-
-      <h5 class="font-bold">The Greek Word Charis (χάρις): Grace in Speech</h5>
-      <p>The Greek term <span class="greek-term">charis</span> refers to unmerited favor, while the Hebrew concept of <span class="greek-term">shalom</span> expresses fullness and well-being.</p>
-      <p>When we speak words full of grace, we are not merely saying pleasant things. We offer unmerited favor through our words. Grace-filled speech means giving more than the other person deserves: encouragement when we could criticize, forgiveness when we could condemn, hope when we could discourage.</p>
-
-      <h5 class="font-bold">The Greek Word Oikodomeō (οἰκοδομέω): To Build Up</h5>
-      <p><span class="greek-term">Oikodomeō</span> literally means "to build a house" (<em>oikos</em> = house, <em>domeō</em> = build). In spiritual context, it means building the character, faith, and spiritual growth of others through our words.</p>
-      <p>Paul teaches that good speech has three features: 1) it builds up, 2) it fits the need of the moment, and 3) it gives grace to those who hear.</p>
-
-      <h4 class="font-bold">SECTION 3.2: THE TONGUE AS A REVEALER OF SPIRITUAL MATURITY</h4>
-
-      <h5 class="font-bold">Speech Reveals the Inner Life</h5>
-      <p>Our speech reveals our level of maturity, attitudes, and spiritual life as believers. This truth is unsettling because it means we cannot hide who we truly are through our words. What comes out of our mouth is a direct reflection of what lives in our heart.</p>
-
-      <h5 class="font-bold">The Teacher's Special Responsibility</h5>
-      <p>The teacher carries greater responsibility because teaching requires much speaking, and controlling speech is difficult. James warned: "Not many of you should become teachers." He also explained: "If anyone does not stumble in what he says, he is a perfect man, able also to bridle his whole body."</p>
-      <p>This suggests that control of the tongue is a gateway to mastery over the rest of life. If we can govern our mouth, we can govern any other area.</p>
-
-      <h5 class="font-bold">The Tongue as Fire</h5>
-      <div class="verse-block">
-        "The tongue is a fire, a world of unrighteousness... with it we bless our Lord and Father, and with it we curse people who are made in the likeness of God." — James 3:6,9
-      </div>
-      <p>The paradox is striking: the same tongue that blesses God can curse His image-bearers. This reveals a deep spiritual inconsistency that only inward transformation can heal.</p>
-
-      <h4 class="font-bold">SECTION 3.3: WORDS THAT BUILD UP</h4>
-
-      <h5 class="font-bold">Characteristics of Edifying Speech</h5>
-      <p>Paul teaches that good speech 1) builds up, 2) meets the need of the moment, and 3) gives grace to listeners (Ephesians 4:29).</p>
-      <p>Examples include words of encouragement, motivation, affection, admiration, gratitude, commitment, support, and enthusiasm; words that ask for help and counsel, words that ask forgiveness, words that heal wounds, words that acknowledge human fragility, and words that share joy, dreams, and goals.</p>
-      <p>These words are not passive. They are active, dynamic, and transformative. Each one performs a specific function in the life of the hearer.</p>
-
-      <h5 class="font-bold">Timing and Context</h5>
-      <p>A correct word at the wrong time can be as harmful as an incorrect word. What we say must be timely and fitted to others' real needs.</p>
-      <p>This requires spiritual discernment. We should ask: "Is this the right moment? Is this the word this person needs to hear right now?"</p>
-
-      <h4 class="font-bold">SECTION 3.4: WORDS THAT DESTROY</h4>
-
-      <h5 class="font-bold">The Nature of Corrupt Speech</h5>
-      <p>The old self speaks rotten things, but the new self speaks what builds up. The biblical idea of corrupt speech describes language that is spiritually decayed and offensive. The apostle is not speaking only about vulgar words, but about anything that does not contribute to the good of others: words that attack, humiliate, blame, mock, threaten, and wound.</p>
-
-      <h5 class="font-bold">Specific Forms of Harm</h5>
-      <ul class="list-disc pl-8 space-y-2">
-        <li><strong>Sarcasm:</strong> wounds under the appearance of humor.</li>
-        <li><strong>Offensive humor:</strong> ridicules others for laughs.</li>
-        <li><strong>Murmuring:</strong> breaks friendships in secret.</li>
-        <li><strong>Destructive criticism:</strong> judges without offering solutions.</li>
-        <li><strong>Gossip:</strong> spreads negative information and damages reputations.</li>
-      </ul>
-
-      <h5 class="font-bold">Practical Rules to Avoid Harm</h5>
-      <p>A wise rule is to avoid speaking negatively about other people. If someone believes there is a real responsibility to report an issue, it should be shared only with a leader who can help resolve the situation.</p>
-      <p>If it is absolutely necessary to mention another person's fault, it should be done with a church leader or mature believer who can help restore and solve the matter. In general, negative information should stay within the smallest circle possible.</p>
-
-      <h4 class="font-bold">SECTION 3.5: DESTRUCTIVE IMPACT ON THE COMMUNITY</h4>
-
-      <h5 class="font-bold">Wrong Communication Destroys Churches</h5>
-      <p>Wrong communication frequently destroys communities of faith. Every believer must establish practical boundaries. As a general practice, we should not criticize others without redemptive purpose.</p>
-      <p>This is an uncomfortable truth: more churches divide because of the tongue than because of doctrine. Destructive communication is a spiritual weapon used effectively by the enemy.</p>
-
-      <h5 class="font-bold">The Biblical Process of Resolution</h5>
-      <p>If we become aware that someone has sinned or failed, we should speak directly with that person before informing others, following principles such as Galatians 6:1 and Matthew 18:15-17.</p>
-      <p>The process is clear: first, private confrontation; second, if there is no repentance, involve witnesses; third, only then, bring it before the church. Skipping these steps violates biblical order.</p>
-
-      <h4 class="font-bold">SECTION 3.6: THE TRANSFORMING POWER OF WORDS</h4>
-
-      <h5 class="font-bold">Our Words Carry Spiritual Power</h5>
-      <p>How a person uses the gift of speech reveals whether they are a doer of the Word or not. A doer of the Word listens more and speaks less. They learn to restrain the tongue, use communication as a gift for teaching, and with it bless both God and people.</p>
-
-      <h5 class="font-bold">Verbal Testimony and Evangelism</h5>
-      <p>Our words are a means through which God works. When we verbalize with humility what God has done in us, we allow the Holy Spirit to use our testimony to draw others toward Christ.</p>
-
-      <h4 class="font-bold">SECTION 3.7: MOTIVATION TO CONTROL THE TONGUE</h4>
-
-      <h5 class="font-bold">The Presence of the Holy Spirit</h5>
-      <p>What motivates the believer to govern emotions and speech is the presence of the Spirit. The Spirit is holy and has come so that believers may be holy as well. He is the seal and guarantee of future blessing. God Himself dwells in the believer, and it deeply matters to Him how the new creation lives while being conformed to the image of His Son.</p>
-      <p>This is the deepest motivation: we do not control our tongue out of fear of punishment, but out of reverence and love for God's presence in us.</p>
-
-      <h4 class="font-bold">SECTION 3.8: SYNTHESIS AND APPLICATION</h4>
-
-      <h5 class="font-bold">Summary of the Power of Words</h5>
-      <ul class="list-disc pl-8 space-y-2">
-        <li><strong>Revealing:</strong> words expose who we truly are.</li>
-        <li><strong>Powerful:</strong> words can build up or destroy.</li>
-        <li><strong>Accountable:</strong> we will be judged for our words.</li>
-        <li><strong>Redemptive:</strong> words can become instruments of God's grace.</li>
-        <li><strong>Reflective:</strong> words require discernment and timing.</li>
-      </ul>
-
-      <div class="resource-section shadow-sm border border-blue-100">
-        <h5 class="mt-0 text-blue-900 border-b border-blue-200 pb-2">KEY PASSAGES TO MEMORIZE</h5>
-        <ul class="space-y-3 mt-4 text-gray-800">
-          <li><strong>Ephesians 4:29</strong> — "Let no corrupting talk come out of your mouths, but only such as is good for building up... that it may give grace to those who hear."</li>
-          <li><strong>James 3:2-12</strong> — Control of the tongue as a sign of maturity.</li>
-          <li><strong>Proverbs 10:19</strong> — "When words are many, transgression is not lacking, but whoever restrains his lips is prudent."</li>
-          <li><strong>Proverbs 15:1</strong> — "A soft answer turns away wrath, but a harsh word stirs up anger."</li>
-          <li><strong>Proverbs 18:21</strong> — "Death and life are in the power of the tongue."</li>
-          <li><strong>Colossians 4:6</strong> — "Let your speech always be gracious, seasoned with salt."</li>
-        </ul>
-      </div>
-
-      <div class="question-box">
-        <p>REFLECTIVE QUESTIONS BY SECTION</p>
-        <ul class="list-disc pl-6 space-y-2 text-gray-700">
-          <li><strong>Section 3.1:</strong> How does the fact that logos means "to give account" reshape your understanding of responsibility in speech?</li>
-          <li><strong>Section 3.2:</strong> What do your words reveal about your spiritual maturity? Are there inconsistencies?</li>
-          <li><strong>Section 3.3:</strong> Which words do you most need to hear right now? How could you offer those words to others?</li>
-          <li><strong>Section 3.4:</strong> What is your most common form of destructive speech: sarcasm, criticism, gossip, or something else?</li>
-          <li><strong>Section 3.5:</strong> Have you seen destructive communication damage a community? What happened?</li>
-          <li><strong>Section 3.6:</strong> How have you seen words carry transforming power?</li>
-          <li><strong>Section 3.7:</strong> How should the Holy Spirit's presence reshape your speech?</li>
-        </ul>
-      </div>
-
-      <div class="question-box">
-        <p>WEEKLY CHALLENGE</p>
-        <ol class="list-decimal pl-6 space-y-2 text-gray-700">
-          <li><strong>Speech audit:</strong> for three days, listen carefully to your own speech and track how often you speak to build up versus tear down.</li>
-          <li><strong>Words of blessing:</strong> intentionally bless one person each day with specific words of encouragement.</li>
-          <li><strong>Strategic silence:</strong> when you feel the impulse to criticize, stay silent and observe what happens.</li>
-          <li><strong>Biblical confrontation:</strong> if a situation requires correction, follow the process in Matthew 18.</li>
+      <p class="font-bold text-xl mb-8">INTRODUCTION</p>
+      <p>Words are not something small or unimportant. What a person says reveals what they carry within. Many times we try to appear in front of others, but sooner or later our words reveal our true attitudes, our level of maturity, and the condition of our heart before God. In other words, the mouth speaks what the heart harbors.</p>
+      <p>For this reason, the Bible treats this subject with great seriousness. It not only teaches that our words affect our relationship with other people, but also that they affect our relationship with God. One word can bring peace or conflict, encouragement or sadness, hope or discouragement. Sometimes a single phrase can lift someone for many days, but also a single phrase can wound a person deeply.</p>
+      <p>This module will help us understand that speaking well does not simply mean "saying nice things." Speaking well, according to the Bible, means using your mouth in a way that honors the Lord, blesses others, and reflects a life transformed by the Holy Spirit. For this reason, learning about our words is not a secondary topic; it is part of practical Christian life.</p>
+      <p>Biblical teaching is clear: our words can build up or tear down, heal or wound, draw others closer to God or push them away from Him. When a person learns to care for their mouth, they also begin to show self-control, humility, and spiritual maturity. For that reason, studying the power of words is studying a very important part of Christian character.</p>
+      <h5 class="font-bold">Base text for the introduction</h5>
+      <p><strong>Proverbs 18:21 (NKJV)</strong><br>"Death and life are in the power of the tongue,<br>And those who love it will eat its fruits."</p>
+      <p><strong>Proverbs 18:21 (NCV)</strong><br>"Words can bring life or death; talking too much leads to ruin."</p>
+      <p>This proverb teaches us that our words produce results. The expression "life and death" does not limit itself only to the physical; it also speaks of the emotional, spiritual, and relational impact that our words have. With our mouth we can comfort someone, but we can also dampen their spirit. We can help heal a relationship, or worsen a wound that already existed.</p>
+      <h5 class="font-bold">Cross-reference</h5>
+      <p><strong>Matthew 12:34–37 (NKJV)</strong><br>"34 Brood of vipers! How can you, being evil, speak good things? For out of the abundance of the heart the mouth speaks.<br>35 A good man out of the good treasure of his heart brings forth good things, and an evil man out of the evil treasure brings forth evil things.<br>36 But I say to you that for every idle word men may speak, they will give account of it in the day of judgment.<br>37 For by your words you will be justified, and by your words you will be condemned."</p>
+      <p>Jesus taught that the mouth expresses what is in the heart. When the heart is full of anger, pride, bitterness, or criticism, that shows in the way of speaking. But when the heart is being transformed by God, that also shows because cleaner, wiser, and more grace-filled words begin to flow out. This passage also reminds us that God takes our words seriously and that we should not speak carelessly.</p>
+      <h5 class="font-bold">Supporting Biblical story</h5>
+      <p>A very clear example is seen in Peter. He loved Jesus, but in a moment of fear he denied Him with his words. His mouth said something that did not reflect faithfulness, but fear. However, later Jesus restored him. The same Peter who denied Jesus was lifted up by the Lord and became a useful instrument in His hands. This story teaches us two important truths: first, our words can fail; second, God can restore us and teach us to speak in a different way.</p>
+      <h5 class="font-bold">Application</h5>
+      <p>Each believer must ask themselves honestly: What kind of fruit are my words producing in my home, in my family, in the church, and in my daily conversations? It's not enough to say "I didn't mean to do it." Many times the damage is already done. For this reason we need to ask the Lord to deal with our heart, because when the heart changes, the way of speaking also changes.</p>
+      <h4 class="font-bold uppercase">SECTION 3.1: ETYMOLOGICAL ANALYSIS OF KEY WORDS</h4>
+      <p>In this section we are going to learn three important words that help us understand better the topic of this module. These words come from Greek, the language in which the New Testament was written, and although they are ancient, their teaching remains very practical for us today. We will not study them in a complicated way, but in a simple way, to see how they illuminate our daily life.</p>
+      <p>These words are <strong>Logos</strong>, <strong>Charis</strong>, and <strong>Oikodomeō</strong>. All three help us understand that speaking is not simply emitting sounds. Speaking is communicating truth, extending grace, and building the lives of others. When we understand this, we begin to see our words with more responsibility before God.</p>
+      <h5 class="font-bold">KEY WORDS</h5>
+      <p><strong>Logos (λόγος)</strong><br><strong>Charis (χάρις)</strong><br><strong>Oikodomeō (οἰκοδομέω)</strong></p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">Logos (λόγος)</h5>
+      <p>The Greek word <strong>logos</strong> can be translated as word, message, discourse, or explanation. In simple terms, it refers to what a person expresses with their mouth. But in the Bible this word also has special depth, because it is used to speak of God's revelation and, in a unique way, of Jesus Christ as the Word of God.</p>
+      <p>This means that words are not something empty. Through the word, truth is communicated, thought is revealed, and what is inside is made known. When a person speaks, they are showing something of themselves. And when God spoke through His Son, He showed perfectly who He is.</p>
+      <h5 class="font-bold">Base text</h5>
+      <p><strong>John 1:1–4 (NKJV)</strong><br>"1 In the beginning was the Word, and the Word was with God, and the Word was God.<br>2 He was in the beginning with God.<br>3 All things were made through Him, and without Him nothing was made that was made.<br>4 In Him was life, and the life was the light of men."</p>
+      <p>Here the word "Word" precisely translates <strong>logos</strong>. John teaches that Jesus not only brings a message from God, but that He Himself is the Word of God made visible. This greatly elevates the importance of words. If God wanted to reveal Himself through the Logos, then we also must treat our words with reverence and responsibility.</p>
+      <p><strong>Key word:</strong><br><strong>Logos = word, message, explanation</strong></p>
+      <h5 class="font-bold">Application of Logos</h5>
+      <p>Every time you speak, you are giving a message. Even when you don't preach or teach publicly, your way of speaking is communicating something. Your words say whether there is peace or anger in your heart, whether there is humility or pride, whether there is faith or bitterness. For this reason, as believers, we must learn to use our word in a way that reflects Christ and not just our emotions of the moment.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">Charis (χάρις)</h5>
+      <p>The word <strong>charis</strong> means grace, unmerited favor, kindness that a person receives without having earned it. In Christian life, this word is precious because it describes how God treats us: not according to what we deserve, but according to His love and mercy. When this concept is applied to our words, we understand that speaking with grace is not only being kind, but treating the other person better than they deserve.</p>
+      <p>Many times a person fails, makes a mistake, or hurts us. Our natural reaction can be to respond with harshness, sarcasm, or condemnation. But grace teaches us to respond differently. Speaking with grace is offering words that help restore, that give hope, that open a door for repentance and change.</p>
+      <h5 class="font-bold">Base text</h5>
+      <p><strong>Ephesians 4:29 (NKJV)</strong><br>"Let no corrupt word proceed out of your mouth, but what is good for necessary edification, that it may impart grace to the hearers."</p>
+      <p><strong>Ephesians 4:29 (NCV)</strong><br>"When you talk, do not say harmful things, but say what people need—words that will help others become stronger."</p>
+      <p>Paul teaches here that the Christian must not speak in just any way. The correct word is not only one that avoids the bad, but also one that does good. When our words "impart grace," they bless the one who listens. Instead of leaving the person more wounded, they leave them more encouraged, more guided, and more open to God's work.</p>
+      <p><strong>Key word:</strong><br><strong>Charis = grace, unmerited favor</strong></p>
+      <h5 class="font-bold">Cross-reference</h5>
+      <p><strong>Colossians 4:6 (NKJV)</strong><br>"Let your speech always be with grace, seasoned with salt, that you may know how you ought to answer each one."</p>
+      <p>This quote confirms the same truth. The word of the believer should always be "with grace," that is, marked by the kindness of God. It also says "seasoned with salt," which speaks of wise, useful, pleasant, and appropriate words. It's not about speaking a lot, but about speaking correctly.</p>
+      <h5 class="font-bold">Application of Charis</h5>
+      <p>Speaking with grace means, for example, telling someone: "I know you made a mistake, but there is still hope," instead of saying: "You never change." It means correcting without crushing, exhorting without humiliating, and counseling without hurting. A word full of grace can open a person's heart to listen to God.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">Oikodomeō (οἰκοδομέω)</h5>
+      <p>The word <strong>oikodomeō</strong> literally means to build a house. In the New Testament it is used spiritually to speak of building, strengthening, or lifting up the life of another person. Just as a house is built gradually, so the faith, encouragement, and character of a person can be strengthened by correct words.</p>
+      <p>This helps us understand Ephesians 4:29 better. Paul is not only saying that we should stop speaking badly. He is also teaching that our words should serve to build something good in others. A conversation can leave someone stronger in faith, more peaceful in their heart, and more willing to move forward.</p>
+      <h5 class="font-bold">Related base text</h5>
+      <p><strong>Ephesians 4:29 (NKJV)</strong><br>"Let no corrupt word proceed out of your mouth, but what is good for necessary edification, that it may impart grace to the hearers."</p>
+      <p>The word "edification" comes precisely from this idea of building. God wants our words to be like construction tools, not instruments of destruction. Each phrase that comes from our mouth can lay a brick of encouragement or remove a stone and weaken another.</p>
+      <p><strong>Key word:</strong><br><strong>Oikodomeō = to build, to construct, to lift up</strong></p>
+      <h5 class="font-bold">Supporting Biblical story</h5>
+      <p>A beautiful example of grace that builds us see in Jesus and the woman caught in adultery. Others came with words of condemnation and stones in hand. They wanted to destroy her publicly. But Jesus spoke with truth and grace. He did not approve of the sin, but neither did he crush the woman. He told her: "Neither do I condemn you; go and sin no more." Thus He showed how a holy word can also be a restoring word.</p>
+      <h5 class="font-bold">Application of Oikodomeō</h5>
+      <p>Each believer should ask themselves: when I speak with my family, with my brothers in the church, or with other people, am I building or destroying? Sometimes we think that only preaching builds, but that's not so. Also builds a word of encouragement, a phrase of gratitude, a correction made with love, a prayer spoken at the right moment, or a gentle answer when another expected harshness.</p>
+      <div class="bg-gray-50 p-6 rounded-lg mb-8">
+        <h4 class="font-bold border-b border-gray-200 pb-2 mb-4">SECTION SUMMARY</h4>
+        <p>The <strong>Introduction</strong> teaches us that words reveal the heart and produce fruit. <strong>Section 3.1</strong> adds that speaking involves spiritual responsibility, because words communicate truth, transmit grace, and have the capacity to build others.</p>
+        <p>For this reason, the believer must learn to use his or her mouth in a way that reflects Christ. It is not simply about avoiding bad words; it is about speaking with truth, with grace, and with the purpose of building.</p>
+        <h5 class="font-bold">Key words to remember</h5>
+        <p><strong>Logos</strong> = word, message, explanation<br><strong>Charis</strong> = grace, unmerited favor<br><strong>Oikodomeō</strong> = to build, to construct, to lift up</p>
+        <h5 class="font-bold">Questions for reflection</h5>
+        <ol>
+          <li>What do my words reveal about what is in my heart?</li>
+          <li>Am I using my words to give grace or to hurt?</li>
+          <li>Are my words building the life of my family and church, or wearing it down?</li>
         </ol>
       </div>
-
+      <h4 class="font-bold">SECTION 3.2</h4>
+      <h4 class="font-bold">The tongue as a revealer of spiritual maturity</h4>
+      <p>In this section we are going to study a very important truth: the way we speak reveals our level of spiritual maturity. Many people think that spirituality is measured only by how much someone prays, how much they know the Bible, or how many years they have been in church. But the Bible also teaches that the mouth reveals much about the real state of the heart. A person can appear very spiritual on the outside, but their words can show anger, pride, harshness, or lack of self-control.</p>
+      <p>This means that speech is not just a matter of education or habit. It is a spiritual matter. What comes out of our mouth shows what is happening inside us. If the heart is full of peace, humility, and fear of God, that will show in the way of speaking. But if the heart is full of bitterness, criticism, or impatience, that will also show. For this reason, learning to control the tongue is not a small detail; it is an important sign of Christian growth.</p>
+      <p>The Bible teaches that the tongue can bless, but it can also destroy. With the same mouth a person can sing to the Lord on Sunday and then speak harshly in the house, criticize another person, or wound with sharp words. That contradiction reveals that there are still areas of the heart that need to be surrendered to God. For this reason, this section not only calls us to speak better, but to allow the Lord to transform our interior.</p>
+      <h5 class="font-bold">KEY WORDS</h5>
+      <p><strong>Spiritual maturity</strong><br><strong>Self-control</strong><br><strong>Tongue</strong><br><strong>Heart</strong><br><strong>Fire</strong></p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">The mouth reveals the heart</h5>
+      <p>Jesus taught that the mouth speaks what is in the heart. This truth is simple, but very profound. Sometimes a person says: "I said it without thinking," but many times that means what really was stored inside came out. Hasty, harsh, or hurtful words often reveal emotions and attitudes that were already in the heart, even if they were not always visible at first glance.</p>
+      <h5 class="font-bold">Base text</h5>
+      <p><strong>Matthew 12:34 (NKJV)</strong><br>"For out of the abundance of the heart the mouth speaks."</p>
+      <p><strong>Matthew 12:34 (NCV)</strong><br>"The things that come out of your mouth come from your heart."</p>
+      <p>This text teaches us that the mouth functions as a window of the heart. If we want to change our way of speaking, it is not enough to try to sound better on the outside; we need God to cleanse what is inside. True transformation begins in the heart and then is reflected in the words.</p>
+      <p><strong>Key word:</strong><br><strong>Heart = the interior of the person; thoughts, emotions, intentions</strong></p>
+      <h5 class="font-bold">Application</h5>
+      <p>When someone reacts with shouting, insults, or words of contempt, they are not just showing a problem with language, but a deeper problem in the heart. For this reason, before correcting only the words, we must ask the Lord to deal with our emotions, our anger, our pride, and our bitterness.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">Controlling the tongue shows maturity</h5>
+      <p>James teaches that one of the clearest signs of spiritual maturity is the ability to control what we say. He is not saying that a mature person never fails, but that they understand the value of their words and learn to put a bridle on their mouth. The mature believer does not speak everything they think, nor react with any emotion, nor use their tongue carelessly.</p>
+      <h5 class="font-bold">Base text</h5>
+      <p><strong>James 3:2 (NKJV)</strong><br>"For we all stumble in many things. If anyone does not stumble in word, he is a perfect man, able also to bridle the whole body."</p>
+      <p><strong>James 3:2 (NCV)</strong><br>"We all make many mistakes. But if someone does not make mistakes in what he says, he is perfect."</p>
+      <p>Here the word "perfect" does not mean a person without any sin. In this context, it speaks of a mature person, complete, who has learned to grow spiritually. James shows that if someone learns to control their mouth, they are also learning to control other areas of their life.</p>
+      <p><strong>Key words:</strong><br><strong>Spiritual maturity = real growth in Christian life</strong><br><strong>Self-control = ability to control oneself with God's help</strong></p>
+      <h5 class="font-bold">Cross-reference</h5>
+      <p><strong>Proverbs 17:27–28 (NKJV)</strong><br>"27 He who has knowledge spares his words,<br>And a man of understanding is of a calm spirit.<br>28 Even a fool is counted wise when he holds his peace;<br>When he shuts his lips, he is considered perceptive."</p>
+      <p>These verses teach something very practical: a wise person does not need to speak too much to show value. Sometimes true wisdom is demonstrated by being silent. In a world where many believe they must always respond immediately, the Bible teaches that knowing how to be silent is also a sign of prudence.</p>
+      <h5 class="font-bold">Application</h5>
+      <p>A mature person learns to ask themselves: "Should I say this? Is it true? Is it necessary? Will it help someone?" Not everything we think should come out of our mouth. Many discussions in families, in churches, and in friendships would have been avoided if someone had had the humility to keep silent for a moment and pray before responding.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">The special responsibility of the teacher</h5>
+      <p>James also says that those who teach have an even greater responsibility. This does not mean that only teachers should care for their tongue, but that whoever speaks more influences more, and therefore can also cause more damage if not careful. A wrong word spoken by a person with influence can hurt, confuse, or discourage many.</p>
+      <h5 class="font-bold">Base text</h5>
+      <p><strong>James 3:1 (NKJV)</strong><br>"My brethren, let not many of you become teachers, knowing that we shall receive a stricter judgment."</p>
+      <p>This verse does not seek to dampen the desire to teach, but to remind us that teaching is a serious responsibility. The Christian teacher not only communicates biblical information; they also model character, spirit, and way of speaking. For this reason, the teacher needs to constantly ask God's help to speak with truth, with humility, and with self-control.</p>
+      <p><strong>Key word:</strong><br><strong>Teacher = a person who instructs others in the truth of God</strong></p>
+      <h5 class="font-bold">Application</h5>
+      <p>Although this warning applies especially to teachers and leaders, it can also be taught to all believers. Every person influences someone: children, grandchildren, family, neighbors, brothers and sisters in the church. For this reason, each believer must understand that their words carry weight and can leave deep marks on others.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">The tongue as fire</h5>
+      <p>James uses a very strong image to describe the tongue: he compares it to fire. This figure helps us understand that something small can cause very great damage. A small spark can burn an entire forest; in the same way, a single phrase spoken with anger, gossip, or lies can damage a family, a friendship, or even a congregation.</p>
+      <h5 class="font-bold">Base text</h5>
+      <p><strong>James 3:5–6 (NKJV)</strong><br>"5 Even so the tongue is a little member and boasts of great things. See how great a forest a little fire kindles!<br>6 And the tongue is a fire, a world of iniquity. The tongue is so set among our members that it defiles the whole body, and sets on fire the course of nature, and it is set on fire by hell."</p>
+      <p><strong>James 3:9–10 (NKJV)</strong><br>"9 With it we bless our God and Father, and with it we curse men, who have been made in the similitude of God.<br>10 Out of the same mouth proceed blessing and cursing. My brethren, these things ought not to be so."</p>
+      <p>These verses show a serious contradiction. It is not right that one and the same mouth worships God and then humiliates, criticizes, or curses people made in His image. James does not present this as something normal, but as something that must be corrected. An uncontrolled tongue can contaminate a person's entire life and also the environment of those around them.</p>
+      <p><strong>Key word:</strong><br><strong>Fire = image of rapid and dangerous destruction</strong></p>
+      <h5 class="font-bold">Cross-reference</h5>
+      <p><strong>Proverbs 15:1 (NKJV)</strong><br>"A soft answer turns away wrath,<br>But a harsh word stirs up anger."</p>
+      <p>This proverb teaches us that words can put out a fire or fan it more. A gentle answer can stop an argument, but a harsh word can make it worse. Here we see again the real power of the tongue in daily life.</p>
+      <h5 class="font-bold">Supporting Biblical story</h5>
+      <p>A story that helps us understand this topic is when the disciples wanted to call fire down from heaven on a Samaritan village because they did not receive Jesus. They reacted with anger and wanted to respond with destruction. But Jesus rebuked them. This story shows that an impulsive reaction can seem very spiritual on the outside, but in reality it can reveal a heart that is still immature and in need of correction.</p>
+      <h5 class="font-bold">Application</h5>
+      <p>Many family and congregational conflicts do not begin with a great offense, but with a phrase spoken without wisdom. A harsh comment, sarcasm, criticism spoken at the wrong time, or a humiliating word can leave deep wounds. For this reason, the believer must learn to stop before speaking and ask themselves if their words will bring peace or bring fire.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <div class="bg-gray-50 p-6 rounded-lg mb-8">
+        <h4 class="font-bold border-b border-gray-200 pb-2 mb-4">SECTION SUMMARY</h4>
+        <p>Section 3.2 teaches us that the tongue reveals the spiritual maturity of the person. What we say shows what is in the heart. James teaches that control of the tongue is an important sign of Christian growth and that those who teach must take even greater care of their way of speaking. He also warns us that the tongue can be like fire: something small, but with great capacity to destroy.</p>
+        <p>For this reason, the believer should not be satisfied with speaking "less badly," but should ask God for an inner transformation that produces clean, wise, and self-controlled words.</p>
+        <h5 class="font-bold">Key words to remember</h5>
+        <p><strong>Spiritual maturity</strong> = real growth in Christian life<br><strong>Self-control</strong> = ability to control oneself with God's help<br><strong>Heart</strong> = the interior of the person; thoughts, emotions, intentions<br><strong>Teacher</strong> = a person who instructs others in the truth of God<br><strong>Fire</strong> = image of rapid and dangerous destruction</p>
+        <h5 class="font-bold">Questions for reflection</h5>
+        <ol>
+          <li>What do my words reveal about my heart?</li>
+          <li>At what times do I speak without self-control?</li>
+          <li>Am I using my tongue to bless or to hurt?</li>
+          <li>What does God need to change within me so that my way of speaking also changes?</li>
+        </ol>
+      </div>
+      <h4 class="font-bold">SECTION 3.3</h4>
+      <h4 class="font-bold">Words that build up</h4>
+      <p>In this section we are going to study how the words of a believer who wants to please God and bless others should be. The Bible not only commands us to avoid bad words; it also teaches us to use our mouth to do good. Speaking as Christians does not simply mean stopping from offending, but learning to say words that help, lift up, encourage, and bring grace to those who hear us.</p>
+      <p>Many times we think that building up others only happens when someone preaches, teaches, or gives very deep advice. But the truth is that a simple word, said with love and at the right time, can strengthen a person very much. A phrase like "God is with you," "thank you for your effort," "I forgive you," or "let's pray" can bring comfort, peace, and new strength. For this reason, speaking well is also a form of serving the Lord and ministering to others.</p>
+      <p>This section reminds us that the words of the believer must be useful, timely, and full of grace. It is not about speaking a lot, but about speaking in such a way that what is said leaves something good in the life of the other person. When our words reflect the character of Christ, they become instruments of blessing.</p>
+      <h5 class="font-bold">KEY WORDS</h5>
+      <p><strong>Building up</strong><br><strong>Grace</strong><br><strong>Encouragement</strong><br><strong>Opportunity</strong><br><strong>Discernment</strong></p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">Speaking to build up</h5>
+      <p>The main teaching of this section is found in Ephesians 4:29. There the apostle Paul explains that the mouth of the believer should not produce corruption, but building up. This means that our words should help build the lives of others, not weaken them. Building up is like constructing a house brick by brick. In the same way, a person can be strengthened gradually by correct, wise, and loving words.</p>
+      <h5 class="font-bold">Base text</h5>
+      <p><strong>Ephesians 4:29 (NKJV)</strong><br>"Let no corrupt word proceed out of your mouth, but what is good for necessary edification, that it may impart grace to the hearers."</p>
+      <p><strong>Ephesians 4:29 (NCV)</strong><br>"When you talk, do not say harmful things, but say what people need—words that will help others become stronger."</p>
+      <p>This verse shows us three characteristics of a good word. First, it must be a word that builds. Second, it must meet the need of the moment. Third, it must give grace to those who listen. This means that the correct word is not only true, but also useful, timely, and kind.</p>
+      <p><strong>Key word:</strong><br><strong>Building up = to build, strengthen, lift up the life of another person</strong></p>
+      <h5 class="font-bold">Application</h5>
+      <p>Before speaking, the believer should learn to ask themselves: "Will what I am going to say help or harm? Will it strengthen or discourage?" This simple practice can change many conversations in the home, in the church, and in any relationship.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">Words that give grace</h5>
+      <p>The word "grace" in this context means that our words should transmit something of God's kind treatment. The other person does not always deserve a soft, patient, or hopeful response, but precisely there grace appears. Speaking with grace does not mean approving sin or avoiding truth. It means speaking the truth with the right spirit, in such a way that the other person has opportunity to be restored and not simply humiliated.</p>
+      <h5 class="font-bold">Cross-reference</h5>
+      <p><strong>Colossians 4:6 (NKJV)</strong><br>"Let your speech always be with grace, seasoned with salt, that you may know how you ought to answer each one."</p>
+      <p><strong>Colossians 4:6 (NCV)</strong><br>"When you talk, you should always be kind and pleasant so you will have the right answer for everyone."</p>
+      <p>Here Paul adds a very beautiful expression: "seasoned with salt." This figure teaches us that our words should not be dry, harsh, or heavy, but wise, pleasant, and appropriate. Just as salt gives flavor to food, a word full of grace can give relief, direction, and encouragement to those who hear it.</p>
+      <p><strong>Key word:</strong><br><strong>Grace = unmerited favor, kindness that is also expressed in speaking</strong></p>
+      <h5 class="font-bold">Application</h5>
+      <p>Speaking with grace can look very simple. For example, when someone fails, instead of saying "you are always the same," you can say: "I know you made a mistake, but God can help you get up." When someone is sad, instead of ignoring them, you can speak gently and remind them of the Lord's promises. These are words that give grace.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">Words of encouragement and strengthening</h5>
+      <p>A person may go through struggles, tiredness, pain, or discouragement, and at those moments a correct word can make a great difference. The Bible calls believers to encourage and build up one another. This reminds us that we were not called only to receive encouragement, but also to give it.</p>
+      <h5 class="font-bold">Cross-reference</h5>
+      <p><strong>1 Thessalonians 5:11 (NKJV)</strong><br>"Therefore comfort each other and edify one another, just as you are doing."</p>
+      <p>This verse shows that mutual encouragement should be a normal practice in Christian life. Instead of looking for mistakes to point out, we should learn to look for opportunities to strengthen the faith and heart of others. This does not mean closing our eyes to sin, but having a spirit of help and not of destruction.</p>
+      <h5 class="font-bold">Application</h5>
+      <p>Some words that build up can be very simple: "thank you," "I am here for you," "I am praying for you," "God will help you," "you did well," "I appreciate you." Sometimes a person does not need a long sermon; they need the right word to remind them that they are not alone.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">The importance of the right moment</h5>
+      <p>It is not enough to say something good; when and how you say it also matters. A correct word at the wrong time may not produce the expected good. For this reason, besides having good intentions, the believer needs spiritual discernment. Discernment means knowing what to say, when to say it, and how to say it.</p>
+      <p>The same Ephesians 4:29 speaks of "necessary edification." This implies that our words must meet the real need of the moment. Not every person needs the same thing. Sometimes someone needs comfort; other times they need correction; other times they need silence accompanied by prayer. Christian wisdom consists of learning to recognize that need.</p>
+      <p><strong>Key words:</strong><br><strong>Opportunity = the right moment to say something</strong><br><strong>Discernment = ability to recognize what the other person needs</strong></p>
+      <h5 class="font-bold">Cross-reference</h5>
+      <p><strong>Proverbs 15:23 (NKJV)</strong><br>"A man has joy by the answer of his mouth,<br>And a word spoken in due season, how good it is!"</p>
+      <p>This proverb highlights the value of a word spoken at the right time. Not only the content matters, but also the moment. A wise word, spoken when the person really needs it, can bring much joy and help.</p>
+      <h5 class="font-bold">Application</h5>
+      <p>Before speaking, it is good to ask yourself: "Is this the right moment? Does this person need advice, comfort, or simply someone to listen?" This habit helps avoid words that, although they seem good, may fall badly due to lack of sensitivity.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">Supporting Biblical story</h5>
+      <p>A good example of words that build us see in Paul with Timothy. Paul not only corrected Timothy, but also encouraged him, reminded him of his faith, and gave him strength to move forward in his ministry. At moments of fear and weakness, Timothy needed words that would lift him up, and Paul gave them to him.</p>
+      <p><strong>2 Timothy 1:6–7 (NKJV)</strong><br>"6 Therefore I remind you to stir up the gift of God which is in you through the laying on of my hands.<br>7 For God has not given us a spirit of fear, but of power and of love and of a sound mind."</p>
+      <p>These words show how a servant of God can use his mouth to strengthen another. Paul does not humiliate Timothy; he encourages him. He does not crush him for his weakness; he reminds him of what God has placed in him. That is a very beautiful way to build up.</p>
+      <h5 class="font-bold">Application</h5>
+      <p>In family and church we must learn to speak like Paul spoke with Timothy: with truth, but also with encouragement. There are people who do not move forward because they almost always hear criticism, but very rarely hear words that remind them of what God can do in them.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <div class="bg-gray-50 p-6 rounded-lg mb-8">
+        <h4 class="font-bold border-b border-gray-200 pb-2 mb-4">SECTION SUMMARY</h4>
+        <p>Section 3.3 teaches that the words of the believer should build, meet the need of the moment, and give grace to those who listen. Speaking well is not just avoiding the bad; it is using the mouth to strengthen, comfort, encourage, correct with love, and help others move forward. The right word, said at the right moment, can be a tool God uses to heal and lift lives.</p>
+        <p>For this reason, the believer must learn to speak with wisdom, sensitivity, and love. A healthy church, a strong family, and mature Christian life need words that build.</p>
+        <h5 class="font-bold">Key words to remember</h5>
+        <p><strong>Building up</strong> = to build, strengthen, lift up the life of another person<br><strong>Grace</strong> = unmerited favor, kindness that is also expressed in speaking<br><strong>Encouragement</strong> = a word that strengthens the tired or discouraged<br><strong>Opportunity</strong> = the right moment to say something<br><strong>Discernment</strong> = ability to recognize what the other person needs</p>
+        <h5 class="font-bold">Questions for reflection</h5>
+        <ol>
+          <li>Do my words usually lift up or discourage others?</li>
+          <li>Am I used to giving words of grace or criticism?</li>
+          <li>Can I recognize when a person needs encouragement, correction, or comfort?</li>
+          <li>What kind of words do I need to start using more in my home and church?</li>
+        </ol>
+      </div>
+      <h4 class="font-bold">SECTION 3.4</h4>
+      <h4 class="font-bold">Words that destroy</h4>
+      <p>In this section we are going to study the opposite side of words that build. The Bible teaches that just as a word can lift up, it can also damage deeply. There are words that not only hurt for a moment, but leave marks on the heart, break relationships, damage trust, and weaken a person's spiritual life.</p>
+      <p>Many times the damage does not come only from strong insults. It can also come from words that seem small: a joke, a harsh criticism, a humiliating comment, gossip, or a repeated complaint. Sometimes the speaker thinks they are "just telling the truth" or "just joking," but in reality their words are producing pain and destruction.</p>
+      <p>For this reason, this section helps us recognize different ways of speaking that do not please God. The purpose is not just to identify the bad, but to ask the Lord to change our way of speaking. The goal of the believer is not simply to speak less badly, but to abandon all form of language that hurts others and learn to use the mouth with holiness and love.</p>
+      <h5 class="font-bold">KEY WORDS</h5>
+      <p><strong>Corrupt</strong><br><strong>Sarcasm</strong><br><strong>Murmuring</strong><br><strong>Destructive criticism</strong><br><strong>Gossip</strong></p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">The nature of corrupt words</h5>
+      <p>Paul uses a very strong expression when he talks about corrupt words. The idea is of something rotten, like a fruit in bad condition that produces rejection. This teaches us that not every bad word has to be vulgar to be sinful. Words that degrade, that humiliate, that destroy peace, and that do not help the good of others are also corrupt.</p>
+      <h5 class="font-bold">Base text</h5>
+      <p><strong>Ephesians 4:29 (NKJV)</strong><br>"Let no corrupt word proceed out of your mouth, but what is good for necessary edification, that it may impart grace to the hearers."</p>
+      <p><strong>Ephesians 4:29 (NCV)</strong><br>"When you talk, do not say harmful things, but say what people need—words that will help others become stronger."</p>
+      <p>This verse not only forbids speaking badly; it also teaches us to evaluate our words by their fruit. If what we say does not help, does not heal, does not build, and does not give grace, then we must seriously review whether that way of speaking pleases the Lord.</p>
+      <p><strong>Key word:</strong><br><strong>Corrupt = something rotten, damaged, that produces harm instead of good</strong></p>
+      <h5 class="font-bold">Application</h5>
+      <p>It is not enough to avoid curse words. A person can speak with "religious" words and still destroy others with a harsh tone, harshness, or humiliation. For this reason, each believer should ask themselves not only "is this word correct?" but also "what effect will it produce in the other person?".</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">Common ways of speaking that destroy</h5>
+      <p>The Bible and daily experience show several ways that words can do harm. Some are very visible; others are more subtle, but equally dangerous. When repeated, they end up affecting the family, the church, and the spiritual life of those who hear them.</p>
+      <h4>Sarcasm</h4>
+      <p>Sarcasm hurts under the appearance of humor. Sometimes someone makes fun of another person and then says: "I'm just playing." But if that "joke" humiliates, embarrasses, or leaves pain, then it is not innocent. Sarcasm often hides harshness, pride, or resentment.</p>
+      <p><strong>Key word:</strong><br><strong>Sarcasm = teasing disguised as a joke</strong></p>
+      <h4>Murmuring</h4>
+      <p>Murmuring is speaking about someone behind their back with a spirit of complaint, criticism, or discontent. Instead of speaking directly with the person or seeking a solution, the murmurer feeds the problem in secret. This breaks friendships and weakens trust among brothers.</p>
+      <p><strong>Key word:</strong><br><strong>Murmuring = complaint or criticism said behind someone's back</strong></p>
+      <h4>Destructive criticism</h4>
+      <p>Not all correction is bad. The Bible allows and commands correction when necessary. But destructive criticism does not seek to restore, but to point out errors without love and without help. It focuses on the negative, exaggerates faults, and leaves a person more hurt than built up.</p>
+      <p><strong>Key word:</strong><br><strong>Destructive criticism = pointing out errors without love or intention to help</strong></p>
+      <h4>Gossip</h4>
+      <p>Gossip consists of talking about other people's affairs, especially negative things, in a way that damages someone's reputation. Sometimes gossip mixes truth with exaggeration; other times it adds suspicions and personal opinions. In any case, it ends up causing division and pain.</p>
+      <p><strong>Key word:</strong><br><strong>Gossip = talking about others in a way that damages their reputation</strong></p>
+      <h5 class="font-bold">Cross-reference</h5>
+      <p><strong>Proverbs 26:20–22 (NKJV)</strong><br>"20 Where there is no wood, the fire goes out;<br>And where there is no talebearer, strife ceases.<br>21 As charcoal is to embers and wood to fire,<br>So is a contentious man to kindle strife.<br>22 The words of a talebearer are like tasty trifles,<br>And they go down into the inmost body."</p>
+      <p>This passage shows that gossip acts like wood feeding fire. Instead of putting out conflicts, it increases them. Sometimes the words of the gossip seem pleasant or interesting, but they enter deep and leave damage in the heart of those who receive them.</p>
+      <h5 class="font-bold">Application</h5>
+      <p>In daily life, many conversations seem "normal," but in reality they feed criticism and division. For this reason, the believer must learn to stop a harmful conversation and not participate in words that destroy the reputation or peace of others.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">The tongue can damage relationships and communities</h5>
+      <p>Destructive words affect not only one person; they damage the entire environment. In a family, they can create distance, resentment, and wounds difficult to heal. In the church, they can produce distrust, factions, divisions, and spiritual coldness. A community can be weakened not only by great visible sins, but also by a culture of criticism and harmful comments.</p>
+      <h5 class="font-bold">Cross-reference</h5>
+      <p><strong>James 4:11 (NKJV)</strong><br>"Do not speak evil of one another, brethren. He who speaks evil of a brother and judges his brother, speaks evil of the law and judges the law. But if you judge the law, you are not a doer of the law but a judge."</p>
+      <p>James speaks with clarity: the believer should not get used to murmuring about others. Murmuring not only hurts the brother, it also shows a proud attitude, as if one had the right to place oneself above others. The biblical call is to humility and mutual care, not constant criticism.</p>
+      <h5 class="font-bold">Supporting Biblical story</h5>
+      <p>A clear example of this sin is seen in Israel in the wilderness. The people murmured repeatedly against Moses and against God. Instead of trusting, they complained. Instead of praying, they spoke negatively. That murmuring affected the entire community and brought serious consequences. This story shows that repeated negative words are not something small before God.</p>
+      <h5 class="font-bold">Application</h5>
+      <p>When a person gets used to criticizing, complaining, or speaking badly of others, they end up contaminating the environment where they are. For this reason, we must ask ourselves honestly: "Does my way of speaking bring peace or bring tension? Do my words help resolve or make the problem worse?".</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">Practical rules for avoiding harm</h5>
+      <p>A very useful way to apply this teaching is to establish clear limits in our way of speaking. Not everything we know needs to be said. Not everything we feel should be expressed immediately. And not everything we hear needs to be repeated.</p>
+      <p>When it comes to real faults or serious problems, the Bible teaches us to handle the situation with wisdom and responsibility. If it is necessary to report something, it should be done with the right person and with the purpose of helping to solve, not to expose or embarrass. Negative information should stay within the smallest circle possible.</p>
+      <h5 class="font-bold">Application</h5>
+      <p>Before speaking about another person, it is good to ask yourself questions like these: "Is what I am going to say true? Is it necessary to say it? Is the right person listening to me? Is my intention to help or just to vent?" These questions can prevent much harm.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <div class="bg-gray-50 p-6 rounded-lg mb-8">
+        <h4 class="font-bold border-b border-gray-200 pb-2 mb-4">SECTION SUMMARY</h4>
+        <p>Section 3.4 teaches that destructive words can take many forms: sarcasm, murmuring, destructive criticism, and gossip. All of them damage people, relationships, and communities. The Bible calls the believer to abandon all corrupt words and reject all language that humiliates, divides, or hurts.</p>
+        <p>For this reason, the believer must watch not only what they say, but also the spirit in which they say it. Speaking with holiness means abandoning words that destroy and learning to use the mouth to honor God and care for our neighbor.</p>
+        <h5 class="font-bold">Key words to remember</h5>
+        <p><strong>Corrupt</strong> = something rotten, damaged, that produces harm instead of good<br><strong>Sarcasm</strong> = teasing disguised as a joke<br><strong>Murmuring</strong> = complaint or criticism said behind someone's back<br><strong>Destructive criticism</strong> = pointing out errors without love or intention to help<br><strong>Gossip</strong> = talking about others in a way that damages their reputation</p>
+        <h5 class="font-bold">Questions for reflection</h5>
+        <ol>
+          <li>Which of these forms of destructive speech appears most easily in my life?</li>
+          <li>Have I hurt someone with sarcasm, criticism, or murmuring?</li>
+          <li>Do I participate in conversations that damage the reputation of others?</li>
+          <li>What changes does God need to make in my heart and in my mouth?</li>
+        </ol>
+      </div>
+      <h4 class="font-bold">SECTION 3.5</h4>
+      <h4 class="font-bold">Destructive impact on the community</h4>
+      <p>In this section we are going to study how poor communication not only hurts one person, but can damage an entire community. When a destructive word leaves the mouth, it rarely stays in just one heart. Frequently it spreads, affects relationships, creates suspicions, breaks trust, and weakens the unity of the church.</p>
+      <p>Many times people think that great problems in the church come only from false doctrines or from scandalous sins. However, this module points out a very serious truth: destructive communication divides communities of faith very frequently. Criticism without love, repeated murmuring, or harmful conversation can do more damage than first appears.</p>
+      <p>For this reason, this section calls us to take seriously the way we handle conflicts and the faults of others. It is not enough to recognize that certain words are bad; we must also learn the biblical way to resolve problems. God not only tells us what not to do, but also how to act correctly when a difficult situation arises.</p>
+      <h5 class="font-bold">KEY WORDS</h5>
+      <p><strong>Community</strong><br><strong>Unity</strong><br><strong>Restoration</strong><br><strong>Private confrontation</strong><br><strong>Gentleness</strong></p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">Incorrect communication destroys communities</h5>
+      <p>The church is not merely a group of people who meet; it is a spiritual community, a family in Christ. For this reason, when words are misused, the damage is not limited to two people. The effect can spread to many: some take sides, others become discouraged, others lose trust, and little by little peace weakens. Destructive words are like a small crack that, if not corrected, ends up affecting the entire structure.</p>
+      <p>The problem is not only what is said, but the environment that is created. When it becomes normal in a congregation to criticize, murmur, or speak without love, the entire community begins to suffer. Fellowship grows cold, testimony weakens, and the enemy finds space to sow division.</p>
+      <h5 class="font-bold">Key quote from the module</h5>
+      <p>The module asserts that incorrect communication destroys communities of faith frequently and that more churches are divided by the tongue than by doctrine. This observation is very important pastorally, because it reminds us that danger does not always come from great visible errors; many times it comes from the habit of speaking badly.</p>
+      <h5 class="font-bold">Cross-reference</h5>
+      <p><strong>Proverbs 16:28 (NKJV)</strong><br>"A perverse man sows strife,<br>And a whisperer separates the best of friends."</p>
+      <p>This proverb shows that words can separate even strong relationships. If that happens in friendships, how much more can it affect a congregation if not corrected in time. Gossip and strife are not small things; they are forces that break bonds and damage fellowship.</p>
+      <h5 class="font-bold">Application</h5>
+      <p>Each believer must ask themselves: "With my way of speaking, am I helping the unity of my church or weakening it?" This question is important because many times a person does not seek to cause harm, but through lack of care ends up sowing tension and distrust.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">Do not criticize without redemptive purpose</h5>
+      <p>The module teaches that one should not criticize others without redemptive purpose. This phrase is very important. It means that biblical correction does not aim to humiliate, exhibit, or release frustrations. Its purpose should be to help restore, heal, and bring solutions.</p>
+      <p>When a person speaks about the mistakes of another only to vent, to gain support, or to make them look bad, they have left the biblical path. The believer must learn to distinguish between speaking to resolve and speaking only to expand the problem. Many conversations that seem like "spiritual concern" are actually criticism in disguise.</p>
+      <h5 class="font-bold">Key word</h5>
+      <p><strong>Restoration = helping a person be corrected and returned to the right path</strong></p>
+      <h5 class="font-bold">Cross-reference</h5>
+      <p><strong>Galatians 6:1 (NKJV)</strong><br>"Brethren, if a man is overtaken in any trespass, you who are spiritual restore such a one in a spirit of gentleness, considering yourself lest you also be tempted."</p>
+      <p>This verse shows us the right heart for dealing with a fault. The purpose is not to crush the brother, but to restore him. Furthermore, it must be done with gentleness, that is, with kindness, humility, and care. The spiritual person does not correct from above, but with fear of God and recognizing that they too need grace.</p>
+      <p><strong>Key word:</strong><br><strong>Gentleness = a gentle, humble, and controlled attitude in dealing with others</strong></p>
+      <h5 class="font-bold">Application</h5>
+      <p>Before speaking about someone else's fault, it is good to ask: "Do I want to help restore or just comment on the problem?" If the intention is not to restore, then it is better to be silent and seek the Lord before speaking.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">The biblical process for resolving conflicts</h5>
+      <p>Jesus did not leave His church without guidance for dealing with conflicts. In Matthew 18 He taught a clear and ordered path. This process avoids gossip, stops unnecessary expansion of the problem, and protects both the offended person and the one who failed. It also helps the community act with justice, love, and truth.</p>
+      <h5 class="font-bold">Base text</h5>
+      <p><strong>Matthew 18:15–17 (NKJV)</strong><br>"15 Moreover if your brother sins against you, go and tell him his fault between you and him alone. If he hears you, you have gained your brother.<br>16 But if he will not hear, take with you one or two more, that by the mouth of two or three witnesses every word may be established.<br>17 And if he refuses to hear them, tell it to the church. But if he refuses even to hear the church, let him be to you like a heathen and a tax collector."</p>
+      <p>This passage presents a very clear order. First, the confrontation must be private. We do not begin by talking to others, but with the person involved. Second, if they do not listen, we take one or two witnesses. Third, only if the fault persists does the matter go to a higher level within the community. Skipping these steps produces more disorder and more pain.</p>
+      <p><strong>Key word:</strong><br><strong>Private confrontation = speaking first directly with the person involved</strong></p>
+      <h5 class="font-bold">Application</h5>
+      <p>Many problems would grow less if this basic principle were obeyed: speak first with the right person. Instead of telling it to friends, family, or brothers, the believer should go in love and truth to the one concerned. This protects unity and honors biblical order.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">The unity of the Spirit must be guarded</h5>
+      <p>The unity of the church does not happen on its own; it must be cared for. The Bible teaches that believers must strive to keep the unity that the Holy Spirit produces. This involves watching the heart, controlling the tongue, avoiding unnecessary words, and acting with humility when tensions arise.</p>
+      <h5 class="font-bold">Cross-reference</h5>
+      <p><strong>Ephesians 4:3 (NKJV)</strong><br>"Endeavoring to keep the unity of the Spirit in the bond of peace."</p>
+      <p>Keeping unity does not mean hiding sins or pretending that nothing is happening. It means handling matters with the right spirit, without feeding divisions. Biblical peace is not false silence; it is order, truth, and love working together.</p>
+      <p><strong>Key word:</strong><br><strong>Unity = spiritual and relational harmony within the body of Christ</strong></p>
+      <h5 class="font-bold">Application</h5>
+      <p>A healthy church is not one without conflicts, but one that learns to resolve them biblically. The same applies to family. Where there are people, there will be tensions. The difference is whether those tensions are handled with flesh or with spiritual wisdom.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">Supporting Biblical story</h5>
+      <p>A useful example to reflect on is the conflict between Paul and Barnabas in Acts 15:36–41. There was a strong difference between them about Mark. Although the passage does not present all the emotional details, it does show that even mature servants can face disagreements. The important lesson is that conflicts exist, but must be handled responsibly before God.</p>
+      <p>This story also helps us understand that the existence of a conflict is not the biggest problem; the biggest problem is how it is treated. When believers mishandle their differences, the community suffers. But when they learn to act with truth, humility, and order, even difficult moments can leave valuable lessons.</p>
+      <h5 class="font-bold">Application</h5>
+      <p>When a difference arises in the church or in family, we should not react impulsively or talk too much. We should seek the biblical way: prayer, truth, humility, and the correct process. This avoids unnecessary wounds and protects the community.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <div class="bg-gray-50 p-6 rounded-lg mb-8">
+        <h4 class="font-bold border-b border-gray-200 pb-2 mb-4">SECTION SUMMARY</h4>
+        <p>Section 3.5 teaches that destructive communication can damage an entire community. Misused words break trust, weaken unity, and open space to division. For this reason, the believer should not criticize without redemptive purpose, but always seek restoration with a spirit of gentleness.</p>
+        <p>Jesus left a clear process to resolve conflicts: first speak privately, then with witnesses, and only if necessary take the matter to a higher level. This teaching protects the church, cares for the dignity of people, and helps preserve the unity of the Spirit.</p>
+        <h5 class="font-bold">Key words to remember</h5>
+        <p><strong>Community</strong> = a group of believers united in Christ<br><strong>Unity</strong> = spiritual and relational harmony within the body of Christ<br><strong>Restoration</strong> = helping a person be corrected and returned to the right path<br><strong>Private confrontation</strong> = speaking first directly with the person involved<br><strong>Gentleness</strong> = a gentle, humble, and controlled attitude in dealing with others</p>
+        <h5 class="font-bold">Questions for reflection</h5>
+        <ol>
+          <li>Have I participated in conversations that damaged the unity of a community?</li>
+          <li>Do I usually speak to restore or just to comment on problems?</li>
+          <li>Am I willing to follow Matthew 18's biblical process when there is a conflict?</li>
+          <li>What can I do to better guard unity in my family and church?</li>
+        </ol>
+      </div>
+      <h4 class="font-bold">SECTION 3.6</h4>
+      <h4 class="font-bold">The transforming power of words</h4>
+      <p>In this section we are going to study a very beautiful truth: God can use our words to transform lives. So far we have seen that the tongue can reveal the heart, build up or destroy, and affect an entire community. But now the focus changes toward the redemptive side of speech: words can also be instruments through which God comforts, corrects, strengthens, draws others to Christ, and produces spiritual change.</p>
+      <p>Many people have been encouraged by a timely word, restored by a sincere conversation, or spiritually awakened by a simple testimony. Sometimes a great speech is not needed for God to work; just a humble word, full of truth and guided by the Holy Spirit, suffices. The Lord can use what we say to plant faith, hope, and direction in the lives of others.</p>
+      <p>This section reminds us that speaking is not just a human skill. In God's hands, the word of the believer becomes a spiritual tool. For this reason, we must learn to listen well, speak with wisdom, and use our mouth as a channel of blessing and testimony.</p>
+      <h5 class="font-bold">KEY WORDS</h5>
+      <p><strong>Testimony</strong><br><strong>Evangelism</strong><br><strong>Listen</strong><br><strong>Bless</strong><br><strong>Transformation</strong></p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">Our words have spiritual power</h5>
+      <p>The module teaches that the use that human beings give to the power to speak indicates whether they are doers of the Word or not. This statement is very important because it shows that the mouth is not separate from obedience. The way we speak reflects whether we are really living what we learn from God. It is not enough to hear the Word; we must also speak in a manner consistent with it.</p>
+      <p>The believer who is growing learns to listen more and speak less. This idea is very practical. Many times problems increase because we speak too soon, too loudly, or without having listened well. On the other hand, a person who walks with God develops prudence. They learn to bridle their tongue, to think before answering, and to use their words to bless, not to hurt.</p>
+      <h5 class="font-bold">Cross-reference</h5>
+      <p><strong>James 1:19 (NKJV)</strong><br>"So then, my beloved brethren, let every man be swift to hear, slow to speak, slow to wrath."</p>
+      <p>This verse teaches us a basic principle of spiritual wisdom. The mature person does not live by reacting immediately. They listen, discern, and then speak. Being "swift to hear" and "slow to speak" is not weakness; it is evidence of self-control and respect for God and for others.</p>
+      <p><strong>Key words:</strong><br><strong>Listen = to pay attention before responding</strong><br><strong>Bless = to use the mouth to do good and not to hurt</strong></p>
+      <h5 class="font-bold">Application</h5>
+      <p>In family, in church, and in any relationship, many conversations would improve if we first learned to listen. A person who listens well understands the need of the other better and avoids rash responses. Speaking less and listening more is also a way to allow God to govern our mouth.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">Verbal testimony and evangelism</h5>
+      <p>One of the most beautiful ways God uses our words is through testimony. Testimony means telling what God has done in our life. It is not about giving a complicated lecture, but about expressing honestly how the Lord found us, helped us, forgave us, or sustained us in a difficult moment. That kind of simple word can be used powerfully by the Holy Spirit.</p>
+      <p>The module also points out that our words are a means through which God can work and that when we verbalize with humility what God has done for us, we allow the Holy Spirit to use our testimony to draw others to Christ. This means that speaking about Christ is not only the responsibility of the pulpit; it is also part of the daily life of the believer.</p>
+      <h5 class="font-bold">Key words</h5>
+      <p><strong>Testimony = telling what God has done in our life</strong><br><strong>Evangelism = sharing the message of Christ with others</strong></p>
+      <h5 class="font-bold">Cross-reference</h5>
+      <p><strong>Mark 5:19 (NKJV)</strong><br>"However, Jesus did not permit him, but said to him, 'Go home to your friends, and tell them what great things the Lord has done for you, and how He has had compassion on you.'"</p>
+      <p>Here we see that Jesus sent a transformed man to tell what God had done in his life. This is a clear example of personal testimony. He did not first ask for great academic preparation; He asked him to tell of the mercy received. This shows us that a person touched by Christ already has something valuable to say.</p>
+      <h5 class="font-bold">Application</h5>
+      <p>Many believers think they don't know how to evangelize because they can't explain many doctrines. But every Christian can share something true and powerful: "this is what God did in me." A humble, sincere, and clear testimony can open doors for another to listen to the gospel with interest.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">Words that bring faith and hope</h5>
+      <p>The right word not only informs; it also strengthens. When a person is tired, confused, or discouraged, a biblical word can restore hope. God uses spoken truth to remind us of His promises, correct wrong thoughts, and give new strength to those who can barely continue.</p>
+      <h5 class="font-bold">Cross-reference</h5>
+      <p><strong>Proverbs 12:25 (NKJV)</strong><br>"Anxiety in the heart of man causes depression,<br>But a good word makes it glad."</p>
+      <p>This proverb is very clear. Worry can sink the spirit, but a good word can bring relief. We will not always be able to change someone's circumstances, but many times we can give them a word that reminds them that God is still working and that they are not alone.</p>
+      <h5 class="font-bold">Application</h5>
+      <p>Sometimes a person does not first need a long counsel, but a word of hope. Simple phrases like "God is with you," "the Lord has not abandoned you," "let's pray," or "He will help you keep going" can be used by God to lift someone who is discouraged.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">The example of Peter at Pentecost</h5>
+      <p>One of the most powerful scenes in the New Testament is Peter in Acts 2. The man who once denied Jesus in fear now stands up filled with the Holy Spirit and speaks boldly. God uses his words to bring conviction, repentance, and salvation to many people. This story clearly shows that God can transform not only a person's heart, but also their way of speaking.</p>
+      <h5 class="font-bold">Supporting Biblical story</h5>
+      <p><strong>Acts 2:37–41 (NKJV)</strong><br>"37 Now when they heard this, they were cut to the heart, and said to Peter and the rest of the apostles, 'Men and brethren, what shall we do?'<br>38 Then Peter said to them, 'Repent, and let every one of you be baptized in the name of Jesus Christ for the remission of sins; and you shall receive the gift of the Holy Spirit.<br>39 For the promise is to you and to your children, and to all who are afar off, as many as the Lord our God will call.'<br>40 And with many other words he testified and exhorted them, saying, 'Be saved from this perverse generation.'<br>41 Then those who gladly received his word were baptized; and that day about three thousand souls were added to them."</p>
+      <p>This passage shows the power of a word used by God. Peter did not speak from the flesh, but under the work of the Holy Spirit. His words brought conviction and guided many to repentance. This encourages us to believe that God can also use our mouth when we speak with humility, truth, and dependence on the Spirit.</p>
+      <h5 class="font-bold">Application</h5>
+      <p>Perhaps not everyone will preach before multitudes, but everyone can be used by God in personal conversations. A word directed by the Lord can touch a child, a neighbor, a brother in the church, or a person far from God. We should not underestimate the spiritual value of a conversation guided by the Holy Spirit.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">Speaking as doers of the Word</h5>
+      <p>The module says that the doer of the Word knows to listen more and speak less, knows to bridle their tongue, and uses the gift of communication to teach, bless God, and bless people. This teaching unites very well the inner life with the outer life. It is not enough to know the truth; that truth must be reflected in the way of speaking.</p>
+      <p>The believer who lives as a doer of the Word does not use their mouth for one thing on Sunday and for another the rest of the week. They seek consistency. Their speech becomes part of their testimony. When a person learns to speak with wisdom, love, and truth, their mouth becomes an extension of their spiritual life.</p>
+      <h5 class="font-bold">Cross-reference</h5>
+      <p><strong>Colossians 3:17 (NKJV)</strong><br>"And whatever you do in word or deed, do all in the name of the Lord Jesus, giving thanks to God the Father through Him."</p>
+      <p>This verse teaches us that our words must also be under the lordship of Christ. Not only our actions, but what we say must reflect that we belong to the Lord. Speaking in the name of Jesus means speaking in a manner worthy of Him.</p>
+      <h5 class="font-bold">Application</h5>
+      <p>Every believer can pray something like this: "Lord, use my mouth to bless, to comfort, to share Your truth, and to speak in a way that honors You." This simple prayer expresses the right desire to put our tongue in service to God.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <div class="bg-gray-50 p-6 rounded-lg mb-8">
+        <h4 class="font-bold border-b border-gray-200 pb-2 mb-4">SECTION SUMMARY</h4>
+        <p>Section 3.6 teaches that our words can be instruments of spiritual transformation. God can use what we say to comfort, strengthen, correct, bring hope, and draw others to Christ. The believer who is a doer of the Word learns to listen more, speak with wisdom, and use their mouth to bless God and people.</p>
+        <p>We also learn that personal testimony is a powerful tool. When we humbly tell what the Lord has done in us, the Holy Spirit can use those words to touch hearts and produce faith.</p>
+        <h5 class="font-bold">Key words to remember</h5>
+        <p><strong>Testimony</strong> = telling what God has done in our life<br><strong>Evangelism</strong> = sharing the message of Christ with others<br><strong>Listen</strong> = to pay attention before responding<br><strong>Bless</strong> = to use the mouth to do good and not to hurt<br><strong>Transformation</strong> = change that God produces in a person's life</p>
+        <h5 class="font-bold">Questions for reflection</h5>
+        <ol>
+          <li>Am I using my words to bless or just to react?</li>
+          <li>Do I know how to listen before speaking?</li>
+          <li>Have I shared with others what God has done in my life?</li>
+          <li>How can God use my mouth this week to bring hope to someone?</li>
+        </ol>
+      </div>
+      <h4 class="font-bold">SECTION 3.7</h4>
+      <h4 class="font-bold">Motivation for controlling the tongue</h4>
+      <p>In this section we are going to study why the believer should want to control their tongue. So far we have seen that words can reveal the heart, destroy relationships, affect the community, or bring transformation. But now the question is deeper: what should motivate the Christian to change their way of speaking? The biblical answer is not based only on external rules, but on a spiritual reality: the presence of the Holy Spirit in the believer's life.</p>
+      <p>Many people try to control their words out of shame, fear of conflict, or desire to look better before others. Although those reasons can influence for a moment, they are not enough to produce deep and lasting transformation. The Christian motivation is higher: we speak with reverence, care, and holiness because God dwells in us and cares about how we live.</p>
+      <p>This section helps us understand that control of the tongue is not born solely from human effort. It is born from a life that recognizes God's presence, respects the work of the Holy Spirit, and desires to please the Lord also in what they say. When the believer understands this, their mouth ceases to be an ungoverned territory and begins to submit to Christ.</p>
+      <h5 class="font-bold">KEY WORDS</h5>
+      <p><strong>Holy Spirit</strong><br><strong>Holiness</strong><br><strong>Seal</strong><br><strong>Fear of God</strong><br><strong>New creation</strong></p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">The presence of the Holy Spirit as motivation</h5>
+      <p>The module teaches that what motivates the believer to overcome emotions and tongue is the presence of the Spirit. This statement is very important because it takes the subject beyond external behavior. It is not just about learning manners or communication techniques. It is about recognizing that God Himself is working within the believer and that this presence should influence everything, including the way of speaking.</p>
+      <p>When a person understands that the Holy Spirit dwells in them, they begin to see their words differently. They no longer speak just as someone expressing emotions, but as someone representing Christ. This produces reverence. The tongue ceases to be a loose instrument and becomes an area of spiritual responsibility.</p>
+      <h5 class="font-bold">Cross-reference</h5>
+      <p><strong>1 Corinthians 6:19-20 (NKJV)</strong><br>"19 Or do you not know that your body is the temple of the Holy Spirit who is in you, whom you have from God, and you are not your own?<br>20 For you were bought at a price; therefore glorify God in your body and in your spirit, which are God's."</p>
+      <p>This passage teaches that the believer does not belong to themselves. Their life belongs to the Lord. If the body is the temple of the Holy Spirit, then also the mouth, the tongue, and the words must be placed under the lordship of Christ. Glorifying God is not limited to what we do; it also includes what we say.</p>
+      <p><strong>Key word:</strong><br><strong>Holy Spirit = the presence of God in the believer, who guides and sanctifies them</strong></p>
+      <h5 class="font-bold">Application</h5>
+      <p>Before speaking impulsively, the believer can remember this truth: "The Holy Spirit dwells in me." That awareness produces restraint, humility, and sensitivity. Many unnecessary words could be avoided if we lived more attentive to God's presence.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">The Holy Spirit is holy</h5>
+      <p>The module asserts that the Spirit is holy and has come so that the believer is also holy. This means that holiness is not limited to certain "big" areas of life, such as worship, service, or visible moral conduct. It also reaches daily conversation, tone of voice, way of responding, and content of words.</p>
+      <p>Sometimes a person thinks that because they don't do certain grave things, they are already living in holiness. However, they may continue speaking with harshness, irony, contempt, or impurity. This section reminds us that holiness also sounds. A holy life produces a cleaner, more prudent, and more reverent mouth before God.</p>
+      <h5 class="font-bold">Cross-reference</h5>
+      <p><strong>Ephesians 4:29-30 (NKJV)</strong><br>"29 Let no corrupt word proceed out of your mouth, but what is good for necessary edification, that it may impart grace to the hearers.<br>30 And do not grieve the Holy Spirit of God, by whom you were sealed for the day of redemption."</p>
+      <p>Here Paul directly links the way of speaking with the believer's relationship with the Holy Spirit. Corrupt words not only damage others; they also grieve the Spirit. This shows us that sinful speech is not a minor detail, but a matter that affects our communion with God.</p>
+      <p><strong>Key word:</strong><br><strong>Holiness = life set apart for God, also in the way of speaking</strong></p>
+      <h5 class="font-bold">Application</h5>
+      <p>Each believer must ask themselves: "Does my way of speaking reflect the holiness of the Spirit who lives in me?" This is a profound question, because it leads us to examine not only our public words, but also what we say at home, in moments of pressure, or when we are upset.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">Sealed for the day of redemption</h5>
+      <p>The module also reminds that the Holy Spirit is the seal and guarantee of future blessings. The seal speaks of belonging, security, and promise. God has put His Spirit in the believer as a sign that they belong to Him and that He will complete His work in them. This truth produces hope, but also responsibility.</p>
+      <p>If we have been sealed by God, then our way of speaking should reflect that identity. The believer does not speak as someone without direction or without spiritual owner. They speak as a person marked by God's grace, called to live in a manner worthy of that calling. The mouth should also testify to whom we belong.</p>
+      <h5 class="font-bold">Cross-reference</h5>
+      <p><strong>Ephesians 1:13-14 (NKJV)</strong><br>"13 In Him you also trusted, after you heard the word of truth, the gospel of your salvation; in whom also, having believed, you were sealed with the Holy Spirit of promise,<br>14 who is the guarantee of our inheritance until the redemption of the purchased possession, to the praise of His glory."</p>
+      <p>This passage shows that the Holy Spirit is not something secondary in Christian life. It is the mark of God upon His people. For this reason, controlling the tongue is not an empty burden, but a coherent response to the work that God has already begun within us.</p>
+      <p><strong>Key word:</strong><br><strong>Seal = mark of belonging and guarantee of God's work</strong></p>
+      <h5 class="font-bold">Application</h5>
+      <p>When the believer remembers that they have been sealed by the Spirit, they learn to speak with more reverence. Their words cease to be merely impulsive and begin to reflect a new identity. This helps live with more coherence between what we believe and what we say.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">The new creation must reflect Christ</h5>
+      <p>The module says that God Himself dwells in the believer and cares about how the new creation lives, being conformed to the image of His Son. This phrase connects speech with the process of Christian transformation. Being a new creation does not mean only having a new position before God; it means also beginning to look like Christ in daily practice.</p>
+      <p>This includes the way of speaking. Jesus spoke with truth, grace, authority, mercy, and purity. If we are being conformed to His image, our words should also be changing. It does not happen overnight, but there should be a clear direction: less flesh and more resemblance to Christ.</p>
+      <h5 class="font-bold">Cross-reference</h5>
+      <p><strong>2 Corinthians 5:17 (NKJV)</strong><br>"Therefore, if anyone is in Christ, he is a new creation; old things have passed away; behold, all things have become new."</p>
+      <p><strong>Romans 8:29 (NKJV)</strong><br>"For whom He foreknew, He also predestined to be conformed to the image of His Son..."</p>
+      <p>These verses show that Christian life involves real change. The old way of speaking cannot continue to rule as before. The Lord is forming the character of Christ in us, and that should also be noticed in the tongue.</p>
+      <p><strong>Key word:</strong><br><strong>New creation = person transformed by God in Christ</strong></p>
+      <h5 class="font-bold">Application</h5>
+      <p>Even when the believer still struggles with certain areas, they should remember that they are not condemned to continue speaking as before. In Christ there is a new identity and a new direction. For this reason, they can ask the Lord to also transform their mouth and tone, not just their thoughts.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">Not from fear, but from love and reverence</h5>
+      <p>The module summarizes this teaching by saying that we control the tongue not from fear of punishment, but from respect and love for the presence of God in us. This is the deepest motivation. The Christian does not seek to change only to avoid problems, but because they love the Lord and desire to honor Him in everything.</p>
+      <p>When love of God governs the heart, it also begins to govern the mouth. The person no longer asks only "what is convenient for me to say?" but "what honors Christ?". That change of focus transforms the way of responding, correcting, conversing, and even keeping silent when necessary.</p>
+      <h5 class="font-bold">Cross-reference</h5>
+      <p><strong>Psalm 19:14 (NKJV)</strong><br>"Let the words of my mouth and the meditation of my heart<br>Be acceptable in Your sight,<br>O LORD, my strength and my Redeemer."</p>
+      <p>This verse expresses very well the desire of a heart that loves God. It asks not only for clean thoughts, but also for pleasant words before the Lord. The goal of the believer is not to speak better to impress people, but to please God.</p>
+      <p><strong>Key word:</strong><br><strong>Fear of God = reverence, respect, and love before the presence of God</strong></p>
+      <h5 class="font-bold">Application</h5>
+      <p>A good spiritual practice is to pray at the beginning of the day: "Lord, guard my mouth and make my words please You." That simple prayer places the tongue under God's care and reminds us that speaking is also part of worship life.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <div class="bg-gray-50 p-6 rounded-lg mb-8">
+        <h4 class="font-bold border-b border-gray-200 pb-2 mb-4">SECTION SUMMARY</h4>
+        <p>Section 3.7 teaches that the deepest motivation for controlling the tongue is the presence of the Holy Spirit in the believer's life. The Spirit is holy, dwells in us, has sealed us for the day of redemption, and is forming Christ's image in us. For this reason, our words should not be governed by the flesh, but by reverence, love, and obedience to God.</p>
+        <p>We also learn that speech can grieve the Holy Spirit or reflect the new life He produces. The believer does not control their tongue only from fear of punishment, but because they want to please the Lord who lives in them.</p>
+        <h5 class="font-bold">Key words to remember</h5>
+        <p><strong>Holy Spirit</strong> = the presence of God in the believer, who guides and sanctifies them<br><strong>Holiness</strong> = life set apart for God, also in the way of speaking<br><strong>Seal</strong> = mark of belonging and guarantee of God's work<br><strong>Fear of God</strong> = reverence, respect, and love before the presence of God<br><strong>New creation</strong> = person transformed by God in Christ</p>
+        <h5 class="font-bold">Questions for reflection</h5>
+        <ol>
+          <li>What truly motivates me to control my words?</li>
+          <li>Am I aware of the presence of the Holy Spirit when I speak?</li>
+          <li>Does my way of speaking reflect that I am a new creation in Christ?</li>
+          <li>What changes does God need to produce in my mouth for my words to please Him?</li>
+        </ol>
+      </div>
     </div>
 
   </main>
@@ -210,11 +554,11 @@
   <footer class="bg-blue-950 text-white mt-12 py-12">
     <div class="max-w-4xl mx-auto px-4">
       <div class="flex flex-col md:flex-row justify-between items-center gap-6 border-b border-white/20 pb-8 mb-8">
-        <a href="modulo-2-en.html" class="text-blue-300 hover:text-white transition font-medium">← Previous Module 2</a>
-        <a href="../index-en.html" class="bg-indigo-600 hover:bg-indigo-500 py-3 px-8 rounded-xl font-bold transition shadow-lg">Back to Main Menu</a>
+        <a href="modulo-2-en.html" class="text-blue-300 hover:text-white transition font-medium">← Previous Module</a>
+        <a href="modulo-4-en.html" class="bg-indigo-600 hover:bg-indigo-500 py-3 px-8 rounded-xl font-bold transition shadow-lg">Next Module →</a>
       </div>
       <div class="text-center">
-        <p class="text-sm text-blue-300">© 2026 Biblical Academy Digital · Module 3 Complete</p>
+        <p class="text-sm text-blue-300">© 2026 Digital Biblical Academy · Module 3 Complete</p>
       </div>
     </div>
   </footer>
@@ -243,11 +587,35 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      function applyVerseBlockCards() {
+        const content = document.getElementById("content-en");
+        if (!content) return;
+
+        const paragraphs = content.querySelectorAll("p");
+        paragraphs.forEach((p) => {
+          const html = p.innerHTML.trim();
+          const match = html.match(/^<strong>([^<]+)<\/strong><br>([\s\S]+)$/);
+          if (!match) return;
+
+          const reference = match[1].trim();
+          const verseHtml = match[2].trim();
+          if (!(verseHtml.startsWith(""") || verseHtml.startsWith("&quot;"))) return;
+
+          const card = document.createElement("div");
+          card.className = "verse-block";
+          card.innerHTML = `${verseHtml}<div class="text-sm font-semibold mt-2 not-italic text-cyan-900">${reference}</div>`;
+          p.replaceWith(card);
+        });
+      }
+
       const keywords = [
-        "God", "Jesus", "Holy Spirit", "Grace", "Sin", "Words",
-        "Tongue", "Logos", "Charis", "Oikodomeō", "Build up", "Spiritual maturity",
+        "God", "Jesus", "Holy Spirit", "Grace", "Sin", "Words", "Tongue",
+        "Logos", "Charis", "Oikodomeō", "Build", "Spiritual maturity",
         "Evangelism", "Murmuring", "Criticism", "Gossip", "Sarcasm", "Discernment",
         "Forgiveness", "Hope", "Community", "Church", "Holiness", "Word",
+        "Self-control", "Heart", "Fire", "Unity", "Restoration", "Private confrontation",
+        "Gentleness", "Testimony", "Listen", "Bless", "Transformation", "Seal",
+        "Fear of God", "New creation", "Opportunity", "Encouragement", "Teacher",
         "Ephesians", "James", "Proverbs", "Colossians", "Matthew", "Galatians", "Romans"
       ];
 
@@ -279,9 +647,7 @@
           const sortedKeywords = [...keywords].sort((a, b) => b.length - a.length);
 
           sortedKeywords.forEach((keyword) => {
-            const escapedKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-            const regex = new RegExp(`(?<!<span[^>]*)\\b${escapedKeyword}\\b(?![^<]*</span>)`, "gi");
-
+            const regex = new RegExp(`\\b${keyword}\\b`, "g");
             modifiedText = modifiedText.replace(regex, (match) => {
               hasChange = true;
               return `<span class="text-keyword-highlight font-bold">${match}</span>`;
@@ -296,6 +662,7 @@
         });
       }
 
+      applyVerseBlockCards();
       highlightKeywordsInElement(document.getElementById("content-en"));
     });
   </script>
