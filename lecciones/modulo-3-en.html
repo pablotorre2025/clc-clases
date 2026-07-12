@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Module 3 – The Power of Your Words | Biblical Academy</title>
+  <title>Módulo 3 – El Poder de Tus Palabras | Academia Bíblica</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,21 +25,48 @@
     }
     .greek-term { font-style: italic; font-weight: 600; color: #1e40af; }
     .verse-block { background-color: #f0f9ff; border-left: 4px solid #0284c7; padding: 1rem 1.5rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0; font-style: italic; color: #1e3a8a; }
+
+    /* Compatibilidad visual: contenido markdown con estilo igual a otros modulos */
+    #content-en > h1:nth-of-type(-n+2),
+    #content-en > h2:first-of-type {
+      display: none;
+    }
+    #content-en h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      color: #1e3a8a;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 0.5rem;
+    }
+    #content-en h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      color: #1e40af;
+    }
+    #content-en hr {
+      border: 0;
+      border-top: 1px solid #e2e8f0;
+      margin: 1.5rem 0;
+    }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
 
   <header class="bg-blue-950 text-white shadow-lg sticky top-0 z-50">
     <div class="max-w-5xl mx-auto px-4 py-4 flex flex-wrap justify-between items-center gap-4">
-      <a href="../index-en.html" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 py-2 px-4 rounded-lg transition font-medium">
-        ← Back to home
+      <a href="../index.html" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 py-2 px-4 rounded-lg transition font-medium">
+        ← Volver al inicio
       </a>
       <div class="flex gap-4 mt-4">
         <button id="increase-text-size" class="bg-green-600 hover:bg-green-700 py-2 px-6 rounded-lg font-bold text-white transition shadow-md">
-          Increase text +
+          Aumentar texto +
         </button>
         <button id="decrease-text-size" class="bg-red-600 hover:bg-red-700 py-2 px-6 rounded-lg font-bold text-white transition shadow-md">
-          Decrease text -
+          Reducir texto -
         </button>
       </div>
     </div>
@@ -47,127 +74,500 @@
 
   <section class="bg-gradient-to-br from-blue-900 to-indigo-700 text-white py-16 px-4 text-center">
     <div class="max-w-4xl mx-auto">
-      <span class="text-blue-300 text-sm font-bold uppercase tracking-widest block mb-2">Module 3</span>
+      <span class="text-blue-300 text-sm font-bold uppercase tracking-widest block mb-2">Módulo 3</span>
       <h1 class="text-4xl md:text-5xl font-bold leading-tight" style="font-family:'Lora',serif;">
-        The Power of Your Words
+        El Poder de Tus Palabras
       </h1>
-      <p class="mt-4 text-blue-200 text-lg max-w-2xl mx-auto">How the tongue reveals the heart and transforms (or harms) the community</p>
+      <p class="mt-4 text-blue-200 text-lg max-w-2xl mx-auto">Cómo la lengua revela el corazón y transforma (o daña) la comunidad</p>
     </div>
   </section>
 
   <main class="max-w-4xl mx-auto px-4 sm:px-6 py-12 bg-white shadow-sm -mt-8 rounded-t-3xl border border-gray-100">
 
     <div id="content-en" class="prose-lora space-y-6 text-gray-800">
-
-      <p class="font-bold text-xl mb-8">MODULE 3: THE POWER OF YOUR WORDS</p>
-
-      <h4 class="font-bold">INTRODUCTION</h4>
-      <p>Words are never small or unimportant. What a person says reveals what that person carries inside. We may try to look mature on the outside, but sooner or later our words expose our attitudes, our level of spiritual maturity, and the true condition of our heart before God.</p>
-      <p>Scripture treats this subject with great seriousness. Our words affect our relationships with people and also our fellowship with God. One sentence can bring peace or conflict, courage or discouragement, healing or deeper wounds. Because of that, speaking well is not merely about sounding polite; it is about honoring the Lord, blessing others, and reflecting a life transformed by the Holy Spirit.</p>
-      <p>This module teaches that words can build up or destroy, heal or wound, and lead people toward God or away from Him. Learning to govern the tongue is part of practical Christian maturity.</p>
-
-      <div class="verse-block">
-        "Death and life are in the power of the tongue, and those who love it will eat its fruit." — Proverbs 18:21
-      </div>
-
-      <h4 class="font-bold">SECTION 3.1: ETYMOLOGICAL ANALYSIS OF KEY TERMS</h4>
-
+      <p class="font-bold text-xl mb-8">MÓDULO 3: EL PODER DE TUS PALABRAS</p>
+      
+      
+      <p class="font-bold text-xl mb-8">INTRODUCCIÓN</p>
+      <p>Las palabras no son algo pequeño ni sin importancia. Lo que una persona dice revela lo que lleva por dentro. Muchas veces tratamos de aparentar delante de los demás, pero tarde o temprano nuestras palabras dejan ver nuestras verdaderas actitudes, nuestro nivel de madurez y la condición de nuestro corazón delante de Dios. En otras palabras, la boca habla lo que el corazón guarda.</p>
+      <p>Por eso, la Biblia trata este tema con mucha seriedad. No sólo enseña que nuestras palabras afectan nuestra relación con otras personas, sino también que afectan nuestra relación con Dios. Una palabra puede traer paz o conflicto, ánimo o tristeza, esperanza o desánimo. A veces una sola frase puede levantar a alguien por muchos días, pero también una sola frase puede herir profundamente a una persona.</p>
+      <p>Este módulo nos ayudará a entender que hablar bien no significa solamente “decir cosas bonitas”. Hablar bien, según la Biblia, significa usar la boca de una manera que honre al Señor, bendiga a los demás y refleje una vida transformada por el Espíritu Santo. Por eso, aprender sobre nuestras palabras no es un tema secundario; es parte de la vida cristiana práctica.</p>
+      <p>La enseñanza bíblica es clara: nuestras palabras pueden edificar o destruir, sanar o herir, acercar a otros a Dios o alejarlos de Él. Cuando una persona aprende a cuidar su boca, también empieza a mostrar dominio propio, humildad y madurez espiritual. Por esa razón, estudiar el poder de las palabras es estudiar una parte muy importante del carácter cristiano.</p>
+      <h5 class="font-bold">Texto base de la introducción</h5>
+      <p><strong>Proverbios 18:21 (RVR1960)</strong><br>“La muerte y la vida están en poder de la lengua,<br>Y el que la ama comerá de sus frutos.”</p>
+      <p><strong>Proverbios 18:21 (NTV)</strong><br>“La lengua puede traer vida o muerte;<br>los que hablan mucho cosecharán las consecuencias.”</p>
+      <p>Este proverbio nos enseña que nuestras palabras producen resultados. La expresión “vida y muerte” no se limita solamente a lo físico; también habla del impacto emocional, espiritual y relacional que tienen nuestras palabras. Con la boca podemos consolar a alguien, pero también podemos apagar su ánimo. Podemos ayudar a sanar una relación, o empeorar una herida que ya existía.</p>
+      <h5 class="font-bold">Cita cruzada</h5>
+      <p><strong>Mateo 12:34–37 (RVR1960)</strong><br>“34 ¡Generación de víboras! ¿Cómo podéis hablar lo bueno, siendo malos? porque de la abundancia del corazón habla la boca.<br>35 El hombre bueno, del buen tesoro del corazón saca buenas cosas; y el hombre malo, del mal tesoro saca malas cosas.<br>36 Mas yo os digo, que de toda palabra ociosa que hablen los hombres, de ella darán cuenta en el día del juicio.<br>37 Porque por tus palabras serás justificado, y por tus palabras serás condenado.”</p>
+      <p>Jesús enseñó que la boca expresa lo que hay en el corazón. Cuando el corazón está lleno de enojo, orgullo, amargura o crítica, eso se nota en la manera de hablar. Pero cuando el corazón está siendo transformado por Dios, también eso se nota, porque empiezan a salir palabras más limpias, más sabias y más llenas de gracia. Este pasaje también nos recuerda que Dios toma en serio nuestras palabras y que no debemos hablar a la ligera.</p>
+      <h5 class="font-bold">Historia bíblica de apoyo</h5>
+      <p>Un ejemplo muy claro lo vemos en Pedro. Él amaba a Jesús, pero en un momento de miedo lo negó con sus palabras. Su boca dijo algo que no reflejaba fidelidad, sino temor. Sin embargo, más adelante Jesús lo restauró. El mismo Pedro que negó a Jesús fue levantado por el Señor y llegó a ser un instrumento útil en sus manos. Esta historia nos enseña dos verdades importantes: primero, nuestras palabras pueden fallar; segundo, Dios puede restaurarnos y enseñarnos a hablar de una manera diferente.</p>
+      <h5 class="font-bold">Aplicación</h5>
+      <p>Cada creyente debe preguntarse con sinceridad: ¿Qué tipo de fruto están produciendo mis palabras en mi casa, en mi familia, en la iglesia y en mis conversaciones diarias? No basta con decir “yo no quise hacerlo”. Muchas veces el daño ya quedó hecho. Por eso necesitamos pedirle al Señor que trate nuestro corazón, porque cuando el corazón cambia, también cambia la forma de hablar.</p>
+      <h4 class="font-bold uppercase">SECCIÓN 3.1: ANÁLISIS ETIMOLÓGICO DE PALABRAS CLAVE</h4>
+      <p>En esta sección vamos a aprender tres palabras importantes que nos ayudan a entender mejor el tema de este módulo. Estas palabras vienen del griego, el idioma en que fue escrito el Nuevo Testamento, y aunque son antiguas, su enseñanza sigue siendo muy práctica para nosotros hoy. No vamos a estudiarlas de manera complicada, sino de una forma sencilla, para ver cómo iluminan nuestra vida diaria.</p>
+      <p>Estas palabras son <strong>Logos</strong>, <strong>Charis</strong> y <strong>Oikodomeō</strong>. Las tres nos ayudan a entender que hablar no es solamente emitir sonidos. Hablar es comunicar verdad, extender gracia y construir la vida de otros. Cuando entendemos esto, comenzamos a ver nuestras palabras con más responsabilidad delante de Dios.</p>
+      <h5 class="font-bold">PALABRAS CLAVE</h5>
+      <p><strong>Logos (λόγος)</strong><br><strong>Charis (χάρις)</strong><br><strong>Oikodomeō (οἰκοδομέω)</strong></p>
+      <div class="border-t border-slate-200 my-6"></div>
       <h5 class="font-bold">Logos (λόγος)</h5>
-      <p>The Greek word <span class="greek-term">logos</span> can be translated as word, message, discourse, or explanation. In the New Testament, it points not only to human speech but also to God's revelation, and uniquely to Jesus Christ as the Word of God.</p>
-      <div class="doctrine-card">
-        <strong>John 1:1-4</strong>
-        <p class="mt-2 mb-0">The Word was with God, and the Word was God. In Him was life, and that life was the light of men.</p>
-      </div>
-      <p><strong>Application:</strong> every time you speak, you communicate what lives in your inner life. Your words reveal whether your heart is governed by peace, pride, faith, or bitterness.</p>
-
+      <p>La palabra griega <strong>logos</strong> puede traducirse como palabra, mensaje, discurso o explicación. En sentido sencillo, se refiere a lo que una persona expresa con su boca. Pero en la Biblia esta palabra también tiene una profundidad especial, porque se usa para hablar de la revelación de Dios y, de manera única, de Jesucristo como la Palabra de Dios.</p>
+      <p>Esto significa que las palabras no son algo vacío. Por medio de la palabra se comunica la verdad, se revela el pensamiento y se da a conocer lo que hay en el interior. Cuando una persona habla, está mostrando algo de sí misma. Y cuando Dios habló por medio de su Hijo, mostró perfectamente quién es Él.</p>
+      <h5 class="font-bold">Texto base</h5>
+      <p><strong>Juan 1:1–4 (RVR1960)</strong><br>“1 En el principio era el Verbo, y el Verbo era con Dios, y el Verbo era Dios.<br>2 Este era en el principio con Dios.<br>3 Todas las cosas por él fueron hechas, y sin él nada de lo que ha sido hecho, fue hecho.<br>4 En él estaba la vida, y la vida era la luz de los hombres.”</p>
+      <p>Aquí la palabra “Verbo” traduce precisamente <strong>logos</strong>. Juan enseña que Jesús no sólo trae un mensaje de parte de Dios, sino que Él mismo es la Palabra de Dios hecha visible. Esto eleva mucho la importancia de las palabras. Si Dios quiso revelarse por medio del Logos, entonces nosotros también debemos tratar nuestras palabras con reverencia y responsabilidad.</p>
+      <p><strong>Palabra clave:</strong><br><strong>Logos = palabra, mensaje, explicación</strong></p>
+      <h5 class="font-bold">Aplicación de Logos</h5>
+      <p>Cada vez que hablas, estás dando un mensaje. Aun cuando no predicas ni enseñas públicamente, tu manera de hablar está comunicando algo. Tus palabras dicen si hay paz o enojo en tu corazón, si hay humildad o soberbia, si hay fe o amargura. Por eso, como creyentes, debemos aprender a usar nuestra palabra de una manera que refleje a Cristo y no sólo nuestras emociones del momento.</p>
+      <div class="border-t border-slate-200 my-6"></div>
       <h5 class="font-bold">Charis (χάρις)</h5>
-      <p>The Greek term <span class="greek-term">charis</span> means grace, unmerited favor. Grace-filled speech is not merely nice speech. It offers to others a treatment better than what they deserve. It tells truth with a right spirit, seeking restoration instead of humiliation.</p>
-      <div class="verse-block">
-        "Let your speech always be with grace, seasoned with salt..." — Colossians 4:6
-      </div>
-      <p><strong>Application:</strong> grace in speech means correcting without crushing, exhorting without shaming, and guiding without wounding.</p>
-
+      <p>La palabra <strong>charis</strong> significa gracia, favor inmerecido, bondad que una persona recibe sin haberla ganado. En la vida cristiana, esta palabra es preciosa porque describe cómo Dios nos trata: no conforme a lo que merecemos, sino conforme a su amor y misericordia. Cuando este concepto se aplica a nuestras palabras, entendemos que hablar con gracia no es solamente ser amable, sino tratar al otro mejor de lo que merece.</p>
+      <p>Muchas veces una persona falla, se equivoca o nos hiere. Nuestra reacción natural puede ser responder con dureza, sarcasmo o condenación. Pero la gracia nos enseña a responder de otra manera. Hablar con gracia es ofrecer palabras que ayuden a restaurar, que den esperanza, que abran una puerta para el arrepentimiento y el cambio.</p>
+      <h5 class="font-bold">Texto base</h5>
+      <p><strong>Efesios 4:29 (RVR1960)</strong><br>“Ninguna palabra corrompida salga de vuestra boca, sino la que sea buena para la necesaria edificación, a fin de dar gracia a los oyentes.”  </p>
+      <p><strong>Efesios 4:29 (NTV)</strong><br>“No empleen un lenguaje grosero ni ofensivo. Que todo lo que digan sea bueno y útil, a fin de que sus palabras resulten de estímulo para quienes las oigan.”</p>
+      <p>Pablo enseña aquí que el cristiano no debe hablar de cualquier manera. La palabra correcta no es sólo la que evita lo malo, sino también la que hace bien. Cuando nuestras palabras “dan gracia”, bendicen al que escucha. En vez de dejar a la persona más herida, la dejan más animada, más orientada y más abierta a la obra de Dios.</p>
+      <p><strong>Palabra clave:</strong><br><strong>Charis = gracia, favor inmerecido</strong></p>
+      <h5 class="font-bold">Cita cruzada</h5>
+      <p><strong>Colosenses 4:6 (RVR1960)</strong><br>“Sea vuestra palabra siempre con gracia, sazonada con sal, para que sepáis cómo debéis responder a cada uno.”</p>
+      <p>Esta cita confirma la misma verdad. La palabra del creyente debe estar “con gracia”, es decir, marcada por la bondad de Dios. También dice “sazonada con sal”, lo cual habla de una palabra sabia, útil, agradable y apropiada. No se trata de hablar mucho, sino de hablar de manera correcta.</p>
+      <h5 class="font-bold">Aplicación de Charis</h5>
+      <p>Hablar con gracia significa, por ejemplo, decirle a alguien: “Sé que te equivocaste, pero todavía hay esperanza”, en lugar de decir: “Tú nunca cambias”. Significa corregir sin aplastar, exhortar sin humillar y aconsejar sin herir. Una palabra llena de gracia puede abrir el corazón de una persona para escuchar a Dios.</p>
+      <div class="border-t border-slate-200 my-6"></div>
       <h5 class="font-bold">Oikodomeō (οἰκοδομέω)</h5>
-      <p><span class="greek-term">Oikodomeō</span> literally means to build a house. Spiritually, it refers to building up the life of others through words that strengthen faith, character, and perseverance.</p>
-      <p>Ephesians 4:29 teaches that healthy speech has a clear purpose: it is good for necessary edification and gives grace to those who hear.</p>
-      <p><strong>Application:</strong> in family and church life, every sentence can either place a brick of encouragement or remove strength from someone's heart.</p>
-
-      <h4 class="font-bold">SECTION 3.2: THE TONGUE AS A REVEALER OF SPIRITUAL MATURITY</h4>
-      <p>The way we speak reveals spiritual maturity. This is not merely a matter of communication habits; it is a matter of the heart. Jesus taught that out of the abundance of the heart the mouth speaks (Matthew 12:34).</p>
-      <p>James teaches that one who does not stumble in speech is spiritually mature and able to govern the rest of life (James 3:2). In other words, growth in speech is a clear sign of growth in character.</p>
-      <ul class="list-disc pl-8 space-y-2">
-        <li><strong>Spiritual maturity:</strong> real growth in Christian life.</li>
-        <li><strong>Self-control:</strong> the God-enabled capacity to restrain oneself.</li>
-        <li><strong>Heart:</strong> the inner world of intentions, thoughts, and emotions.</li>
-      </ul>
-      <div class="verse-block">
-        "The tongue is a fire... With it we bless our Lord and Father, and with it we curse people made in God's likeness." — James 3:5-10
-      </div>
-      <p>This contradiction reveals why the tongue matters so deeply. A transformed heart should produce transformed speech.</p>
-
-      <h4 class="font-bold">SECTION 3.3: WORDS THAT BUILD UP</h4>
-      <p>Believers are not only called to avoid corrupt speech; they are called to use their mouth to do good. Edifying words help, strengthen, encourage, and impart grace.</p>
-      <p>Ephesians 4:29 presents three marks of healthy speech: it builds up, responds to the need of the moment, and gives grace to the hearer. This means words must be true, useful, timely, and kind.</p>
-      <p>Simple phrases like "God is with you," "thank you for your effort," "I forgive you," or "let's pray" can deeply strengthen a person.</p>
-      <p><strong>Discernment and timing:</strong> saying a good thing at the wrong moment can still cause harm. Wise speech asks: Is this the right word for this person right now?</p>
-      <div class="doctrine-card">
-        <strong>Proverbs 15:23</strong>
-        <p class="mt-2 mb-0">"A word spoken at the right time, how good it is!"</p>
-      </div>
-
-      <h4 class="font-bold">SECTION 3.4: WORDS THAT DESTROY</h4>
-      <p>Corrupt speech is more than profanity. Scripture describes it as decayed language, words that do not produce good in others. It includes speech that humiliates, divides, accuses without love, and damages reputations.</p>
-      <ul class="list-disc pl-8 space-y-2">
-        <li><strong>Sarcasm:</strong> ridicule disguised as humor.</li>
-        <li><strong>Murmuring:</strong> negative speech behind someone's back.</li>
-        <li><strong>Destructive criticism:</strong> exposing faults without restorative intent.</li>
-        <li><strong>Gossip:</strong> sharing information that harms another person's reputation.</li>
-      </ul>
-      <div class="verse-block">
-        "Where there is no wood, the fire goes out; where there is no gossip, conflict ceases." — Proverbs 26:20
-      </div>
-      <p><strong>Application:</strong> before speaking about someone else, ask: Is it true? Is it necessary? Is my intent to restore or to damage?</p>
-
-      <h4 class="font-bold">SECTION 3.5: DESTRUCTIVE IMPACT ON THE COMMUNITY</h4>
-      <p>Destructive communication does not wound only individuals. It can damage whole communities by weakening trust, creating suspicion, and fracturing unity. Many churches divide because of speech more than doctrine.</p>
-      <p>Biblical correction must always be redemptive. Galatians 6:1 commands believers to restore those who fall, and to do so in a spirit of gentleness.</p>
-      <p>Jesus gave a clear process for conflict resolution in Matthew 18:15-17: private confrontation first, then witnesses, and only after that broader church involvement if necessary. Skipping this order usually multiplies pain.</p>
-      <ul class="list-disc pl-8 space-y-2">
-        <li><strong>Community:</strong> believers united in Christ.</li>
-        <li><strong>Unity:</strong> spiritual and relational harmony in Christ's body.</li>
-        <li><strong>Gentleness:</strong> humble and controlled strength when addressing fault.</li>
-      </ul>
-
-      <h4 class="font-bold">SECTION 3.6: THE TRANSFORMING POWER OF WORDS</h4>
-      <p>God can use our words to comfort, correct, strengthen, and draw others to Christ. The tongue can become a redemptive instrument when speech is submitted to the Holy Spirit.</p>
-      <p>The doer of the Word learns to listen more and speak less (James 1:19), restrains the tongue, and uses speech to bless rather than wound.</p>
-      <p>Personal testimony is also a powerful evangelistic channel. When we humbly tell what God has done in us, the Spirit can use those words to awaken faith.</p>
-      <div class="doctrine-card">
-        <strong>Acts 2:37-41</strong>
-        <p class="mt-2 mb-0">God used Peter's words to bring conviction, repentance, and salvation to thousands.</p>
-      </div>
-
-      <h4 class="font-bold">SECTION 3.7: MOTIVATION TO CONTROL THE TONGUE</h4>
-      <p>The deepest motive for controlling speech is not fear of punishment but love and reverence for God's presence in us. The Holy Spirit dwells in the believer, and that reality must shape our words.</p>
-      <p>Ephesians 4:29-30 directly connects speech and fellowship with the Spirit: corrupt speech grieves the Holy Spirit. This shows that sinful talk is not a minor issue; it affects communion with God.</p>
-      <p>As new creations in Christ, believers are being conformed to His image. That transformation should be heard in tone, content, intention, and even in the willingness to remain silent when silence is wise.</p>
-      <ul class="list-disc pl-8 space-y-2">
-        <li><strong>Holy Spirit:</strong> God's indwelling presence who guides and sanctifies.</li>
-        <li><strong>Seal:</strong> mark of belonging and guarantee of God's completed work.</li>
-        <li><strong>Fear of God:</strong> reverent love and holy respect in His presence.</li>
-        <li><strong>New creation:</strong> a life transformed by union with Christ.</li>
-      </ul>
-
-      <div class="resource-section shadow-sm border border-blue-100">
-        <h5 class="mt-0 text-blue-900 border-b border-blue-200 pb-2">REFLECTION QUESTIONS</h5>
-        <ol class="list-decimal pl-6 space-y-2 mt-4 text-gray-800">
-          <li>What do my words reveal about my heart?</li>
-          <li>Am I using my tongue to bless, restore, and build up others?</li>
-          <li>In what moments do I speak without self-control?</li>
-          <li>What changes does God need to produce in my speech so my words please Him?</li>
-        </ol>
-      </div>
-
+      <p>La palabra <strong>oikodomeō</strong> significa literalmente construir una casa. En el Nuevo Testamento se usa de manera espiritual para hablar de edificar, fortalecer o levantar la vida de otra persona. Así como una casa se levanta poco a poco, también la fe, el ánimo y el carácter de una persona pueden ser fortalecidos por palabras correctas.</p>
+      <p>Esto nos ayuda a entender mejor Efesios 4:29. Pablo no está diciendo solamente que dejemos de hablar mal. También está enseñando que nuestras palabras deben servir para construir algo bueno en los demás. Una conversación puede dejar a alguien más fuerte en la fe, más tranquilo en su corazón y más dispuesto a seguir adelante.</p>
+      <h5 class="font-bold">Texto base relacionado</h5>
+      <p><strong>Efesios 4:29 (RVR1960)</strong><br>“Ninguna palabra corrompida salga de vuestra boca, sino la que sea buena para la necesaria edificación, a fin de dar gracia a los oyentes.”</p>
+      <p>La palabra “edificación” viene precisamente de esta idea de construir. Dios quiere que nuestras palabras sean como herramientas de construcción y no como instrumentos de destrucción. Cada frase que sale de nuestra boca puede poner un ladrillo de ánimo o puede quitar una piedra y debilitar a otro.</p>
+      <p><strong>Palabra clave:</strong><br><strong>Oikodomeō = edificar, construir, levantar</strong></p>
+      <h5 class="font-bold">Historia bíblica de apoyo</h5>
+      <p>Un ejemplo hermoso de gracia que edifica lo encontramos en Jesús y la mujer sorprendida en adulterio. Los demás llegaron con palabras de condena y con piedras en la mano. Querían destruirla públicamente. Pero Jesús habló con verdad y con gracia. Él no aprobó el pecado, pero tampoco aplastó a la mujer. Le dijo: “Ni yo te condeno; vete, y no peques más”. Así mostró cómo una palabra santa también puede ser una palabra restauradora.</p>
+      <h5 class="font-bold">Aplicación de Oikodomeō</h5>
+      <p>Cada creyente debe preguntarse: cuando hablo con mi familia, con mis hermanos de la iglesia o con otras personas, ¿estoy construyendo o destruyendo? A veces pensamos que sólo predicar edifica, pero no es así. También edifica una palabra de ánimo, una frase de gratitud, una corrección hecha con amor, una oración hablada en el momento correcto o una respuesta suave cuando otro esperaba dureza.</p>
+      <div class="bg-gray-50 p-6 rounded-lg mb-8">
+        <h4 class="font-bold border-b border-gray-200 pb-2 mb-4">RESUMEN DE LA SECCIÓN</h4>
+      <p>La <strong>Introducción</strong> nos enseña que las palabras revelan el corazón y producen frutos. La <strong>Sección 3.1</strong> añade que hablar implica responsabilidad espiritual, porque las palabras comunican verdad, transmiten gracia y tienen capacidad de edificar a otros.</p>
+      <p>Por eso, el creyente debe aprender a usar su boca de una manera que refleje a Cristo. No se trata solamente de evitar malas palabras; se trata de hablar con verdad, con gracia y con propósito de edificación.</p>
+      <h5 class="font-bold">Palabras clave para recordar</h5>
+      <p><strong>Logos</strong> = palabra, mensaje, explicación<br><strong>Charis</strong> = gracia, favor inmerecido<br><strong>Oikodomeō</strong> = edificar, construir, levantar</p>
+      <h5 class="font-bold">Preguntas para reflexión</h5>
+      <ol>
+      <li>¿Qué revelan mis palabras sobre lo que hay en mi corazón?</li>
+      <li>¿Estoy usando mis palabras para dar gracia o para herir?</li>
+      <li>¿Mis palabras están edificando la vida de mi familia y de la iglesia, o la están desgastando?</li>
+      </ol>
+      <h4 class="font-bold">SECCIÓN 3.2</h4>
+      <h4 class="font-bold">La lengua como reveladora de madurez espiritual</h4>
+      <p>En esta sección vamos a estudiar una verdad muy importante: la manera en que hablamos revela nuestro nivel de madurez espiritual. Muchas personas piensan que la espiritualidad se mide solamente por cuánto alguien ora, cuánto sabe de la Biblia o cuántos años tiene en la iglesia. Pero la Biblia también enseña que la boca revela mucho del estado real del corazón. Una persona puede aparentar mucha espiritualidad por fuera, pero sus palabras pueden mostrar enojo, orgullo, dureza o falta de dominio propio.</p>
+      <p>Esto significa que el habla no es solamente un tema de educación o de costumbre. Es un asunto espiritual. Lo que sale de nuestra boca deja ver lo que está pasando dentro de nosotros. Si el corazón está lleno de paz, humildad y temor de Dios, eso se notará en la manera de hablar. Pero si el corazón está lleno de amargura, crítica o impaciencia, también se va a notar. Por eso, aprender a controlar la lengua no es un detalle pequeño; es una señal importante de crecimiento cristiano.</p>
+      <p>La Biblia enseña que la lengua puede bendecir, pero también puede destruir. Con la misma boca una persona puede cantar al Señor el domingo y luego hablar con dureza en la casa, criticar a otra persona o herir con palabras ásperas. Esa contradicción revela que todavía hay áreas del corazón que necesitan ser rendidas a Dios. Por eso, esta sección no solo nos llama a hablar mejor, sino a permitir que el Señor transforme nuestro interior.</p>
+      <h5 class="font-bold">PALABRAS CLAVE</h5>
+      <p><strong>Madurez espiritual</strong><br><strong>Dominio propio</strong><br><strong>Lengua</strong><br><strong>Corazón</strong><br><strong>Fuego</strong></p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">La boca revela el corazón</h5>
+      <p>Jesús enseñó que la boca habla de lo que hay en el corazón. Esta verdad es sencilla, pero muy profunda. A veces la persona dice: “Lo dije sin pensar”, pero muchas veces eso significa que salió lo que realmente estaba guardado por dentro. Las palabras apresuradas, ásperas o hirientes suelen revelar emociones y actitudes que ya estaban en el corazón, aunque no siempre se veían a simple vista.</p>
+      <h5 class="font-bold">Texto base</h5>
+      <p><strong>Mateo 12:34 (RVR1960)</strong><br>“Porque de la abundancia del corazón habla la boca.”</p>
+      <p><strong>Mateo 12:34 (NTV)</strong><br>“Pues lo que está en el corazón determina lo que uno dice.”</p>
+      <p>Este texto nos enseña que la boca funciona como una ventana del corazón. Si queremos cambiar nuestra manera de hablar, no basta con tratar de sonar mejor por fuera; necesitamos que Dios limpie lo que hay dentro. La transformación verdadera empieza en el corazón y luego se refleja en las palabras.</p>
+      <p><strong>Palabra clave:</strong><br><strong>Corazón = el interior de la persona; pensamientos, emociones, intenciones</strong></p>
+      <h5 class="font-bold">Aplicación</h5>
+      <p>Cuando alguien reacciona con gritos, insultos o palabras de desprecio, no está mostrando solo un problema de lenguaje, sino un problema más profundo del corazón. Por eso, antes de corregir solamente las palabras, debemos pedirle al Señor que trate nuestras emociones, nuestro enojo, nuestro orgullo y nuestra amargura.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">El control de la lengua muestra madurez</h5>
+      <p>Santiago enseña que una de las señales más claras de madurez espiritual es la capacidad de controlar lo que decimos. No está diciendo que una persona madura nunca falla, sino que entiende el valor de sus palabras y aprende a poner freno a su boca. El creyente maduro no habla todo lo que piensa, ni reacciona con cualquier emoción, ni usa su lengua sin cuidado.</p>
+      <h5 class="font-bold">Texto base</h5>
+      <p><strong>Santiago 3:2 (RVR1960)</strong><br>“Porque todos ofendemos muchas veces. Si alguno no ofende en palabra, éste es varón perfecto, capaz también de refrenar todo el cuerpo.”</p>
+      <p><strong>Santiago 3:2 (NTV)</strong><br>“Es cierto que todos cometemos muchos errores, pero si pudiéramos dominar la lengua, seríamos perfectos y podríamos controlarnos en todo sentido.”</p>
+      <p>Aquí la palabra “perfecto” no significa una persona sin pecado absoluto. En este contexto, habla de una persona madura, completa, que ha aprendido a crecer espiritualmente. Santiago muestra que si alguien aprende a controlar su boca, también está aprendiendo a controlar otras áreas de su vida.</p>
+      <p><strong>Palabras clave:</strong><br><strong>Madurez espiritual = crecimiento real en la vida cristiana</strong><br><strong>Dominio propio = capacidad de controlarse con la ayuda de Dios</strong></p>
+      <h5 class="font-bold">Cita cruzada</h5>
+      <p><strong>Proverbios 17:27–28 (RVR1960)</strong><br>“27 El que ahorra sus palabras tiene sabiduría;<br>De espíritu prudente es el hombre entendido.<br>28 Aun el necio, cuando calla, es contado por sabio;<br>El que cierra sus labios es entendido.”</p>
+      <p>Estos versículos enseñan algo muy práctico: una persona sabia no necesita hablar demasiado para mostrar valor. A veces la verdadera sabiduría se demuestra callando a tiempo. En un mundo donde muchos creen que siempre hay que responder de inmediato, la Biblia enseña que saber callar también es una señal de prudencia.</p>
+      <h5 class="font-bold">Aplicación</h5>
+      <p>Una persona madura aprende a preguntarse: “¿Debo decir esto? ¿Es verdad? ¿Es necesario? ¿Ayudará a alguien?” No todo lo que pensamos debe salir de nuestra boca. Muchas discusiones en la familia, en la iglesia y en las amistades se habrían evitado si alguien hubiera tenido la humildad de guardar silencio por un momento y orar antes de responder.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">La responsabilidad especial del maestro</h5>
+      <p>Santiago también dice que quienes enseñan tienen una responsabilidad todavía mayor. Esto no significa que sólo los maestros deban cuidar su lengua, sino que quien habla más, influye más, y por lo tanto también puede causar más daño si no se cuida. Una palabra equivocada dicha por una persona con influencia puede herir, confundir o desanimar a muchos.</p>
+      <h5 class="font-bold">Texto base</h5>
+      <p><strong>Santiago 3:1 (RVR1960)</strong><br>“Hermanos míos, no os hagáis maestros muchos de vosotros, sabiendo que recibiremos mayor condenación.”</p>
+      <p>Este versículo no busca apagar el deseo de enseñar, sino recordar que enseñar es una responsabilidad seria. El maestro cristiano no solo comunica información bíblica; también modela carácter, espíritu y forma de hablar. Por eso, el maestro necesita pedir constantemente la ayuda de Dios para hablar con verdad, con humildad y con dominio propio.</p>
+      <p><strong>Palabra clave:</strong><br><strong>Maestro = persona que instruye a otros en la verdad de Dios</strong></p>
+      <h5 class="font-bold">Aplicación</h5>
+      <p>Aunque esta advertencia se aplica de manera especial a maestros y líderes, también puede enseñarse a todos los creyentes. Toda persona influye sobre alguien: hijos, nietos, familia, vecinos, hermanos de la iglesia. Por eso, cada creyente debe entender que sus palabras tienen peso y pueden dejar huellas profundas en otros.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">La lengua como fuego</h5>
+      <p>Santiago usa una imagen muy fuerte para describir la lengua: la compara con un fuego. Esta figura ayuda a entender que algo pequeño puede causar un daño muy grande. Una chispa pequeña puede quemar un bosque entero; de la misma manera, una sola frase dicha con enojo, chisme o mentira puede dañar una familia, una amistad o incluso una congregación.</p>
+      <h5 class="font-bold">Texto base</h5>
+      <p><strong>Santiago 3:5–6 (RVR1960)</strong><br>“5 Así también la lengua es un miembro pequeño, pero se jacta de grandes cosas. He aquí, ¡cuán grande bosque enciende un pequeño fuego!<br>6 Y la lengua es un fuego, un mundo de maldad. La lengua está puesta entre nuestros miembros, y contamina todo el cuerpo
+      , e inflama la rueda de la creación, y ella misma es inflamada por el infierno.”</p>
+      <p><strong>Santiago 3:9–10 (RVR1960)</strong><br>“9 Con ella bendecimos al Dios y Padre, y con ella maldecimos a los hombres, que están hechos a la semejanza de Dios.<br>10 De una misma boca proceden bendición y maldición. Hermanos míos, esto no debe ser así.”</p>
+      <p>Estos versículos muestran una contradicción seria. No es correcto que una misma boca adore a Dios y luego humille, critique o maldiga a las personas hechas a su imagen. Santiago no presenta esto como algo normal, sino como algo que debe corregirse. La lengua sin control puede contaminar toda la vida de una persona y también el ambiente de quienes la rodean.</p>
+      <p><strong>Palabra clave:</strong><br><strong>Fuego = imagen de destrucción rápida y peligrosa</strong></p>
+      <h5 class="font-bold">Cita cruzada</h5>
+      <p><strong>Proverbios 15:1 (RVR1960)</strong><br>“La blanda respuesta quita la ira;<br>Mas la palabra áspera hace subir el furor.”</p>
+      <p>Este proverbio nos enseña que las palabras pueden apagar un incendio o encenderlo más. Una respuesta suave puede detener una discusión, pero una palabra áspera puede empeorarla. Aquí vemos otra vez el poder real de la lengua en la vida diaria.</p>
+      <h5 class="font-bold">Historia bíblica de apoyo</h5>
+      <p>Una historia que ayuda a entender este tema es la de los discípulos cuando quisieron hacer descender fuego del cielo sobre una aldea samaritana porque no recibieron a Jesús. Ellos reaccionaron con enojo y quisieron responder con destrucción. Pero Jesús los reprendió. Esta historia muestra que una reacción impulsiva puede parecer muy espiritual por fuera, pero en realidad puede revelar un corazón todavía inmaduro y necesitado de corrección.</p>
+      <h5 class="font-bold">Aplicación</h5>
+      <p>Muchos conflictos familiares y congregacionales no comienzan con una gran ofensa, sino con una frase dicha sin sabiduría. Un comentario duro, un sarcasmo, una crítica dicha en mal momento o una palabra humillante puede dejar heridas profundas. Por eso, el creyente debe aprender a detenerse antes de hablar y preguntarse si sus palabras traerán paz o traerán fuego.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <div class="bg-gray-50 p-6 rounded-lg mb-8">
+        <h4 class="font-bold border-b border-gray-200 pb-2 mb-4">RESUMEN DE LA SECCIÓN</h4>
+      <p>La Sección 3.2 nos enseña que la lengua revela la madurez espiritual de la persona. Lo que decimos muestra lo que hay en el corazón. Santiago enseña que el dominio de la lengua es una señal importante de crecimiento cristiano y que quienes enseñan deben cuidar aún más su manera de hablar. También nos advierte que la lengua puede ser como fuego: algo pequeño, pero con gran capacidad de destruir.</p>
+      <p>Por eso, el creyente no debe conformarse con hablar “menos mal”, sino pedirle a Dios una transformación interior que produzca palabras limpias, sabias y llenas de dominio propio.</p>
+      <h5 class="font-bold">Palabras clave para recordar</h5>
+      <p><strong>Madurez espiritual</strong> = crecimiento real en la vida cristiana<br><strong>Dominio propio</strong> = capacidad de controlarse con la ayuda de Dios<br><strong>Corazón</strong> = el interior de la persona; pensamientos, emociones, intenciones<br><strong>Maestro</strong> = persona que instruye a otros en la verdad de Dios<br><strong>Fuego</strong> = imagen de destrucción rápida y peligrosa</p>
+      <h5 class="font-bold">Preguntas para reflexión</h5>
+      <ol>
+      <li>¿Qué revelan mis palabras sobre mi corazón?</li>
+      <li>¿En qué momentos hablo sin dominio propio?</li>
+      <li>¿Estoy usando mi lengua para bendecir o para herir?</li>
+      <li>¿Qué necesita cambiar Dios dentro de mí para que cambie también mi manera de hablar?</li>
+      </ol>
+      <h4 class="font-bold">SECCIÓN 3.3</h4>
+      <h4 class="font-bold">Palabras que edifican</h4>
+      <p>En esta sección vamos a estudiar cómo deben ser las palabras de un creyente que quiere agradar a Dios y bendecir a los demás. La Biblia no solo nos manda evitar palabras malas; también nos enseña a usar la boca para hacer bien. Hablar como cristianos no significa simplemente dejar de ofender, sino aprender a decir palabras que ayuden, levanten, animen y traigan gracia a quienes nos escuchan.</p>
+      <p>Muchas veces pensamos que edificar a otros solo ocurre cuando alguien predica, enseña o da un consejo muy profundo. Pero la verdad es que una palabra sencilla, dicha con amor y en el momento correcto, puede fortalecer mucho a una persona. Una frase como “Dios está contigo”, “gracias por tu esfuerzo”, “te perdono” o “vamos a orar” puede traer consuelo, paz y nueva fuerza. Por eso, hablar bien también es una forma de servir al Señor y de ministrar a otros.</p>
+      <p>Esta sección nos recuerda que las palabras del creyente deben ser útiles, oportunas y llenas de gracia. No se trata de hablar mucho, sino de hablar de manera que lo dicho deje algo bueno en la vida de la otra persona. Cuando nuestras palabras reflejan el carácter de Cristo, se convierten en instrumentos de bendición.</p>
+      <h5 class="font-bold">PALABRAS CLAVE</h5>
+      <p><strong>Edificación</strong><br><strong>Gracia</strong><br><strong>Ánimo</strong><br><strong>Oportunidad</strong><br><strong>Discernimiento</strong></p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">Hablar para edificar</h5>
+      <p>La enseñanza principal de esta sección se encuentra en Efesios 4:29. Allí el apóstol Pablo explica que la boca del creyente no debe producir corrupción, sino edificación. Esto significa que nuestras palabras deben ayudar a construir la vida de otros, no a debilitarla. Edificar es como levantar una casa ladrillo por ladrillo. Del mismo modo, una persona puede ser fortalecida poco a poco por palabras correctas, sabias y llenas de amor.</p>
+      <h5 class="font-bold">Texto base</h5>
+      <p><strong>Efesios 4:29 (RVR1960)</strong><br>“Ninguna palabra corrompida salga de vuestra boca, sino la que sea buena para la necesaria edificación, a fin de dar gracia a los oyentes.”</p>
+      <p><strong>Efesios 4:29 (NTV)</strong><br>“No empleen un lenguaje grosero ni ofensivo. Que todo lo que digan sea bueno y útil, a fin de que sus palabras resulten de estímulo para quienes las oigan.”</p>
+      <p>Este versículo nos muestra tres características de una palabra buena. Primero, debe ser una palabra que edifica. Segundo, debe responder a la necesidad del momento. Tercero, debe dar gracia a quienes la escuchan. Esto quiere decir que la palabra correcta no solo es verdadera, sino también útil, oportuna y bondadosa.</p>
+      <p><strong>Palabra clave:</strong><br><strong>Edificación = construir, fortalecer, levantar la vida de otra persona</strong></p>
+      <h5 class="font-bold">Aplicación</h5>
+      <p>Antes de hablar, el creyente debe aprender a preguntarse: “¿Lo que voy a decir va a ayudar o va a dañar? ¿Va a fortalecer o va a desanimar?” Esta sencilla práctica puede cambiar muchas conversaciones en la casa, en la iglesia y en cualquier relación.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">Palabras que dan gracia</h5>
+      <p>La palabra “gracia” en este contexto significa que nuestras palabras deben transmitir algo del trato bondadoso de Dios
+      . No siempre la otra persona merece una respuesta suave, paciente o esperanzadora, pero precisamente allí aparece la gracia. Hablar con gracia no significa aprobar el pecado ni evitar la verdad. Significa decir la verdad con un espíritu correcto, de tal manera que la otra persona tenga oportunidad de ser restaurada y no simplemente humillada.</p>
+      <h5 class="font-bold">Cita cruzada</h5>
+      <p><strong>Colosenses 4:6 (RVR1960)</strong><br>“Sea vuestra palabra siempre con gracia, sazonada con sal, para que sepáis cómo debéis responder a cada uno.”</p>
+      <p><strong>Colosenses 4:6 (NTV)</strong><br>“Que su conversación sea cordial y agradable, a fin de que ustedes tengan la respuesta adecuada para cada persona.”</p>
+      <p>Aquí Pablo añade una expresión muy hermosa: “sazonada con sal”. Esta figura nos enseña que nuestras palabras no deben ser secas, ásperas ni pesadas, sino sabias, agradables y adecuadas. Así como la sal da sabor a la comida, una palabra llena de gracia puede dar alivio, dirección y ánimo a quien la escucha.</p>
+      <p><strong>Palabra clave:</strong><br><strong>Gracia = favor inmerecido, bondad que se expresa también al hablar</strong></p>
+      <h5 class="font-bold">Aplicación</h5>
+      <p>Hablar con gracia puede verse de maneras muy simples. Por ejemplo, cuando alguien falla, en vez de decir “siempre eres igual”, se puede decir: “sé que te equivocaste, pero Dios puede ayudarte a levantarte”. Cuando alguien está triste, en vez de ignorarlo, se le puede hablar con ternura y recordarle las promesas del Señor. Estas son palabras que dan gracia.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">Palabras de ánimo y fortalecimiento</h5>
+      <p>Una persona puede pasar por luchas, cansancio, dolor o desánimo, y en esos momentos una palabra correcta puede hacer una gran diferencia. La Biblia llama a los creyentes a animarse y edificarse unos a otros. Esto nos recuerda que no fuimos llamados solo a recibir ánimo, sino también a darlo.</p>
+      <h5 class="font-bold">Cita cruzada</h5>
+      <p><strong>1 Tesalonicenses 5:11 (RVR1960)</strong><br>“Por lo cual, animaos unos a otros, y edificaos unos a otros, así como lo hacéis.”</p>
+      <p>Este versículo muestra que el ánimo mutuo debe ser una práctica normal en la vida cristiana. En lugar de buscar errores para señalar, debemos aprender a buscar oportunidades para fortalecer la fe y el corazón de otros. Esto no quiere decir cerrar los ojos al pecado, sino tener una disposición de ayuda y no de destrucción.</p>
+      <h5 class="font-bold">Aplicación</h5>
+      <p>Algunas palabras que edifican pueden ser muy sencillas: “gracias”, “cuenta conmigo”, “estoy orando por ti”, “Dios te va a ayudar”, “hiciste bien”, “te aprecio”. A veces una persona no necesita un gran sermón; necesita una palabra correcta que le recuerde que no está sola.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">La importancia del momento correcto</h5>
+      <p>No basta con decir algo bueno; también importa cuándo y cómo se dice. Una palabra correcta en un momento incorrecto puede no producir el bien esperado. Por eso, además de tener buenas intenciones, el creyente necesita discernimiento espiritual. Discernimiento significa saber qué decir, cuándo decirlo y de qué manera decirlo.</p>
+      <p>El mismo Efesios 4:29 habla de “la necesaria edificación”. Eso implica que nuestras palabras deben responder a la necesidad real del momento. No toda persona necesita lo mismo. A veces alguien necesita consuelo; otras veces necesita corrección; otras veces necesita silencio acompañado de oración. La sabiduría cristiana consiste en aprender a reconocer esa necesidad.</p>
+      <p><strong>Palabras clave:</strong><br><strong>Oportunidad = el momento correcto para decir algo</strong><br><strong>Discernimiento = capacidad de reconocer qué necesita la otra persona</strong></p>
+      <h5 class="font-bold">Cita cruzada</h5>
+      <p><strong>Proverbios 15:23 (RVR1960)</strong><br>“El hombre se alegra con la respuesta de su boca;<br>Y la palabra a su tiempo, ¡cuán buena es!”</p>
+      <p>Este proverbio resalta el valor de una palabra dicha a tiempo. No solamente importa el contenido, sino también el momento. Una palabra sabia, dicha cuando la persona realmente la necesita, puede traer mucho gozo y mucha ayuda.</p>
+      <h5 class="font-bold">Aplicación</h5>
+      <p>Antes de hablar, conviene preguntarse: “¿Este es el momento correcto? ¿Esta persona necesita consejo, consuelo o simplemente que la escuchen?” Esta costumbre ayuda a evitar palabras que, aunque parezcan buenas, puedan caer mal por falta de sensibilidad.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">Historia bíblica de apoyo</h5>
+      <p>Un buen ejemplo de palabras que edifican lo encontramos en Pablo con Timoteo. Pablo no solo corrigió a Timoteo, sino que también lo animó, le recordó su fe y le dio fuerzas para seguir adelante en el ministerio. En momentos de temor y debilidad, Timoteo necesitaba palabras que lo levantaran, y Pablo se las dio.</p>
+      <p><strong>2 Timoteo 1:6–7 (RVR1960)</strong><br>“6 Por lo cual te aconsejo que avives el fuego del don de Dios que está en ti por la imposición de mis manos.<br>7 Porque no nos ha dado Dios espíritu de cobardía, sino de poder, de amor y de dominio propio.”</p>
+      <p>Estas palabras muestran cómo un siervo de Dios puede usar su boca para fortalecer a otro. Pablo no humilla a Timoteo; lo anima. No lo aplasta por su debilidad; le recuerda lo que Dios ha puesto en él. Esa es una manera muy hermosa de edificar.</p>
+      <h5 class="font-bold">Aplicación</h5>
+      <p>En la familia y en la iglesia debemos aprender a hablar como Pablo habló con Timoteo: con verdad, pero también con ánimo. Hay personas que no avanzan porque casi siempre escuchan crítica, pero muy pocas veces escuchan palabras que les recuerden lo que Dios puede hacer en ellas.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <div class="bg-gray-50 p-6 rounded-lg mb-8">
+        <h4 class="font-bold border-b border-gray-200 pb-2 mb-4">RESUMEN DE LA SECCIÓN</h4>
+      <p>La Sección 3.3 enseña que las palabras del creyente deben edificar, responder a la necesidad del momento y dar gracia a quienes escuchan. Hablar bien no es solo evitar lo malo; es usar la boca para fortalecer, consolar, animar, corregir con amor y ayudar a otros a seguir adelante. La palabra correcta, dicha en el momento correcto, puede ser una herramienta de Dios para sanar y levantar vidas.</p>
+      <p>Por eso, el creyente debe aprender a hablar con sabiduría, sensibilidad y amor. Una iglesia sana, una familia fuerte y una vida cristiana madura necesitan palabras que edifiquen.</p>
+      <h5 class="font-bold">Palabras clave para recordar</h5>
+      <p><strong>Edificación</strong> = construir, fortalecer, levantar la vida de otra persona<br><strong>Gracia</strong> = favor inmerecido, bondad que se expresa también al hablar<br><strong>Ánimo</strong> = palabra que fortalece al cansado o desanimado<br><strong>Oportunidad</strong> = el momento correcto para decir algo<br><strong>Discernimiento</strong> = capacidad de reconocer qué necesita la otra persona</p>
+      <h5 class="font-bold">Preguntas para reflexión</h5>
+      <ol>
+      <li>¿Mis palabras suelen levantar o desanimar a los demás?</li>
+      <li>¿Estoy acostumbrado a dar palabras de gracia o de crítica?</li>
+      <li>¿Sé reconocer cuándo una persona necesita ánimo, corrección o consuelo?</li>
+      <li>¿Qué tipo de palabras necesito empezar a usar más en mi casa y en la iglesia?</li>
+      </ol>
+      <h4 class="font-bold">SECCIÓN 3.4</h4>
+      <h4 class="font-bold">Palabras que destruyen</h4>
+      <p>En esta sección vamos a estudiar el lado opuesto de las palabras que edifican. La Biblia enseña que así como una palabra puede levantar, también puede dañar profundamente. Hay palabras que no solo hieren un momento, sino que dejan marcas en el corazón, rompen relaciones, dañan la confianza y debilitan la vida espiritual de una persona.</p>
+      <p>Muchas veces el daño no viene solamente de insultos fuertes. También puede venir de palabras que parecen pequeñas: una burla, una crítica dura, un comentario humillante, un chisme o una queja repetida. A veces quien habla cree que “solo está diciendo la verdad” o “solo está bromeando”, pero en realidad sus palabras están produciendo dolor y destrucción.</p>
+      <p>Por eso, esta sección nos ayuda a reconocer diferentes formas de hablar que no agradan a Dios. El propósito no es solo identificar lo malo, sino pedir al Señor que cambie nuestra manera de hablar. La meta del creyente no es simplemente hablar menos feo, sino abandonar toda forma de lenguaje que lastime a otros y aprender a usar la boca con santidad y amor.</p>
+      <h5 class="font-bold">PALABRAS CLAVE</h5>
+      <p><strong>Corrompida</strong><br><strong>Sarcasmo</strong><br><strong>Murmuración</strong><br><strong>Crítica destructiva</strong><br><strong>Chisme</strong></p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">La naturaleza de las palabras corrompidas</h5>
+      <p>Pablo usa una expresión muy fuerte cuando habla de la palabra corrompida. La idea es la de algo podrido, como una fruta en mal estado que produce rechazo. Esto nos enseña que no toda palabra mala tiene que ser vulgar para ser pecaminosa. También son corrompidas las palabras que degradan, que humillan, que destruyen la paz y que no ayudan al bien de los demás.</p>
+      <h5 class="font-bold">Texto base</h5>
+      <p><strong>Efesios 4:29 (RVR1960)</strong><br>“Ninguna palabra corrompida salga de vuestra boca, sino la que sea buena para la necesaria edificación, a fin de dar gracia a los oyentes.”</p>
+      <p><strong>Efesios 4:29 (NTV)</strong><br>“No empleen un lenguaje grosero ni ofensivo. Que todo lo que digan sea bueno y útil, a fin de que sus palabras resulten de estímulo para quienes las oigan.”</p>
+      <p>Este versículo no solo prohíbe hablar mal; también nos enseña a evaluar nuestras palabras por su fruto. Si lo que decimos no ayuda, no sana, no edifica y no da gracia, entonces debemos revisar seriamente si esa manera de hablar agrada al Señor.</p>
+      <p><strong>Palabra clave:</strong><br><strong>Corrompida = algo podrido, dañado, que produce mal en vez de bien</strong></p>
+      <h5 class="font-bold">Aplicación</h5>
+      <p>No basta con evitar groserías. Una persona puede hablar con palabras “religiosas” y aun así destruir a otros con tono áspero, dureza o humillación. Por eso, cada creyente debe preguntarse no solo “¿es correcta esta palabra?”, sino también “¿qué efecto va a producir en la otra persona?”.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">Formas comunes de hablar que destruyen</h5>
+      <p>La Biblia y la experiencia diaria muestran varias maneras en que las palabras pueden hacer daño. Algunas son muy visibles; otras son más sutiles, pero igualmente peligrosas. Cuando se repiten, terminan afectando la familia, la iglesia y la vida espiritual de quienes las escuchan.</p>
+      <h4>Sarcasmo</h4>
+      <p>El sarcasmo hiere bajo la apariencia del humor. A veces alguien se burla de otra persona y luego dice: “solo estoy jugando”. Pero si esa “broma” humilla, avergüenza o deja dolor, entonces no es inocente. El sarcasmo suele esconder dureza, orgullo o resentimiento.</p>
+      <p><strong>Palabra clave:</strong><br><strong>Sarcasmo = burla disfrazada de broma</strong></p>
+      <h4>Murmuración</h4>
+      <p>La murmuración es hablar de alguien a sus espaldas con un espíritu de queja, crítica o descontento. En lugar de hablar directamente con la persona o buscar una solución, el murmurador alimenta el problema en secreto. Esto rompe amistades y debilita la confianza entre hermanos.</p>
+      <p><strong>Palabra clave:</strong><br><strong>Murmuración = queja o crítica dicha a espaldas</strong></p>
+      <h4>Crítica destructiva</h4>
+      <p>No toda corrección es mala. La Biblia permite y manda corregir cuando es necesario. Pero la crítica destructiva no busca restaurar, sino señalar errores sin amor y sin ayuda. Se enfoca en lo negativo, exagera fallas y deja a la persona más herida que edificada.</p>
+      <p><strong>Palabra clave:</strong><br><strong>Crítica destructiva = señalar errores sin amor ni intención de ayudar</strong></p>
+      <h4>Chisme</h4>
+      <p>El chisme consiste en hablar de asuntos ajenos, especialmente cosas negativas, de una manera que daña la reputación de alguien. A veces el chisme mezcla verdad con exageración; otras veces añade sospechas y opiniones personales. En cualquier caso, termina causando división y dolor.</p>
+      <p><strong>Palabra clave:</strong><br><strong>Chisme = hablar de otros de manera que dañe su reputación</strong></p>
+      <h5 class="font-bold">Cita cruzada</h5>
+      <p><strong>Proverbios 26:20–22 (RVR1960)</strong><br>“20 Sin leña se apaga el fuego;<br>Y donde no hay chismoso, cesa la contienda.<br>21 Como el carbón para brasas y la leña para el fuego,<br>Así es el hombre rencilloso para encender contienda.<br>22 Las palabras del chismoso son como bocados suaves,<br>Y penetran hasta las entrañas.”</p>
+      <p>Este pasaje muestra que el chisme actúa como leña sobre el fuego. En vez de apagar conflictos, los aumenta. A veces las palabras del chismoso parecen agradables o interesantes, pero entran profundo y dejan daño en el corazón de quienes las reciben.</p>
+      <h5 class="font-bold">Aplicación</h5>
+      <p>En la vida diaria, muchas conversaciones parecen “normales”, pero en realidad alimentan la crítica y la división. Por eso, el creyente debe aprender a detener una conversación dañina y no participar en palabras que destruyen la reputación o la paz de otros.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">La lengua puede dañar relaciones y comunidades</h5>
+      <p>Las palabras destructivas no afectan solo a una persona; también dañan el ambiente entero. En una familia, pueden crear distancia, resentimiento y heridas difíciles de sanar. En la iglesia, pueden producir desconfianza, bandos, divisiones y frialdad espiritual. Una comunidad puede ser debilitada no solo por grandes pecados visibles, sino también por una cultura de crítica y comentarios dañinos.</p>
+      <h5 class="font-bold">Cita cruzada</h5>
+      <p><strong>Santiago 4:11 (RVR1960)</strong><br>“Hermanos, no murmuréis los unos de los otros. El que murmura del hermano y juzga a su hermano, murmura de la ley y juzga a la ley; pero si tú juzgas a la ley, no eres hacedor de la ley, sino juez.”</p>
+      <p>Santiago habla con claridad: el creyente no debe acostumbrarse a murmurar de otros. La murmuración no solo hiere al hermano, también muestra una actitud orgullosa, como si uno tuviera derecho de colocarse por encima de los demás. El llamado bíblico es a la humildad y al cuidado mutuo, no a la crítica constante.</p>
+      <h5 class="font-bold">Historia bíblica de apoyo</h5>
+      <p>Un ejemplo claro de este pecado lo vemos en Israel en el desierto. El pueblo murmuró repetidas veces contra Moisés y contra Dios. En vez de confiar, se quejaban. En vez de orar, hablaban negativamente. Esa murmuración afectó a toda la comunidad y trajo consecuencias serias. Esta historia muestra que las palabras negativas repetidas no son algo pequeño delante de Dios.</p>
+      <h5 class="font-bold">Aplicación</h5>
+      <p>Cuando una persona se acostumbra a criticar, quejarse o hablar mal de otros, termina contaminando el ambiente donde está. Por eso, debemos preguntarnos con sinceridad: “¿Mi manera de hablar trae paz o trae tensión? ¿Mis palabras ayudan a resolver o empeoran el problema?”.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">Reglas prácticas para evitar el daño</h5>
+      <p>Una forma muy útil de aplicar esta enseñanza es establecer límites claros en nuestra manera de hablar. No todo lo que sabemos necesita ser dicho. No todo lo que sentimos debe expresarse de inmediato. Y no todo lo que escuchamos debe repetirse.</p>
+      <p>Cuando se trata de faltas reales o problemas serios, la Biblia nos enseña a manejar la situación con sabiduría y responsabilidad. Si es necesario informar algo, debe hacerse con la persona correcta y con el propósito de ayudar a resolver, no de exponer ni avergonzar. La información negativa debe quedar dentro del círculo más reducido posible.</p>
+      <h5 class="font-bold">Aplicación</h5>
+      <p>Antes de hablar de otra persona, conviene hacerse preguntas como estas: “¿Es verdad lo que voy a decir? ¿Es necesario decirlo? ¿La persona correcta me está escuchando? ¿Mi intención es ayudar o solo desahogarme?”. Estas preguntas pueden evitar mucho daño.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <div class="bg-gray-50 p-6 rounded-lg mb-8">
+        <h4 class="font-bold border-b border-gray-200 pb-2 mb-4">RESUMEN DE LA SECCIÓN</h4>
+      <p>La Sección 3.4 enseña que las palabras destructivas pueden tomar muchas formas: sarcasmo, murmuración, crítica destructiva y chisme. Todas ellas dañan personas, relaciones y comunidades. La Biblia llama al creyente a desechar toda palabra corrompida y a rechazar todo lenguaje que humille, divida o lastime.</p>
+      <p>Por eso, el creyente debe vigilar no solo lo que dice, sino también el espíritu con que lo dice. Hablar con santidad significa renunciar a las palabras que destruyen y aprender a usar la boca para honrar a Dios y cuidar al prójimo.</p>
+      <h5 class="font-bold">Palabras clave para recordar</h5>
+      <p><strong>Corrompida</strong> = algo podrido, dañado, que produce mal en vez de bien<br><strong>Sarcasmo</strong> = burla disfrazada de broma<br><strong>Murmuración</strong> = queja o crítica dicha a espaldas<br><strong>Crítica destructiva</strong> = señalar errores sin amor ni intención de ayudar<br><strong>Chisme</strong> = hablar de otros de manera que dañe su reputación</p>
+      <h5 class="font-bold">Preguntas para reflexión</h5>
+      <ol>
+      <li>¿Cuál de estas formas de hablar destructivo aparece más fácilmente en mi vida?</li>
+      <li>¿He herido a alguien con sarcasmo, crítica o murmuración?</li>
+      <li>¿Participo en conversaciones que dañan la reputación de otros?</li>
+      <li>¿Qué cambios necesita hacer Dios en mi corazón y en mi boca?</li>
+      </ol>
+      <h4 class="font-bold">SECCIÓN 3.5</h4>
+      <h4 class="font-bold">Impacto destructivo en la comunidad</h4>
+      <p>En esta sección vamos a estudiar cómo la mala comunicación no solo hiere a una persona, sino que puede dañar a toda una comunidad. Cuando una palabra destructiva sale de la boca, rara vez se queda en un solo corazón. Con frecuencia se extiende, afecta relaciones, crea sospechas, rompe la confianza y debilita la unidad de la iglesia.</p>
+      <p>Muchas veces las personas piensan que los problemas grandes en la iglesia vienen solamente por doctrinas falsas o por pecados escandalosos. Sin embargo, el módulo señala una verdad muy seria: la comunicación destructiva divide comunidades de fe con mucha frecuencia. Una crítica sin amor, una murmuración repetida o una conversación dañina pueden hacer más daño del que parece al principio.</p>
+      <p>Por eso, esta sección nos llama a tomar en serio la manera en que tratamos los conflictos y las faltas de otros. No basta con reconocer que ciertas palabras son malas; también debemos aprender el camino bíblico para resolver problemas. Dios no solo nos dice qué no hacer, sino también cómo actuar correctamente cuando surge una situación difícil.</p>
+      <h5 class="font-bold">PALABRAS CLAVE</h5>
+      <p><strong>Comunidad</strong><br><strong>Unidad</strong><br><strong>Restauración</strong><br><strong>Confrontación privada</strong><br><strong>Mansedumbre</strong></p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">La comunicación incorrecta destruye comunidades</h5>
+      <p>La iglesia no es solamente un grupo de personas que se reúnen; es una comunidad espiritual, una familia en Cristo. Por eso, cuando las palabras se usan mal, el daño no queda limitado a dos personas. El efecto puede extenderse a muchos: unos toman partido, otros se desaniman, otros pierden confianza, y poco a poco la paz se debilita. Las palabras destructivas son como una grieta pequeña que, si no se corrige, termina afectando toda la estructura.</p>
+      <p>El problema no es solamente lo que se dice, sino el ambiente que se crea. Cuando en una congregación se vuelve normal criticar, murmurar o hablar sin amor, la comunidad entera comienza a sufrir. Se enfría la fraternidad, se debilita el testimonio y el enemigo encuentra espacio para sembrar división.</p>
+      <h5 class="font-bold">Cita clave del módulo</h5>
+      <p>El módulo afirma que la comunicación incorrecta destruye comunidades de fe con frecuencia y que más iglesias se dividen por la lengua que por la doctrina. Esta observación es pastoralmente muy importante, porque nos recuerda que el peligro no siempre viene de grandes errores visibles; muchas veces viene de la costumbre de hablar mal.</p>
+      <h5 class="font-bold">Cita cruzada</h5>
+      <p><strong>Proverbios 16:28 (RVR1960)</strong><br>“El hombre perverso levanta contienda,<br>Y el chismoso aparta a los mejores amigos.”</p>
+      <p>Este proverbio muestra que las palabras pueden separar incluso relaciones fuertes. Si eso ocurre en amistades, cuánto más puede afectar a una congregación si no se corrige a tiempo. El chisme y la contienda no son cosas pequeñas; son fuerzas que rompen vínculos y dañan la comunión.</p>
+      <h5 class="font-bold">Aplicación</h5>
+      <p>Cada creyente debe preguntarse: “¿Con mi manera de hablar estoy ayudando a la unidad de mi iglesia o la estoy debilitando?” Esta pregunta es importante porque muchas veces una persona no busca hacer daño, pero por falta de cuidado termina sembrando tensión y desconfianza.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">No criticar sin propósito redentor</h5>
+      <p>El módulo enseña que no se debe criticar a otros sin propósito redentor. Esta frase es muy importante. Significa que la corrección bíblica no tiene como meta humillar, exhibir ni descargar frustraciones. Su objetivo debe ser ayudar a restaurar, sanar y traer solución.</p>
+      <p>Cuando una persona habla de los errores de otra solo para desahogarse, para ganar apoyo o para hacerla quedar mal, ya dejó el camino bíblico. El creyente debe aprender a distinguir entre hablar para resolver y hablar solo para expandir el problema. Muchas conversaciones que parecen “preocupación espiritual” en realidad son crítica disfrazada.</p>
+      <h5 class="font-bold">Palabra clave</h5>
+      <p><strong>Restauración = ayudar a que una persona sea corregida y vuelta al camino correcto</strong></p>
+      <h5 class="font-bold">Cita cruzada</h5>
+      <p><strong>Gálatas 6:1 (RVR1960)</strong><br>“Hermanos, si alguno fuere sorprendido en alguna falta, vosotros que sois espirituales, restauradle con espíritu de mansedumbre, considerándote a ti mismo, no sea que tú también seas tentado.”</p>
+      <p>Este versículo nos muestra el corazón correcto para tratar una falta. El propósito no es aplastar al hermano, sino restaurarlo. Además, debe hacerse con mansedumbre, es decir, con suavidad, humildad y cuidado. La persona espiritual no corrige desde arriba, sino con temor de Dios y reconociendo que ella también necesita gracia.</p>
+      <p><strong>Palabra clave:</strong><br><strong>Mansedumbre = actitud suave, humilde y controlada al tratar con otros</strong></p>
+      <h5 class="font-bold">Aplicación</h5>
+      <p>Antes de hablar de la falta de alguien, conviene preguntar: “¿Quiero ayudar a restaurar o solo quiero comentar el problema?” Si la intención no es restaurar, entonces es mejor callar y buscar al Señor antes de hablar.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">El proceso bíblico para resolver conflictos</h5>
+      <p>Jesús no dejó a su iglesia sin dirección para tratar conflictos. En Mateo 18 enseñó un camino claro y ordenado. Este proceso evita el chisme, frena la expansión innecesaria del problema y protege tanto a la persona ofendida como a la persona que falló. También ayuda a que la comunidad actúe con justicia, amor y verdad.</p>
+      <h5 class="font-bold">Texto base</h5>
+      <p><strong>Mateo 18:15–17 (RVR1960)</strong><br>“15 Por tanto, si tu hermano peca contra ti, ve y repréndele estando tú y él solos; si te oyere, has ganado a tu hermano.<br>16 Mas si no te oyere, toma aún contigo a uno o dos, para que en boca de dos o tres testigos conste toda palabra.<br>17 Si no los oyere a ellos, dilo a la iglesia; y si no oyere a la iglesia, tenle por gentil y publicano.”</p>
+      <p>Este pasaje presenta un orden muy claro. Primero, la confrontación debe ser privada. No se comienza hablando con otros, sino con la persona involucrada. Segundo, si no escucha, se lleva a uno o dos testigos. Tercero, solo si persiste la falta, el asunto pasa a un nivel mayor dentro de la comunidad. Saltarse estos pasos produce más desorden y más dolor.</p>
+      <p><strong>Palabra clave:</strong><br><strong>Confrontación privada = hablar primero directamente con la persona involucrada</strong></p>
+      <h5 class="font-bold">Aplicación</h5>
+      <p>Muchos problemas crecerían menos si se obedeciera este principio básico: hablar primero con la persona correcta. En vez de comentarlo con amigos, familiares o hermanos, el creyente debe ir en amor y verdad a quien corresponde. Esto protege la unidad y honra el orden bíblico.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">La unidad del Espíritu debe guardarse</h5>
+      <p>La unidad de la iglesia no ocurre sola; debe cuidarse. La Biblia enseña que los creyentes deben esforzarse por guardar la unidad que el Espíritu Santo produce. Esto implica vigilar el corazón, controlar la lengua, evitar palabras innecesarias y actuar con humildad cuando surgen tensiones.</p>
+      <h5 class="font-bold">Cita cruzada</h5>
+      <p><strong>Efesios 4:3 (RVR1960)</strong><br>“solícitos en guardar la unidad del Espíritu en el vínculo de la paz.”</p>
+      <p>Guardar la unidad no significa esconder pecados ni fingir que no pasa nada. Significa tratar los asuntos con un espíritu correcto, sin alimentar divisiones. La paz bíblica no es silencio falso; es orden, verdad y amor trabajando juntos.</p>
+      <p><strong>Palabra clave:</strong><br><strong>Unidad = armonía espiritual y relacional dentro del cuerpo de Cristo</strong></p>
+      <h5 class="font-bold">Aplicación</h5>
+      <p>Una iglesia sana no es una iglesia sin conflictos, sino una iglesia que aprende a resolverlos bíblicamente. Lo mismo aplica a la familia. Donde hay personas, habrá tensiones. La diferencia está en si esas tensiones se manejan con carne o con sabiduría espiritual.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">Historia bíblica de apoyo</h5>
+      <p>Un ejemplo útil para reflexionar es el conflicto entre Pablo y Bernabé en Hechos 15:36–41. Hubo entre ellos una diferencia fuerte acerca de Marcos. Aunque el pasaje no presenta todos los detalles emocionales, sí muestra que aun siervos maduros pueden enfrentar desacuerdos. La lección importante es que los conflictos existen, pero deben manejarse con responsabilidad delante de Dios.</p>
+      <p>Esta historia también nos ayuda a entender que la existencia de un conflicto no es el mayor problema; el mayor problema es cómo se trata. Cuando los creyentes manejan mal sus diferencias, la comunidad sufre. Pero cuando aprenden a actuar con verdad, humildad y orden, aun los momentos difíciles pueden dejar enseñanzas valiosas.</p>
+      <h5 class="font-bold">Aplicación</h5>
+      <p>Cuando surja una diferencia en la iglesia o en la familia, no debemos reaccionar impulsivamente ni hablar de más. Debemos buscar la manera bíblica: oración, verdad, humildad y el proceso correcto. Esto evita heridas innecesarias y protege a la comunidad.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <div class="bg-gray-50 p-6 rounded-lg mb-8">
+        <h4 class="font-bold border-b border-gray-200 pb-2 mb-4">RESUMEN DE LA SECCIÓN</h4>
+      <p>La Sección 3.5 enseña que la comunicación destructiva puede dañar a toda una comunidad. Las palabras mal usadas rompen la confianza, debilitan la unidad y abren espacio a la división. Por eso, el creyente no debe criticar sin propósito redentor, sino buscar siempre la restauración con espíritu de mansedumbre.</p>
+      <p>Jesús dejó un proceso claro para resolver conflictos: primero hablar en privado, luego con testigos y, solo si es necesario, llevar el asunto a un nivel mayor. Esta enseñanza protege a la iglesia, cuida la dignidad de las personas y ayuda a conservar la unidad del Espíritu.</p>
+      <h5 class="font-bold">Palabras clave para recordar</h5>
+      <p><strong>Comunidad</strong> = grupo de creyentes unidos en Cristo<br><strong>Unidad</strong> = armonía espiritual y relacional dentro del cuerpo de Cristo<br><strong>Restauración</strong> = ayudar a que una persona sea corregida y vuelta al camino correcto<br><strong>Confrontación privada</strong> = hablar primero directamente con la persona involucrada<br><strong>Mansedumbre</strong> = actitud suave, humilde y controlada al tratar con otros</p>
+      <h5 class="font-bold">Preguntas para reflexión</h5>
+      <ol>
+      <li>¿He participado alguna vez en conversaciones que dañaron la unidad de una comunidad?</li>
+      <li>¿Suelo hablar para restaurar o solo para comentar problemas?</li>
+      <li>¿Estoy dispuesto a seguir el proceso bíblico de Mateo 18 cuando hay un conflicto?</li>
+      <li>¿Qué puedo hacer para cuidar mejor la unidad en mi familia y en la iglesia?</li>
+      </ol>
+      <h4 class="font-bold">SECCIÓN 3.6</h4>
+      <h4 class="font-bold">El poder transformador de las palabras</h4>
+      <p>En esta sección vamos a estudiar una verdad muy hermosa: Dios puede usar nuestras palabras para transformar vidas. Hasta ahora hemos visto que la lengua puede revelar el corazón, edificar o destruir, y afectar a toda una comunidad. Pero ahora el enfoque cambia hacia el lado redentor del habla: las palabras también pueden ser instrumentos por medio de los cuales Dios consuela, corrige, fortalece, atrae a otros hacia Cristo y produce cambio espiritual.</p>
+      <p>Muchas personas han sido animadas por una palabra oportuna, restauradas por una conversación sincera o despertadas espiritualmente por un testimonio sencillo. A veces no se necesita un gran discurso para que Dios obre; basta una palabra humilde, llena de verdad y guiada por el Espíritu Santo. El Señor puede usar lo que decimos para sembrar fe, esperanza y dirección en la vida de otros.</p>
+      <p>Esta sección nos recuerda que hablar no es solamente una habilidad humana. En manos de Dios, la palabra del creyente se convierte en una herramienta espiritual. Por eso, debemos aprender a escuchar bien, hablar con sabiduría y usar nuestra boca como un canal de bendición y testimonio.</p>
+      <h5 class="font-bold">PALABRAS CLAVE</h5>
+      <p><strong>Testimonio</strong><br><strong>Evangelismo</strong><br><strong>Escuchar</strong><br><strong>Bendecir</strong><br><strong>Transformación</strong></p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">Nuestras palabras tienen poder espiritual</h5>
+      <p>El módulo enseña que el uso que el ser humano da al poder hablar indica si es hacedor de la Palabra o no. Esta afirmación es muy importante porque muestra que la boca no está separada de la obediencia. La forma en que hablamos refleja si realmente estamos viviendo lo que aprendemos de Dios. No basta con oír la Palabra; también debemos hablar de una manera coherente con ella.</p>
+      <p>El creyente que está creciendo aprende a escuchar más y hablar menos. Esta idea es muy práctica. Muchas veces los problemas aumentan porque hablamos demasiado pronto, demasiado fuerte o sin haber escuchado bien. En cambio, una persona que camina con Dios desarrolla prudencia. Aprende a frenar su lengua, a pensar antes de responder y a usar sus palabras para bendecir, no para herir.</p>
+      <h5 class="font-bold">Cita cruzada</h5>
+      <p><strong>Santiago 1:19 (RVR1960)</strong><br>“Por esto, mis amados hermanos, todo hombre sea pronto para oír, tardo para hablar, tardo para airarse.”</p>
+      <p>Este versículo nos enseña un principio básico de sabiduría espiritual. La persona madura no vive reaccionando de inmediato. Escucha, discierne y luego habla. Ser &quot;pronto para oír&quot; y &quot;tardo para hablar&quot; no es debilidad; es una evidencia de dominio propio y de respeto por Dios y por los demás.</p>
+      <p><strong>Palabras clave:</strong><br><strong>Escuchar = prestar atención antes de responder</strong><br><strong>Bendecir = usar la boca para hacer bien y no para herir</strong></p>
+      <h5 class="font-bold">Aplicación</h5>
+      <p>En la familia, en la iglesia y en cualquier relación, muchas conversaciones mejorarían si primero aprendiéramos a escuchar. Una persona que escucha bien entiende mejor la necesidad del otro y evita respuestas precipitadas. Hablar menos y escuchar más también es una forma de permitir que Dios gobierne nuestra boca.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">El testimonio verbal y el evangelismo</h5>
+      <p>Una de las maneras más hermosas en que Dios usa nuestras palabras es por medio del testimonio. Testimonio significa contar lo que Dios ha hecho en nuestra vida. No se trata de dar una conferencia complicada, sino de expresar con sinceridad cómo el Señor nos encontró, nos ayudó, nos perdonó o nos sostuvo en un momento difícil. Ese tipo de palabra sencilla puede ser usada poderosamente por el Espíritu Santo.</p>
+      <p>El módulo también señala que nuestras palabras son un medio a través del cual Dios puede obrar y que, cuando verbalizamos con humildad lo que Dios ha hecho por nosotros, permitimos que el Espíritu Santo use nuestro testimonio para atraer a otros hacia Cristo. Esto significa que hablar de Cristo no es solo responsabilidad del púlpito; también es parte de la vida diaria del creyente.</p>
+      <h5 class="font-bold">Palabras clave</h5>
+      <p><strong>Testimonio = contar lo que Dios ha hecho en nuestra vida</strong><br><strong>Evangelismo = compartir el mensaje de Cristo con otros</strong></p>
+      <h5 class="font-bold">Cita cruzada</h5>
+      <p><strong>Marcos 5:19 (RVR1960)</strong><br>&quot;Mas Jesús no se lo permitió, sino que le dijo: Vete a tu casa, a los tuyos, y cuéntales cuán grandes cosas el Señor ha hecho contigo, y cómo ha tenido misericordia de ti.&quot;</p>
+      <p>Aquí vemos que Jesús envió a un hombre transformado a contar lo que Dios había hecho en su vida. Este es un ejemplo claro de testimonio personal. No le pidió primero una gran preparación académica; le pidió que contara la misericordia recibida. Esto nos muestra que una persona tocada por Cristo ya tiene algo valioso que decir.</p>
+      <h5 class="font-bold">Aplicación</h5>
+      <p>Muchos creyentes piensan que no saben evangelizar porque no pueden explicar muchas doctrinas. Pero todo cristiano puede compartir algo verdadero y poderoso: “esto hizo Dios en mí”. Un testimonio humilde, sincero y claro puede abrir puertas para que otro escuche el evangelio con interés.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">Palabras que traen fe y esperanza</h5>
+      <p>La palabra correcta no solo informa; también fortalece. Cuando una persona está cansada, confundida o desanimada, una palabra bíblica puede devolver esperanza. Dios usa la verdad hablada para recordar sus promesas, corregir pensamientos equivocados y dar nuevas fuerzas a quien ya casi no puede seguir adelante.</p>
+      <h5 class="font-bold">Cita cruzada</h5>
+      <p><strong>Proverbios 12:25 (RVR1960)</strong><br>&quot;La congoja en el corazón del hombre lo abate;<br>Mas la buena palabra lo alegra.&quot;</p>
+      <p>Este proverbio es muy claro. La preocupación puede hundir el ánimo, pero una buena palabra puede traer alivio. No siempre podremos cambiar las circunstancias de alguien, pero muchas veces sí podremos darle una palabra que le recuerde que Dios sigue obrando y que no está solo.</p>
+      <h5 class="font-bold">Aplicación</h5>
+      <p>A veces una persona no necesita primero un consejo largo, sino una palabra de esperanza. Frases sencillas como “Dios está contigo”, “el Señor no te ha abandonado”, “vamos a orar”, o “Él te ayudará a seguir adelante” pueden ser usadas por Dios para levantar a alguien que está abatido.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">El ejemplo de Pedro en Pentecostés</h5>
+      <p>Una de las escenas más poderosas del Nuevo Testamento es la de Pedro en Hechos 2. El hombre que antes negó a Jesús con temor ahora se levanta lleno del Espíritu Santo y habla con valentía. Dios usa sus palabras para traer convicción, arrepentimiento y salvación a muchas personas. Esta historia muestra claramente que Dios puede transformar no solo el corazón de una persona, sino también su manera de hablar.</p>
+      <h5 class="font-bold">Historia bíblica de apoyo</h5>
+      <p><strong>Hechos 2:37–41 (RVR1960)</strong><br>&quot;37 Al oír esto, se compungieron de corazón, y dijeron a Pedro y a los otros apóstoles: Varones hermanos, ¿qué haremos?<br>38 Pedro les dijo: Arrepentíos, y bautícese cada uno de vosotros en el nombre de Jesucristo para perdón de los pecados; y recibiréis el don del Espíritu Santo.<br>39 Porque para vosotros es la promesa, y para vuestros hijos, y para todos los que están lejos; para cuantos el Señor nuestro Dios llamare.<br>40 Y con otras muchas palabras testificaba y les exhortaba, diciendo: Sed salvos de esta perversa generación.<br>41 Así que, los que recibieron su palabra fueron bautizados; y se añadieron aquel día como tres mil personas.&quot;</p>
+      <p>Este pasaje muestra el poder de una palabra usada por Dios. Pedro no habló desde la carne, sino bajo la obra del Espíritu Santo. Sus palabras trajeron convicción y guiaron a muchos al arrepentimiento. Esto nos anima a creer que Dios también puede usar nuestra boca cuando hablamos con humildad, verdad y dependencia del Espíritu.</p>
+      <h5 class="font-bold">Aplicación</h5>
+      <p>Tal vez no todos predicarán delante de multitudes, pero todos podemos ser usados por Dios en conversaciones personales. Una palabra dirigida por el Señor puede tocar a un hijo, a un vecino, a un hermano de la iglesia o a una persona que está lejos de Dios. No debemos menospreciar el valor espiritual de una conversación guiada por el Espíritu Santo.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">Hablar como hacedores de la Palabra</h5>
+      <p>El módulo dice que el hacedor de la Palabra sabe escuchar más y hablar menos, sabe frenar su lengua y usar el don de comunicación para enseñar, bendecir a Dios y bendecir a los hombres. Esta enseñanza une muy bien la vida interior con la vida exterior. No es suficiente conocer la verdad; esa verdad debe reflejarse en la manera de hablar.</p>
+      <p>El creyente que vive como hacedor de la Palabra no usa su boca para una cosa el domingo y para otra el resto de la semana. Busca coherencia. Su habla se vuelve parte de su testimonio. Cuando una persona aprende a hablar con sabiduría, amor y verdad, su boca se convierte en una extensión de su vida espiritual.</p>
+      <h5 class="font-bold">Cita cruzada</h5>
+      <p><strong>Colosenses 3:17 (RVR1960)</strong><br>&quot;Y todo lo que hacéis, sea de palabra o de hecho, hacedlo todo en el nombre del Señor Jesús, dando gracias a Dios Padre por medio de él.&quot;</p>
+      <p>Este versículo nos enseña que nuestras palabras también deben estar bajo el señorío de Cristo. No solo las acciones, también lo que decimos debe reflejar que pertenecemos al Señor. Hablar en el nombre de Jesús significa hablar de una manera digna de Él.</p>
+      <h5 class="font-bold">Aplicación</h5>
+      <p>Cada creyente puede orar algo como esto: “Señor, usa mi boca para bendecir, para consolar, para compartir tu verdad y para hablar de una manera que te honre”. Esta oración sencilla expresa el deseo correcto de poner nuestra lengua al servicio de Dios.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <div class="bg-gray-50 p-6 rounded-lg mb-8">
+        <h4 class="font-bold border-b border-gray-200 pb-2 mb-4">RESUMEN DE LA SECCIÓN</h4>
+      <p>La Sección 3.6 enseña que nuestras palabras pueden ser instrumentos de transformación espiritual. Dios puede usar lo que decimos para consolar, fortalecer, corregir, traer esperanza y acercar a otros a Cristo. El creyente que es hacedor de la Palabra aprende a escuchar más, hablar con sabiduría y usar su boca para bendecir a Dios y a las personas.</p>
+      <p>También aprendemos que el testimonio personal es una herramienta poderosa. Cuando contamos con humildad lo que el Señor ha hecho en nosotros, el Espíritu Santo puede usar esas palabras para tocar corazones y producir fe.</p>
+      <h5 class="font-bold">Palabras clave para recordar</h5>
+      <p><strong>Testimonio</strong> = contar lo que Dios ha hecho en nuestra vida<br><strong>Evangelismo</strong> = compartir el mensaje de Cristo con otros<br><strong>Escuchar</strong> = prestar atención antes de responder<br><strong>Bendecir</strong> = usar la boca para hacer bien y no para herir<br><strong>Transformación</strong> = cambio que Dios produce en la vida de una persona</p>
+      <h5 class="font-bold">Preguntas para reflexión</h5>
+      <ol>
+      <li>¿Estoy usando mis palabras para bendecir o solo para reaccionar?</li>
+      <li>¿Sé escuchar antes de hablar?</li>
+      <li>¿He compartido con otros lo que Dios ha hecho en mi vida?</li>
+      <li>¿Cómo puede Dios usar mi boca esta semana para traer esperanza a alguien?</li>
+      </ol>
+      <h4 class="font-bold">SECCIÓN 3.7</h4>
+      <h4 class="font-bold">Motivación para controlar la lengua</h4>
+      <p>En esta sección vamos a estudiar por qué el creyente debe querer controlar su lengua. Hasta aquí ya vimos que las palabras pueden revelar el corazón, destruir relaciones, afectar a la comunidad o traer transformación. Pero ahora la pregunta es más profunda: ¿qué debe mover al cristiano a cambiar su manera de hablar? La respuesta bíblica no se basa solo en reglas externas, sino en una realidad espiritual: la presencia del Espíritu Santo en la vida del creyente.</p>
+      <p>Muchas personas intentan controlar sus palabras por vergüenza, por miedo al conflicto o por deseo de verse mejor delante de otros. Aunque esas razones pueden influir por un momento, no alcanzan para producir una transformación profunda y constante. La motivación cristiana es más alta: hablamos con reverencia, cuidado y santidad porque Dios habita en nosotros y le importa cómo vivimos.</p>
+      <p>Esta sección nos ayuda a comprender que el control de la lengua no nace solamente del esfuerzo humano. Nace de una vida que reconoce la presencia de Dios, respeta la obra del Espíritu Santo y desea agradar al Señor también en lo que dice. Cuando el creyente entiende esto, su boca deja de ser un territorio sin gobierno y comienza a someterse a Cristo.</p>
+      <h5 class="font-bold">PALABRAS CLAVE</h5>
+      <p><strong>Espíritu Santo</strong><br><strong>Santidad</strong><br><strong>Sello</strong><br><strong>Temor de Dios</strong><br><strong>Nueva criatura</strong></p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">La presencia del Espíritu Santo como motivación</h5>
+      <p>El módulo enseña que lo que motiva al creyente a dominar emociones y lengua es la presencia del Espíritu. Esta afirmación es muy importante porque lleva el tema más allá del comportamiento externo. No se trata solo de aprender modales o técnicas de comunicación. Se trata de reconocer que Dios mismo está obrando dentro del creyente y que esa presencia debe influir en todo, incluso en la manera de hablar.</p>
+      <p>Cuando una persona entiende que el Espíritu Santo mora en ella, empieza a ver sus palabras de otra manera. Ya no habla solo como alguien que expresa emociones, sino como alguien que representa a Cristo. Esto produce reverencia. La lengua deja de ser un instrumento suelto y se convierte en un área de responsabilidad espiritual.</p>
+      <h5 class="font-bold">Cita cruzada</h5>
+      <p><strong>1 Corintios 6:19-20 (RVR1960)</strong><br>“19 ¿O ignoráis que vuestro cuerpo es templo del Espíritu Santo, el cual está en vosotros, el cual tenéis de Dios, y que no sois vuestros?<br>20 Porque habéis sido comprados por precio; glorificad, pues, a Dios en vuestro cuerpo y en vuestro espíritu, los cuales son de Dios.”</p>
+      <p>Este pasaje enseña que el creyente no se pertenece a sí mismo. Su vida le pertenece al Señor. Si el cuerpo es templo del Espíritu Santo, entonces también la boca, la lengua y las palabras deben ser puestas bajo el señorío de Cristo. Glorificar a Dios no se limita a lo que hacemos; también incluye lo que decimos.</p>
+      <p><strong>Palabra clave:</strong><br><strong>Espíritu Santo = la presencia de Dios en el creyente, quien lo guía y santifica</strong></p>
+      <h5 class="font-bold">Aplicación</h5>
+      <p>Antes de hablar impulsivamente, el creyente puede recordar esta verdad: “El Espíritu Santo mora en mí”. Esa conciencia produce freno, humildad y sensibilidad. Muchas palabras innecesarias podrían evitarse si viviéramos más atentos a la presencia de Dios.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">El Espíritu Santo es santo</h5>
+      <p>El módulo afirma que el Espíritu es santo y ha venido para que el creyente sea santo también. Esto significa que la santidad no se limita a ciertas áreas “grandes” de la vida, como la adoración, el servicio o la conducta moral visible. También alcanza la conversación diaria, el tono de voz, la forma de responder y el contenido de nuestras palabras.</p>
+      <p>A veces una persona piensa que porque no hace ciertas cosas graves, ya está viviendo en santidad. Sin embargo, puede seguir hablando con dureza, ironía, desprecio o impureza. Esta sección nos recuerda que la santidad también se oye. Una vida santa produce una boca más limpia, más prudente y más reverente delante de Dios.</p>
+      <h5 class="font-bold">Cita cruzada</h5>
+      <p><strong>Efesios 4:29-30 (RVR1960)</strong><br>“29 Ninguna palabra corrompida salga de vuestra boca, sino la que sea buena para la necesaria edificación, a fin de dar gracia a los oyentes.<br>30 Y no contristéis al Espíritu Santo de Dios, con el cual fuisteis sellados para el día de la redención.”</p>
+      <p>Aquí Pablo une directamente la forma de hablar con la relación del creyente con el Espíritu Santo. La palabra corrompida no solo daña a los demás; también contrista al Espíritu. Esto nos muestra que el habla pecaminosa no es un detalle menor, sino un asunto que afecta nuestra comunión con Dios.</p>
+      <p><strong>Palabra clave:</strong><br><strong>Santidad = vida apartada para Dios, también en la manera de hablar</strong></p>
+      <h5 class="font-bold">Aplicación</h5>
+      <p>Cada creyente debe preguntarse: “¿Mi forma de hablar refleja la santidad del Espíritu que vive en mí?” Esta es una pregunta profunda, porque nos lleva a examinar no solo nuestras palabras públicas, sino también lo que decimos en casa, en momentos de presión o cuando estamos molestos.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">Sellados para el día de la redención</h5>
+      <p>El módulo también recuerda que el Espíritu Santo es el sello y garantía de bendiciones futuras. El sello habla de pertenencia, seguridad y promesa. Dios ha puesto su Espíritu en el creyente como señal de que le pertenece y de que completará su obra en él. Esta verdad produce esperanza, pero también responsabilidad.</p>
+      <p>Si hemos sido sellados por Dios, entonces nuestra manera de hablar debe reflejar esa identidad. El creyente no habla como alguien sin dirección o sin dueño espiritual. Habla como una persona marcada por la gracia de Dios, llamada a vivir de una manera digna de esa vocación. La boca también debe dar testimonio de a quién pertenecemos.</p>
+      <h5 class="font-bold">Cita cruzada</h5>
+      <p><strong>Efesios 1:13-14 (RVR1960)</strong><br>“13 En él también vosotros, habiendo oído la palabra de verdad, el evangelio de vuestra salvación, y habiendo creído en él, fuisteis sellados con el Espíritu Santo de la promesa,<br>14 que es las arras de nuestra herencia hasta la redención de la posesión adquirida, para alabanza de su gloria.”</p>
+      <p>Este pasaje muestra que el Espíritu Santo no es algo secundario en la vida cristiana. Es la marca de Dios sobre su pueblo. Por eso, controlar la lengua no es una carga vacía, sino una respuesta coherente a la obra que Dios ya ha comenzado dentro de nosotros.</p>
+      <p><strong>Palabra clave:</strong><br><strong>Sello = marca de pertenencia y garantía de la obra de Dios</strong></p>
+      <h5 class="font-bold">Aplicación</h5>
+      <p>Cuando el creyente recuerda que ha sido sellado por el Espíritu, aprende a hablar con más reverencia. Sus palabras dejan de ser meramente impulsivas y empiezan a reflejar una identidad nueva. Esto ayuda a vivir con más coherencia entre lo que se cree y lo que se dice.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">La nueva criatura debe reflejar a Cristo</h5>
+      <p>El módulo dice que Dios mismo mora en el creyente y le importa cómo vive la nueva criatura que está siendo conformada a la imagen de su Hijo. Esta frase conecta el habla con el proceso de transformación cristiana. Ser nueva criatura no significa solo tener una nueva posición delante de Dios; significa también comenzar a parecerse a Cristo en la práctica diaria.</p>
+      <p>Esto incluye la forma de hablar. Jesús hablaba con verdad, gracia, autoridad, misericordia y pureza. Si estamos siendo conformados a su imagen, nuestras palabras también deben ir cambiando. No ocurre de un día para otro, pero sí debe haber una dirección clara: menos carne y más semejanza a Cristo.</p>
+      <h5 class="font-bold">Cita cruzada</h5>
+      <p><strong>2 Corintios 5:17 (RVR1960)</strong><br>“De modo que si alguno está en Cristo, nueva criatura es; las cosas viejas pasaron; he aquí todas son hechas nuevas.”</p>
+      <p><strong>Romanos 8:29 (RVR1960)</strong><br>“Porque a los que antes conoció, también los predestinó para que fuesen hechos conformes a la imagen de su Hijo...”</p>
+      <p>Estos versículos muestran que la vida cristiana implica cambio real. La vieja manera de hablar no puede seguir gobernando como antes. El Señor está formando en nosotros el carácter de Cristo, y eso debe notarse también en la lengua.</p>
+      <p><strong>Palabra clave:</strong><br><strong>Nueva criatura = persona transformada por Dios en Cristo</strong></p>
+      <h5 class="font-bold">Aplicación</h5>
+      <p>Aun cuando el creyente todavía lucha con ciertas áreas, debe recordar que no está condenado a seguir hablando como antes. En Cristo hay una nueva identidad y una nueva dirección. Por eso, puede pedir al Señor que también transforme su boca y su tono, no solo sus pensamientos.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <h5 class="font-bold">No por miedo, sino por amor y reverencia</h5>
+      <p>El módulo resume esta enseñanza diciendo que no controlamos la lengua por miedo al castigo, sino por respeto y amor a la presencia de Dios en nosotros. Esta es la motivación más profunda. El cristiano no busca cambiar solo para evitar problemas, sino porque ama al Señor y desea honrarlo en todo.</p>
+      <p>Cuando el amor a Dios gobierna el corazón, también empieza a gobernar la boca. La persona ya no pregunta solamente “¿qué me conviene decir?”, sino “¿qué honra a Cristo?”. Ese cambio de enfoque transforma la manera de responder, corregir, conversar y aun guardar silencio cuando es necesario.</p>
+      <h5 class="font-bold">Cita cruzada</h5>
+      <p><strong>Salmo 19:14 (RVR1960)</strong><br>“Sean gratos los dichos de mi boca y la meditación de mi corazón delante de ti,<br>Oh Jehová, roca mía, y redentor mío.”</p>
+      <p>Este versículo expresa muy bien el deseo de un corazón que ama a Dios. No solo pide pensamientos limpios, sino también palabras agradables delante del Señor. La meta del creyente no es hablar mejor para impresionar personas, sino para agradar a Dios.</p>
+      <p><strong>Palabra clave:</strong><br><strong>Temor de Dios = reverencia, respeto y amor delante de la presencia de Dios</strong></p>
+      <h5 class="font-bold">Aplicación</h5>
+      <p>Una buena práctica espiritual es orar antes de empezar el día: “Señor, guarda mi boca y haz que mis palabras te agraden”. Esa oración sencilla coloca la lengua bajo el cuidado de Dios y recuerda que hablar también es parte de la vida de adoración.</p>
+      <div class="border-t border-slate-200 my-6"></div>
+      <div class="bg-gray-50 p-6 rounded-lg mb-8">
+        <h4 class="font-bold border-b border-gray-200 pb-2 mb-4">RESUMEN DE LA SECCIÓN</h4>
+      <p>La Sección 3.7 enseña que la motivación más profunda para controlar la lengua es la presencia del Espíritu Santo en la vida del creyente. El Espíritu es santo, mora en nosotros, nos ha sellado para el día de la redención y está formando en nosotros la imagen de Cristo. Por eso, nuestras palabras no deben ser gobernadas por la carne, sino por reverencia, amor y obediencia a Dios.</p>
+      <p>También aprendemos que el habla puede contristar al Espíritu Santo o reflejar la nueva vida que Él produce. El creyente no controla su lengua solo por miedo al castigo, sino porque quiere agradar al Señor que vive en él.</p>
+      <h5 class="font-bold">Palabras clave para recordar</h5>
+      <p><strong>Espíritu Santo</strong> = la presencia de Dios en el creyente, quien lo guía y santifica<br><strong>Santidad</strong> = vida apartada para Dios, también en la manera de hablar<br><strong>Sello</strong> = marca de pertenencia y garantía de la obra de Dios<br><strong>Temor de Dios</strong> = reverencia, respeto y amor delante de la presencia de Dios<br><strong>Nueva criatura</strong> = persona transformada por Dios en Cristo</p>
+      <h5 class="font-bold">Preguntas para reflexión</h5>
+      <ol>
+      <li>¿Qué me motiva realmente a controlar mis palabras?</li>
+      <li>¿Estoy consciente de la presencia del Espíritu Santo cuando hablo?</li>
+      <li>¿Mi forma de hablar refleja que soy nueva criatura en Cristo?</li>
+      <li>¿Qué cambios necesita producir Dios en mi boca para que mis palabras le agraden?</li>
+      </ol>
+      
     </div>
 
   </main>
@@ -175,11 +575,11 @@
   <footer class="bg-blue-950 text-white mt-12 py-12">
     <div class="max-w-4xl mx-auto px-4">
       <div class="flex flex-col md:flex-row justify-between items-center gap-6 border-b border-white/20 pb-8 mb-8">
-        <a href="modulo-2-en.html" class="text-blue-300 hover:text-white transition font-medium">← Previous Module 2</a>
-        <a href="modulo-4-en.html" class="bg-indigo-600 hover:bg-indigo-500 py-3 px-8 rounded-xl font-bold transition shadow-lg">Next Module →</a>
+        <a href="modulo-2-es.html" class="text-blue-300 hover:text-white transition font-medium">← Módulo 2 Anterior</a>
+        <a href="modulo-4-es.html" class="bg-indigo-600 hover:bg-indigo-500 py-3 px-8 rounded-xl font-bold transition shadow-lg">Siguiente Módulo →</a>
       </div>
       <div class="text-center">
-        <p class="text-sm text-blue-300">© 2026 Biblical Academy Digital · Module 3 Complete</p>
+        <p class="text-sm text-blue-300">© 2026 Academia Bíblica Digital · Módulo 3 Completo</p>
       </div>
     </div>
   </footer>
@@ -188,12 +588,12 @@
     document.addEventListener("DOMContentLoaded", () => {
       const increaseTextSizeButton = document.getElementById("increase-text-size");
       const decreaseTextSizeButton = document.getElementById("decrease-text-size");
-      const contentEn = document.getElementById("content-en");
+      const contentEs = document.getElementById("content-en");
 
       function changeTextSize(factor) {
-        const currentFontSize = parseFloat(window.getComputedStyle(contentEn).fontSize);
+        const currentFontSize = parseFloat(window.getComputedStyle(contentEs).fontSize);
         const newSize = Math.max(12, currentFontSize * factor);
-        contentEn.style.fontSize = `${newSize}px`;
+        contentEs.style.fontSize = `${newSize}px`;
       }
 
       increaseTextSizeButton.addEventListener("click", () => {
@@ -209,14 +609,14 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const keywords = [
-        "God", "Jesus", "Holy Spirit", "Grace", "Sin", "Words",
-        "Tongue", "Logos", "Charis", "Oikodomeō", "Build up", "Spiritual maturity",
-        "Evangelism", "Murmuring", "Criticism", "Gossip", "Sarcasm", "Discernment",
-        "Forgiveness", "Hope", "Community", "Church", "Holiness", "Word",
-        "Self-control", "Heart", "Fire", "Unity", "Restoration", "Private confrontation",
-        "Gentleness", "Testimony", "Listen", "Bless", "Transformation", "Seal",
-        "Fear of God", "New creation", "Opportunity", "Encouragement", "Teacher",
-        "Ephesians", "James", "Proverbs", "Colossians", "Matthew", "Galatians", "Romans"
+        "Dios", "Jesús", "Espíritu Santo", "Gracia", "Pecado", "Palabras",
+        "Lengua", "Logos", "Charis", "Oikodomeō", "Edificar", "Madurez espiritual",
+        "Evangelismo", "Murmuración", "Crítica", "Chisme", "Sarcasmo", "Discernimiento",
+        "Perdón", "Esperanza", "Comunidad", "Iglesia", "Santidad", "Palabra",
+        "Dominio propio", "Corazón", "Fuego", "Unidad", "Restauración", "Confrontación privada",
+        "Mansedumbre", "Testimonio", "Escuchar", "Bendecir", "Transformación", "Sello",
+        "Temor de Dios", "Nueva criatura", "Oportunidad", "Ánimo", "Maestro",
+        "Efesios", "Santiago", "Proverbios", "Colosenses", "Mateo", "Gálatas", "Romanos"
       ];
 
       function highlightKeywordsInElement(element) {
@@ -247,8 +647,17 @@
           const sortedKeywords = [...keywords].sort((a, b) => b.length - a.length);
 
           sortedKeywords.forEach((keyword) => {
-            const escapedKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-            const regex = new RegExp(`(?<!<span[^>]*)\\b${escapedKeyword}\\b(?![^<]*</span>)`, "gi");
+            const pattern = keyword.split('').map(char => {
+              const base = char.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+              if (base === 'a') return '[aá]';
+              if (base === 'e') return '[eé]';
+              if (base === 'i') return '[ií]';
+              if (base === 'o') return '[oó]';
+              if (base === 'u') return '[uú]';
+              return char;
+            }).join('');
+
+            const regex = new RegExp(`(?<!<span[^>]*)\\b${pattern}\\b(?![^<]*</span>)`, "gi");
 
             modifiedText = modifiedText.replace(regex, (match) => {
               hasChange = true;
