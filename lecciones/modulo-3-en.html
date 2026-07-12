@@ -599,7 +599,7 @@
 
           const reference = match[1].trim();
           const verseHtml = match[2].trim();
-          if (!(verseHtml.startsWith(""") || verseHtml.startsWith("&quot;"))) return;
+          if (!(verseHtml.startsWith("“") || verseHtml.startsWith("&quot;"))) return;
 
           const card = document.createElement("div");
           card.className = "verse-block";
